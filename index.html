@@ -823,6 +823,14 @@
     </footer>
 
     <script>
+      // Captura e armazena o parâmetro de referência na URL
+      (function () {
+        const ref = new URLSearchParams(window.location.search).get("ref");
+        if (ref) sessionStorage.setItem("ref", ref);
+      })();
+    </script>
+
+    <script>
       function toggleFaq(btn) {
         const item = btn.parentElement;
         const isOpen = item.classList.contains("open");
