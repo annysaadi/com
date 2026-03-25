@@ -177,6 +177,19 @@ footer p{font-size:11px;color:rgba(255,255,255,0.2);letter-spacing:0.5px;}
 
 .fade-up{opacity:0;transform:translateY(18px);transition:opacity 0.6s ease,transform 0.6s ease;}
 .fade-up.visible{opacity:1;transform:translateY(0);}
+
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:999;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.3s ease;}
+.modal-overlay.open{opacity:1;pointer-events:all;}
+.modal-box{position:relative;width:90%;max-width:380px;aspect-ratio:9/16;background:#000;border-radius:8px;overflow:hidden;}
+.modal-box iframe{width:100%;height:100%;border:none;}
+.modal-close{position:absolute;top:-36px;right:0;background:none;border:none;color:#fff;font-size:13px;font-weight:400;letter-spacing:1px;cursor:pointer;font-family:"DM Sans",sans-serif;opacity:0.7;}
+.modal-close:hover{opacity:1;}
+
+/* VIDEO BUTTON */
+.video-btn{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-size:12px;font-weight:500;color:var(--coal);letter-spacing:0.5px;cursor:pointer;background:none;border:none;padding:0;font-family:"DM Sans",sans-serif;text-decoration:underline;text-decoration-color:var(--border);text-underline-offset:3px;transition:all 0.2s;}
+.video-btn:hover{text-decoration-color:var(--coal);}
+.video-btn svg{flex-shrink:0;}
 </style>
 </head>
 <body>
@@ -285,7 +298,22 @@ footer p{font-size:11px;color:rgba(255,255,255,0.2);letter-spacing:0.5px;}
     <p>Não consegue usar CPF como chave? Use o <strong>número de telefone</strong>.</p>
     <p style="margin-top:8px;">O Pix tem que ser seu — não pode ser de outra pessoa.</p>
   </div>
+  <button class="video-btn" onclick="openModal()">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+      <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
+      <path d="M10 8l6 4-6 4V8z" fill="currentColor"/>
+    </svg>
+    Ver tutorial em vídeo — como cadastrar o Pix
+  </button>
 </div>
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal" onclick="closeModal(event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">✕ fechar</button>
+    <iframe id="modal-iframe" src="" allowfullscreen allow="autoplay"></iframe>
+  </div>
 </div>
 
 <!-- 04 PAGAMENTO + NÍVEIS -->
@@ -606,6 +634,19 @@ window.addEventListener('scroll', () => {
   sections.forEach(s => { if(window.scrollY >= s.offsetTop - 80) cur = s.id; });
   navLinks.forEach(a => { a.classList.toggle('active', a.getAttribute('href') === '#'+cur); });
 });
+
+function openModal() {
+  document.getElementById('modal-iframe').src = 'https://www.youtube.com/embed/BjnrFbpOGho?autoplay=1';
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(e) {
+  if(e && e.target !== document.getElementById('modal')) return;
+  document.getElementById('modal-iframe').src = '';
+  document.getElementById('modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
 </script>
 </body>
 </html>
