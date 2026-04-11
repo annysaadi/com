@@ -203,26 +203,28 @@
         position: absolute;
         bottom: 36px;
         left: 32px;
-        background: var(--white);
-        border-radius: 14px;
-        padding: 14px 18px;
+        background: rgba(255,255,255,0.15);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1.5px solid rgba(255,255,255,0.35);
+        border-radius: 18px;
+        padding: 16px 20px;
         display: flex;
         align-items: center;
         gap: 14px;
-        box-shadow: 0 8px 32px rgba(0,0,0,0.15);
         z-index: 10;
         animation: floatBadge 3s ease-in-out infinite;
       }
       .pix-badge-icon {
         width: 48px; height: 48px;
         border-radius: 50%;
-        background: #e8f5e9;
+        background: rgba(255,255,255,0.2);
         display: flex; align-items: center; justify-content: center;
         flex-shrink: 0;
         font-size: 24px;
       }
-      .pix-badge-label { font-size: 13px; font-weight: 500; color: #666; margin-bottom: 2px; }
-      .pix-badge-value { font-size: 20px; font-weight: 800; color: var(--coal); }
+      .pix-badge-label { font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.75); margin-bottom: 2px; }
+      .pix-badge-value { font-size: 20px; font-weight: 800; color: var(--white); }
       @keyframes pulse {
         0% { box-shadow: 0 4px 16px rgba(39,174,96,0.35), 0 0 0 0 rgba(39,174,96,0.4); }
         70% { box-shadow: 0 4px 16px rgba(39,174,96,0.35), 0 0 0 12px rgba(39,174,96,0); }
@@ -598,13 +600,13 @@
         .pix-badge {
           bottom: 16px;
           left: 16px;
-          padding: 10px 12px;
+          padding: 10px 14px;
           gap: 10px;
-          border-radius: 10px;
+          border-radius: 14px;
         }
-        .pix-badge-icon { width: 34px; height: 34px; font-size: 16px; }
-        .pix-badge-label { font-size: 10px; }
-        .pix-badge-value { font-size: 14px; }
+        .pix-badge-icon { width: 36px; height: 36px; font-size: 18px; }
+        .pix-badge-label { font-size: 11px; }
+        .pix-badge-value { font-size: 15px; }
 
         /* Sections */
         section { padding: 48px 24px; }
@@ -855,7 +857,13 @@ Só precisa do celular e de tempo disponível.
           <!-- Card 1 -->
           <div class="testimonial-card">
             <div>
-              <div style="color: #c9a84c; font-size: 20px; margin-bottom: 20px; letter-spacing: 2px;">★★★★★</div>
+              <div style="display: flex; gap: 4px; margin-bottom: 20px;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#f5a623"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#f5a623"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#f5a623"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#f5a623"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#f5a623"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
               <p style="font-size: 15px; color: #444; line-height: 1.75; font-style: italic; margin-bottom: 28px;">
                 "Comecei para fazer uma renda extra no final de semana, hoje é minha principal fonte de renda. O pagamento cai certinho toda semana via PIX, me salva muito!"
               </p>
@@ -872,7 +880,13 @@ Só precisa do celular e de tempo disponível.
           <!-- Card 2 -->
           <div class="testimonial-card">
             <div>
-              <div style="color: #c9a84c; font-size: 20px; margin-bottom: 20px; letter-spacing: 2px;">★★★★★</div>
+              <div style="display: flex; gap: 4px; margin-bottom: 20px;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#f5a623"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#f5a623"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#f5a623"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#f5a623"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#f5a623"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
               <p style="font-size: 15px; color: #444; line-height: 1.75; font-style: italic; margin-bottom: 28px;">
                 "O que eu mais gosto do app é a flexibilidade. Como mãe, posso ficar com meu filho e trabalhar nos horários que ele dorme. Pra mim não tem coisa melhor!!!"
               </p>
@@ -889,7 +903,13 @@ Só precisa do celular e de tempo disponível.
           <!-- Card 3 -->
           <div class="testimonial-card">
             <div>
-              <div style="color: #c9a84c; font-size: 20px; margin-bottom: 20px; letter-spacing: 2px;">★★★★★</div>
+              <div style="display: flex; gap: 4px; margin-bottom: 20px;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#f5a623"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#f5a623"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#f5a623"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#f5a623"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#f5a623"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
               <p style="font-size: 15px; color: #444; line-height: 1.75; font-style: italic; margin-bottom: 28px;">
                 "Tinha receio no começo, mas as adm's da agência são excelente. Sou só gratidão, queria ter conhecido antes!"
               </p>
