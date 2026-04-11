@@ -521,6 +521,31 @@
       }
       .fade-up.visible { opacity: 1; transform: translateY(0); }
 
+      /* TESTIMONIALS */
+      .testimonials-track {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+      .testimonials-track > div {
+        min-width: 0;
+      }
+      @media (max-width: 900px) {
+        .testimonials-track {
+          display: flex;
+          gap: 16px;
+          overflow-x: auto;
+          scroll-snap-type: x mandatory;
+          -webkit-overflow-scrolling: touch;
+          padding-bottom: 16px;
+        }
+        .testimonials-track::-webkit-scrollbar { display: none; }
+        .testimonials-track > div {
+          flex: 0 0 85vw;
+          scroll-snap-align: start;
+        }
+      }
+
       /* RESPONSIVE */
       @media (max-width: 900px) {
         nav { padding: 14px 20px; }
@@ -535,7 +560,6 @@
         .footer-cta { padding: 56px 24px; }
         footer { padding: 20px 24px; flex-direction: column; text-align: center; }
         .hero-proof { flex-wrap: wrap; gap: 20px; }
-        .testimonials-grid { grid-template-columns: 1fr !important; }
       }
     </style>
   </head>
@@ -732,7 +756,7 @@ Só precisa do celular e de tempo disponível.
           <span class="tag" style="text-align: center; display: block;">depoimentos</span>
           <h2 class="section-title">O que elas estão <em>dizendo</em></h2>
         </div>
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;" class="fade-up">
+        <div class="testimonials-track fade-up">
 
           <!-- Card 1 -->
           <div style="background: var(--white); border-radius: 16px; padding: 32px 28px; box-shadow: 0 2px 16px rgba(0,0,0,0.06); display: flex; flex-direction: column; justify-content: space-between;">
