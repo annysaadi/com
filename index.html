@@ -83,7 +83,7 @@
         position: fixed;
         top: 0; left: 0; right: 0;
         z-index: 100;
-        padding: 16px 40px;
+        padding: 16px 40px 12px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -120,14 +120,14 @@
         min-height: 100vh;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        padding-top: 80px;
+        padding-top: 90px;
       }
       .hero-left {
         background: var(--white);
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 100px 56px 72px 64px;
+        padding: 90px 56px 72px 64px;
       }
       .hero-right {
         position: relative;
@@ -574,7 +574,7 @@
       /* RESPONSIVE */
       @media (max-width: 900px) {
         /* Nav */
-        nav { padding: 16px 20px; }
+        nav { padding: 20px 20px; }
         .nav-logo { font-size: 14px; }
         .nav-cta {
           font-size: 11px;
@@ -583,7 +583,7 @@
 
         /* Hero */
         .hero { grid-template-columns: 1fr; min-height: auto; }
-        .hero-left { padding: 96px 20px 40px; }
+        .hero-left { padding: 100px 20px 40px; }
         .hero-title { font-size: 26px; }
         .hero-title em { font-size: 0.7em; }
         .hero-body { font-size: 14px; margin-bottom: 20px; }
@@ -1083,6 +1083,7 @@ Só precisa do celular e de tempo disponível.
 
       document.querySelectorAll('.proof-num[data-target]')
         .forEach(el => counterObserver.observe(el));
+
     </script>
   </body>
 </html>
