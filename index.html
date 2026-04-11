@@ -679,6 +679,128 @@
         footer { padding: 16px 16px; flex-direction: column; text-align: center; gap: 2px; }
         footer p { font-size: 10px !important; }
       }
+      /* CHATBOT */
+      .chat-toggle {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: var(--green);
+        color: white;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 4px 24px rgba(39,174,96,0.4);
+        z-index: 200;
+        font-size: 26px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.2s;
+      }
+      .chat-toggle:hover { transform: scale(1.08); }
+      .chat-box {
+        position: fixed;
+        bottom: 96px;
+        right: 24px;
+        width: 360px;
+        max-height: 520px;
+        background: #fafafa;
+        border-radius: 24px;
+        box-shadow: 0 12px 48px rgba(0,0,0,0.18);
+        z-index: 200;
+        display: none;
+        flex-direction: column;
+        overflow: hidden;
+      }
+      .chat-box.open { display: flex; }
+      .chat-header {
+        background: var(--green);
+        color: white;
+        padding: 18px 20px;
+        font-size: 16px;
+        font-weight: 700;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 24px 24px 0 0;
+      }
+      .chat-header button {
+        background: rgba(255,255,255,0.2);
+        border: none;
+        color: white;
+        font-size: 18px;
+        cursor: pointer;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .chat-messages {
+        flex: 1;
+        overflow-y: auto;
+        padding: 20px 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        max-height: 240px;
+        background: #fafafa;
+      }
+      .chat-msg {
+        max-width: 82%;
+        padding: 12px 16px;
+        font-size: 14px;
+        line-height: 1.6;
+        font-weight: 400;
+      }
+      .chat-msg.bot {
+        background: white;
+        color: var(--coal);
+        align-self: flex-start;
+        border-radius: 18px 18px 18px 4px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      }
+      .chat-msg.user {
+        background: var(--green);
+        color: white;
+        align-self: flex-end;
+        border-radius: 18px 18px 4px 18px;
+        font-weight: 500;
+      }
+      .chat-options {
+        padding: 16px;
+        background: white;
+        border-top: 1px solid #eee;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        max-height: 200px;
+        overflow-y: auto;
+      }
+      .chat-opt {
+        background: var(--green-light);
+        border: none;
+        color: var(--green-deep);
+        padding: 8px 16px;
+        border-radius: 50px;
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s;
+        font-family: "Poppins", sans-serif;
+        white-space: nowrap;
+      }
+      .chat-opt:hover {
+        background: var(--green);
+        color: white;
+      }
+      @media (max-width: 900px) {
+        .chat-box { width: calc(100vw - 32px); right: 16px; bottom: 92px; max-height: 70vh; }
+        .chat-toggle { bottom: 20px; right: 16px; width: 54px; height: 54px; font-size: 24px; }
+      }
     </style>
   </head>
   <body>
@@ -1111,6 +1233,72 @@ Só precisa do celular e de tempo disponível.
       document.querySelectorAll('.proof-num[data-target]')
         .forEach(el => counterObserver.observe(el));
 
+    </script>
+    <!-- CHATBOT -->
+    <button class="chat-toggle" onclick="toggleChat()" aria-label="Abrir chat">💬</button>
+    <div class="chat-box" id="chatBox">
+      <div class="chat-header">
+        <span>Tire suas dúvidas 💌</span>
+        <button onclick="toggleChat()">✕</button>
+      </div>
+      <div class="chat-messages" id="chatMessages">
+        <div class="chat-msg bot">Oi! 🤍 Escolha uma pergunta abaixo que eu te respondo na hora.</div>
+      </div>
+      <div class="chat-options" id="chatOptions"></div>
+    </div>
+
+    <script>
+      const chatData = [
+        { q: "Preciso pagar algo pra entrar?", a: "Não! O cadastro é 100% gratuito. Você entra pra ganhar, não pra pagar." },
+        { q: "Preciso aparecer nua?", a: "Você não é obrigada a nada. Mas sendo honesta: 99% dos usuários buscam esse tipo de conteúdo. Se não se sentir confortável, talvez seja melhor não iniciar." },
+        { q: "Quando recebo meu primeiro PIX?", a: "Os pagamentos são semanais. O que você fizer nesta semana, cai na conta na próxima; geralmente às sextas-feiras." },
+        { q: "Preciso falar inglês?", a: "Não! O app ajuda na comunicação. Não precisa falar nada." },
+        { q: "Quanto dá pra ganhar?", a: "Na conta nova, a meta mínima de 20.000 moedas dá cerca de R$ 115 por semana. São mais ou menos 4 horas de chamada, e você divide como quiser." },
+        { q: "Como funciona o pagamento?", a: "Cai no seu PIX toda semana, em reais. Você ganha moedas durante as chamadas e elas viram dinheiro." },
+        { q: "Preciso ter experiência?", a: "Não! Dá pra começar mesmo sem experiência. Nossa equipe te acompanha no início." },
+        { q: "Preciso aparecer na câmera?", a: "Sim, precisa aparecer na câmera durante as chamadas de vídeo. Só ganha moedas se estiver visível na chamada; só mensagem não acumula ganho." },
+        { q: "Eu ganho se só falar por mensagem?", a: "Só ganha moedas estando em chamada de vídeo, aparecendo na câmera. Trocar só mensagens não gera nenhum ganho, tá?" },
+        { q: "Tem brasileiro?", a: "Tem sim, usuários do Brasil também usam o app! Mas não é obrigatório atender eles, você escolhe quem quer responder." },
+        { q: "Aparece gente da minha cidade?", a: "É bem difícil aparecer alguém conhecido ou da mesma cidade, mas não é impossível, porque o app não bloqueia região. O risco é raro, mas pode acontecer." },
+        { q: "Se não gostar, pode sair?", a: "Pode sim! Se não gostar, é só parar de usar o app quando quiser, não tem contrato nem obrigação de ficar." },
+        { q: "Quero começar agora!", a: "Ótimo! Clica no botão verde 'QUERO COMEÇAR A GANHAR HOJE' aqui na página, ou vai direto pra página de inscrição. A gente te responde rapidinho no WhatsApp! 🚀" }
+      ];
+
+      function toggleChat() {
+        document.getElementById('chatBox').classList.toggle('open');
+      }
+
+      function renderOptions() {
+        const opts = document.getElementById('chatOptions');
+        opts.innerHTML = '';
+        chatData.forEach((item, i) => {
+          const btn = document.createElement('button');
+          btn.className = 'chat-opt';
+          btn.textContent = item.q;
+          btn.onclick = () => sendQuestion(i);
+          opts.appendChild(btn);
+        });
+      }
+
+      function sendQuestion(i) {
+        const msgs = document.getElementById('chatMessages');
+        const userMsg = document.createElement('div');
+        userMsg.className = 'chat-msg user';
+        userMsg.textContent = chatData[i].q;
+        msgs.appendChild(userMsg);
+
+        setTimeout(() => {
+          const botMsg = document.createElement('div');
+          botMsg.className = 'chat-msg bot';
+          botMsg.textContent = chatData[i].a;
+          msgs.appendChild(botMsg);
+          msgs.scrollTop = msgs.scrollHeight;
+        }, 600);
+
+        msgs.scrollTop = msgs.scrollHeight;
+      }
+
+      renderOptions();
     </script>
   </body>
 </html>
