@@ -522,6 +522,9 @@
       .fade-up.visible { opacity: 1; transform: translateY(0); }
 
       /* TESTIMONIALS */
+      .swipe-hint {
+        display: none;
+      }
       .testimonial-card {
         background: var(--white);
         border-radius: 16px;
@@ -600,6 +603,19 @@
         }
         .testimonial-card p {
           font-size: 13px !important;
+        }
+        .swipe-hint {
+          display: block;
+          text-align: center;
+          font-size: 13px;
+          font-weight: 500;
+          color: var(--light);
+          margin-top: 12px;
+          animation: swipeArrow 1.5s ease-in-out infinite;
+        }
+        @keyframes swipeArrow {
+          0%, 100% { transform: translateX(0); opacity: 0.6; }
+          50% { transform: translateX(8px); opacity: 1; }
         }
 
         /* Footer */
@@ -864,6 +880,9 @@ Só precisa do celular e de tempo disponível.
             </div>
           </div>
 
+        </div>
+        <div class="swipe-hint">
+          Deslize para ver mais →
         </div>
       </div>
     </section>
