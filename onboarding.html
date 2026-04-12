@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17625822152"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WEP2D02X35"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'AW-17625822152');
+  gtag('config', 'G-WEP2D02X35');
 </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bem-vinda — Leia antes de começar</title>
+    <title>Bem-vinda | Leia antes de começar</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -26,35 +25,36 @@
         box-sizing: border-box;
       }
       :root {
-        --cream: #f7f3ee;
-        --cream-d: #ede5d8;
-        --white: #fdfaf7;
-        --coal: #1e1c1a;
-        --dark: #2a2724;
-        --mid: #6b6560;
-        --light: #a8a09a;
-        --border: #ddd5c8;
+        --green-bg: #f0faf2;
+        --green-light: #d4f0dc;
+        --green: #27ae60;
+        --green-dark: #1e8449;
+        --green-deep: #145a32;
+        --white: #ffffff;
+        --coal: #1a1a1a;
+        --mid: #444444;
+        --light: #888888;
+        --border: #d0e8d8;
         --warning: #c4882a;
-        --warning-bg: #fbf5eb;
+        --warning-bg: #fef9f0;
+        --cream: #f0faf2;
+        --cream-d: #d4f0dc;
+        --dark: #145a32;
       }
-      html {
-        scroll-behavior: smooth;
-      }
+      html { scroll-behavior: smooth; }
       body {
-        background: var(--cream);
+        background: var(--green-bg);
         color: var(--coal);
-        font-family: "DM Sans", sans-serif;
-        font-weight: 300;
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
         line-height: 1.6;
         overflow-x: hidden;
       }
-      .serif {
-        font-family: "Cormorant Garamond", serif;
-      }
+      .serif { font-family: "Poppins", sans-serif; }
 
       /* ── HERO ── */
       .hero {
-        background: var(--dark);
+        background: var(--green-deep);
         padding: 80px 48px 72px;
         text-align: center;
         position: relative;
@@ -64,11 +64,7 @@
         content: "";
         position: absolute;
         inset: 0;
-        background: radial-gradient(
-          ellipse at 50% 0%,
-          rgba(196, 136, 42, 0.12),
-          transparent 70%
-        );
+        background: radial-gradient(ellipse at 50% 0%, rgba(39,174,96,0.15), transparent 70%);
       }
       .hero-avatar {
         width: 72px;
@@ -86,34 +82,34 @@
         object-fit: cover;
       }
       .hero-tag {
-        font-size: 9px;
-        font-weight: 500;
-        letter-spacing: 3px;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 2px;
         text-transform: uppercase;
-        color: rgba(255, 255, 255, 0.3);
+        color: rgba(255, 255, 255, 0.5);
         display: block;
         margin-bottom: 14px;
         position: relative;
         z-index: 1;
       }
       .hero-title {
-        font-family: "Cormorant Garamond", serif;
-        font-size: clamp(36px, 5vw, 52px);
-        font-weight: 400;
+        font-family: "Poppins", sans-serif;
+        font-size: clamp(30px, 5vw, 46px);
+        font-weight: 800;
         color: var(--white);
-        line-height: 1.1;
+        line-height: 1.15;
         margin-bottom: 16px;
         position: relative;
         z-index: 1;
       }
       .hero-title em {
-        font-style: italic;
-        font-weight: 300;
+        font-style: normal;
+        color: #6ee89a;
       }
       .hero-sub {
-        font-size: 14px;
-        font-weight: 300;
-        color: rgba(255, 255, 255, 0.45);
+        font-size: 15px;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.55);
         max-width: 500px;
         margin: 0 auto;
         position: relative;
@@ -122,8 +118,8 @@
 
       /* ── WARNING BANNER ── */
       .warning {
-        background: var(--warning-bg);
-        border-top: 3px solid var(--warning);
+        background: #fff8ee;
+        border-top: 3px solid #f5a623;
         padding: 32px 48px;
         display: flex;
         align-items: flex-start;
@@ -135,24 +131,25 @@
         margin-top: 2px;
       }
       .warning-title {
-        font-family: "DM Sans", sans-serif;
-        font-size: 14px;
-        font-weight: 500;
-        color: var(--warning);
+        font-family: "Poppins", sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        color: #f5a623;
         letter-spacing: 0.5px;
+        text-transform: uppercase;
         margin-bottom: 8px;
       }
       .warning-text {
         font-size: 14px;
-        font-weight: 300;
-        color: #7a5c1e;
+        font-weight: 400;
+        color: #8a6a1e;
         line-height: 1.7;
       }
 
       /* ── PROGRESS NAV ── */
       .progress-nav {
         background: var(--white);
-        border-bottom: 1px solid var(--border);
+        border-bottom: 2px solid var(--border);
         padding: 0 48px;
         display: flex;
         gap: 0;
@@ -160,13 +157,14 @@
         position: sticky;
         top: 0;
         z-index: 50;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
       }
       .nav-item {
-        font-size: 11px;
-        font-weight: 500;
-        letter-spacing: 0.5px;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.3px;
         color: var(--light);
-        padding: 18px 20px;
+        padding: 16px 20px;
         border-bottom: 2px solid transparent;
         white-space: nowrap;
         cursor: pointer;
@@ -174,12 +172,10 @@
         text-decoration: none;
         display: block;
       }
-      .nav-item:hover {
-        color: var(--coal);
-      }
+      .nav-item:hover { color: var(--coal); }
       .nav-item.active {
-        color: var(--coal);
-        border-bottom-color: var(--coal);
+        color: var(--green);
+        border-bottom-color: var(--green);
       }
 
       /* ── SECTIONS ── */
@@ -194,38 +190,38 @@
       }
 
       .section-num {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 48px;
-        font-weight: 300;
-        color: var(--cream-d);
+        font-family: "Poppins", sans-serif;
+        font-size: 40px;
+        font-weight: 800;
+        color: var(--green);
         line-height: 1;
         display: block;
         margin-bottom: 8px;
       }
       .section-tag {
-        font-size: 9px;
-        font-weight: 500;
-        letter-spacing: 3px;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 2px;
         text-transform: uppercase;
-        color: var(--light);
+        color: var(--green);
         display: block;
-        margin-bottom: 14px;
+        margin-bottom: 12px;
       }
       .section-title {
-        font-family: "Cormorant Garamond", serif;
-        font-size: clamp(28px, 4vw, 38px);
-        font-weight: 400;
+        font-family: "Poppins", sans-serif;
+        font-size: clamp(24px, 4vw, 34px);
+        font-weight: 700;
         color: var(--coal);
-        line-height: 1.1;
-        margin-bottom: 24px;
+        line-height: 1.2;
+        margin-bottom: 20px;
       }
       .section-title em {
-        font-style: italic;
-        font-weight: 300;
+        font-style: normal;
+        color: var(--green);
       }
       .section-body {
-        font-size: 14px;
-        font-weight: 300;
+        font-size: 15px;
+        font-weight: 400;
         color: var(--mid);
         line-height: 1.8;
         margin-bottom: 20px;
@@ -240,12 +236,12 @@
       }
       .card {
         padding: 20px 22px;
-        border: 1px solid var(--border);
-        border-radius: 3px;
+        border: 2px solid var(--border);
+        border-radius: 12px;
         background: var(--white);
       }
       .card-dark {
-        background: var(--dark);
+        background: var(--green-deep);
         border-color: transparent;
       }
       .card-label {
@@ -261,9 +257,9 @@
         color: rgba(255, 255, 255, 0.3);
       }
       .card-value {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 28px;
-        font-weight: 300;
+        font-family: "Poppins", sans-serif;
+        font-size: 26px;
+        font-weight: 800;
         color: var(--coal);
         line-height: 1;
         display: block;
@@ -336,18 +332,18 @@
       }
       .call-card {
         padding: 24px 28px;
-        border: 1px solid var(--border);
-        border-radius: 3px;
+        border: 2px solid var(--border);
+        border-radius: 12px;
         background: var(--white);
       }
       .call-card-dark {
-        background: var(--dark);
+        background: var(--green-deep);
         border-color: transparent;
       }
       .call-name {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 22px;
-        font-weight: 400;
+        font-family: "Poppins", sans-serif;
+        font-size: 20px;
+        font-weight: 700;
         color: var(--coal);
         margin-bottom: 6px;
       }
@@ -409,7 +405,7 @@
 
       /* ── FINAL CTA ── */
       .final {
-        background: var(--coal);
+        background: var(--green-deep);
         padding: 80px 48px;
         text-align: center;
       }
@@ -433,16 +429,16 @@
         margin-bottom: 16px;
       }
       .final-title {
-        font-family: "Cormorant Garamond", serif;
-        font-size: clamp(32px, 4vw, 44px);
-        font-weight: 400;
+        font-family: "Poppins", sans-serif;
+        font-size: clamp(26px, 4vw, 40px);
+        font-weight: 800;
         color: var(--white);
-        line-height: 1.1;
+        line-height: 1.15;
         margin-bottom: 16px;
       }
       .final-title em {
-        font-style: italic;
-        font-weight: 300;
+        font-style: normal;
+        color: #6ee89a;
       }
       .final-text {
         font-size: 14px;
@@ -455,35 +451,36 @@
         display: inline-flex;
         align-items: center;
         gap: 10px;
-        font-family: "DM Sans", sans-serif;
-        font-size: 11px;
-        font-weight: 500;
-        letter-spacing: 2px;
+        font-family: "Poppins", sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: 0.3px;
         text-transform: uppercase;
-        color: var(--coal);
-        background: var(--cream);
-        padding: 16px 36px;
-        border-radius: 2px;
+        color: var(--green-deep);
+        background: var(--white);
+        padding: 18px 40px;
+        border-radius: 50px;
         text-decoration: none;
         border: none;
         cursor: pointer;
         transition: all 0.2s;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.15);
       }
       .final-btn:hover {
-        background: var(--white);
+        background: var(--green-light);
+        transform: translateY(-1px);
       }
 
       /* FOOTER */
       footer {
-        background: var(--dark);
-        padding: 24px 48px;
+        background: #0a1a0a;
+        padding: 20px 48px;
         text-align: center;
         border-top: 1px solid rgba(255, 255, 255, 0.06);
       }
       footer p {
         font-size: 11px;
-        color: rgba(255, 255, 255, 0.2);
-        letter-spacing: 0.5px;
+        color: rgba(255, 255, 255, 0.25);
       }
 
       /* ANIMATIONS */
