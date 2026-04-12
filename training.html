@@ -1513,8 +1513,24 @@
           width: calc(100vw - 32px);
           right: 16px;
           bottom: 80px;
-          max-height: calc(100vh - 100px);
+          max-height: calc(100vh - 120px);
+          overflow: hidden;
+          display: none;
+          flex-direction: column;
+        }
+        .chat-box.open {
+          display: flex;
+        }
+        .chat-messages {
+          flex: 1;
+          max-height: none;
+          min-height: 0;
           overflow-y: auto;
+        }
+        .chat-options {
+          max-height: 40vh;
+          overflow-y: auto;
+          flex-shrink: 0;
         }
         .chat-toggle {
           bottom: 20px;
