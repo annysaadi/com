@@ -1366,13 +1366,14 @@
         display: block;
       }
       .glass-card-device {
-        font-size: 10px;
+        font-size: 9px;
         font-weight: 500;
         letter-spacing: 1px;
         text-transform: uppercase;
-        color: var(--gray-400);
+        color: var(--gray-300);
         display: block;
         margin-bottom: 6px;
+        text-align: center;
       }
 
       /* APP BUTTON SIMULATIONS */
@@ -1563,7 +1564,7 @@
         </p>
         <div style="margin: 20px 0">
           <span class="app-popup-label"
-            >É assim que aparece na tela da Lupa ↓</span
+            >É assim que aparece na tela da Lupa/Explorar ↓</span
           >
           <div
             style="
@@ -1577,7 +1578,7 @@
             "
           >
             <div>
-              <span class="glass-card-device">📱 iPhone</span>
+              <span class="glass-card-device">iPhone</span>
               <div
                 class="glass-card"
                 style="
@@ -1599,7 +1600,7 @@
               </div>
             </div>
             <div>
-              <span class="glass-card-device">📱 Android</span>
+              <span class="glass-card-device">Android</span>
               <div
                 class="glass-card"
                 style="
@@ -1671,6 +1672,65 @@
             <strong>RG ou a CNH</strong>. Isso é obrigatório — se não fizer,
             pode não receber o dinheiro ou ter o perfil bloqueado.
           </p>
+          <div style="margin: 20px 0">
+            <span class="app-popup-label"
+              >Essa mensagem vai aparecer no app ↓</span
+            >
+            <div
+              class="app-popup"
+              style="text-align: center; padding: 28px 24px 24px"
+            >
+              <div
+                class="app-popup-title"
+                style="color: var(--gray-900); font-size: 17px"
+              >
+                Verificação KYC
+              </div>
+              <p
+                class="app-popup-text"
+                style="
+                  color: var(--gray-500);
+                  font-size: 13px;
+                  line-height: 1.6;
+                  margin-bottom: 20px;
+                "
+              >
+                Na Yaar, a privacidade e a segurança do usuário é a nossa
+                principal prioridade. Para continuar usando o nosso app, você
+                precisa através de um processo KYC seguro. Os seus dados
+                pessoais serão transferidos em segurança para a Yoti para
+                verificação KYC. A Yoti é um parceiro confiável que aplica os.
+                Ao concluir o processo de verificação KYC, você poderá usar o
+                nosso app. Agradecemos a sua compreensão.
+              </p>
+              <span
+                class="app-popup-btn"
+                style="
+                  display: block;
+                  width: 100%;
+                  text-align: center;
+                  padding: 14px;
+                  font-size: 15px;
+                  margin-bottom: 10px;
+                "
+                >Verificar agora</span
+              >
+              <span
+                style="
+                  display: block;
+                  width: 100%;
+                  text-align: center;
+                  padding: 12px;
+                  font-size: 15px;
+                  font-weight: 500;
+                  color: var(--gray-500);
+                  border: 1px solid var(--gray-200);
+                  border-radius: 100px;
+                "
+                >Ignorar</span
+              >
+            </div>
+          </div>
           <div class="info-box">
             <p>
               <strong>Se der errado na primeira vez, fica tranquila</strong> —
@@ -1713,7 +1773,8 @@
                   <strong>CPF</strong> — só os números, sem ponto e sem traço
                 </li>
                 <li style="padding: 4px 0; border-bottom: none">
-                  <strong>Nome completo</strong> — sem abreviar nada
+                  <strong>Nome completo</strong> — sem abreviar nada e sem
+                  acentos
                 </li>
                 <li style="padding: 4px 0; border-bottom: none">
                   <strong>Chave Pix</strong> — melhor usar o CPF mesmo
@@ -1901,7 +1962,9 @@
                 border-color: rgba(255, 255, 255, 0.08);
               "
             >
-              <div class="call-name call-name-dark">Chamada da Lupa</div>
+              <div class="call-name call-name-dark">
+                Chamada da Lupa/Explorar
+              </div>
               <span class="badge badge-nao">não paga moedas</span>
               <p class="call-desc call-desc-dark">
                 É quando você toca em "Toque na tela para iniciar". O app te
@@ -2256,7 +2319,69 @@
             <span class="step-n">01</span>
             <div>
               <span class="step-title">Toca em "Faça mais vídeos"</span
-              ><span class="step-desc">Tá na tela principal do app</span>
+              ><span class="step-desc"
+                >Tá na tela principal do app. É assim:</span
+              >
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 14px;
+                  margin-top: 10px;
+                  padding: 10px 16px 10px 10px;
+                  background: #fff;
+                  border: 1px solid var(--gray-200);
+                  border-radius: 14px;
+                  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+                  max-width: 260px;
+                "
+              >
+                <div
+                  style="
+                    width: 42px;
+                    height: 42px;
+                    border-radius: 10px;
+                    background: var(--gray-100);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-shrink: 0;
+                  "
+                >
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="var(--gray-800)"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                  </svg>
+                </div>
+                <div>
+                  <span
+                    style="
+                      font-size: 14px;
+                      font-weight: 600;
+                      color: var(--gray-800);
+                      display: block;
+                      line-height: 1.3;
+                    "
+                    >Faça mais vídeos</span
+                  >
+                  <span
+                    style="
+                      font-size: 11px;
+                      color: var(--gray-400);
+                      display: block;
+                    "
+                    >Conte sua história com um vídeo</span
+                  >
+                </div>
+              </div>
             </div>
           </div>
           <div class="step-row">
