@@ -1545,27 +1545,43 @@
 
       @media (max-width: 900px) {
         .chat-box {
-          width: calc(100vw - 32px);
-          right: 16px;
-          bottom: 80px;
-          max-height: calc(100vh - 120px);
-          overflow: hidden;
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          width: 100%;
+          max-height: 100vh;
+          border-radius: 0;
           display: none;
           flex-direction: column;
+          overflow: hidden;
+          z-index: 400;
         }
         .chat-box.open {
           display: flex;
+        }
+        .chat-header {
+          border-radius: 0;
+          flex-shrink: 0;
         }
         .chat-messages {
           flex: 1;
           max-height: none;
           min-height: 0;
           overflow-y: auto;
+          -webkit-overflow-scrolling: touch;
         }
         .chat-options {
-          max-height: 40vh;
+          max-height: 45vh;
           overflow-y: auto;
+          -webkit-overflow-scrolling: touch;
           flex-shrink: 0;
+          flex-wrap: wrap;
+        }
+        .chat-opt {
+          white-space: normal;
+          text-align: left;
         }
         .chat-toggle {
           bottom: 20px;
