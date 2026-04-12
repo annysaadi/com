@@ -1194,6 +1194,114 @@
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
       }
 
+      /* CALL MOCKUP — simulação da tela do app */
+      .call-mockup {
+        width: 100%;
+        max-width: 220px;
+        margin: 16px auto 0;
+        border-radius: 20px;
+        padding: 36px 16px 28px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .call-mockup-lupa {
+        background: linear-gradient(160deg, #1a1a2e 0%, #16213e 100%);
+      }
+      .call-mockup-amigo {
+        background: linear-gradient(160deg, #0d3b3b 0%, #1a5c4c 100%);
+      }
+      .call-mockup-deusa {
+        background: linear-gradient(160deg, #3b1a5c 0%, #6b2fa0 100%);
+      }
+      .call-mockup-avatar {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        margin: 0 auto 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+      }
+      .call-mockup-lupa .call-mockup-avatar {
+        background: #2ec4b6;
+        color: white;
+        font-size: 20px;
+        font-weight: 600;
+      }
+      .call-mockup-amigo .call-mockup-avatar {
+        background: #2ec4b6;
+        color: white;
+        font-size: 20px;
+        font-weight: 600;
+      }
+      .call-mockup-deusa .call-mockup-avatar {
+        background: transparent;
+        font-size: 36px;
+      }
+      .call-mockup-name {
+        font-size: 13px;
+        font-weight: 600;
+        color: white;
+        margin-bottom: 2px;
+      }
+      .call-mockup-info {
+        font-size: 10px;
+        color: rgba(255,255,255,0.5);
+        margin-bottom: 6px;
+      }
+      .call-mockup-status {
+        font-size: 11px;
+        color: rgba(255,255,255,0.4);
+        margin-bottom: 20px;
+      }
+      .call-mockup-earn {
+        font-size: 13px;
+        font-weight: 700;
+        color: white;
+      }
+      .call-mockup-earn span {
+        color: #f59e0b;
+      }
+      .call-mockup-type {
+        font-size: 9px;
+        color: rgba(255,255,255,0.35);
+        margin-top: 4px;
+        letter-spacing: 0.5px;
+      }
+      .call-mockup-nopay {
+        font-size: 11px;
+        font-weight: 600;
+        color: rgba(255,255,255,0.3);
+        margin-top: 10px;
+        letter-spacing: 0.5px;
+      }
+      .call-mockup-header {
+        font-size: 12px;
+        font-weight: 700;
+        color: white;
+        margin-bottom: 16px;
+        letter-spacing: 0.3px;
+      }
+      .call-mockup-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 32px;
+        margin-top: 20px;
+      }
+      .call-mockup-btn {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+      }
+      .call-mockup-btn-red { background: #ef4444; }
+      .call-mockup-btn-green { background: #22c55e; }
+
       /* MODAL */
       .modal-overlay {
         position: fixed;
@@ -2212,8 +2320,8 @@
             <div
               class="call-card"
               style="
-                background: rgba(255, 255, 255, 0.04);
-                border-color: rgba(255, 255, 255, 0.08);
+                background: linear-gradient(135deg, rgba(22,33,62,0.6), rgba(26,26,46,0.6));
+                border-color: rgba(44,196,182,0.15);
               "
             >
               <div class="call-name call-name-dark">
@@ -2231,8 +2339,8 @@
             <div
               class="call-card"
               style="
-                background: rgba(255, 255, 255, 0.04);
-                border-color: rgba(255, 255, 255, 0.08);
+                background: linear-gradient(135deg, rgba(13,59,59,0.6), rgba(26,92,76,0.6));
+                border-color: rgba(44,196,182,0.2);
               "
             >
               <div class="call-name call-name-dark">Chamada de Amigo</div>
@@ -2245,12 +2353,25 @@
                 . Foca nela. Você começa a ganhar moedas depois de 30 segundos.
                 Começa ganhando 80 moedas por minuto e pode chegar até 120.
               </p>
+              <div class="call-mockup call-mockup-amigo">
+                <div class="call-mockup-header">🎥 Chamada de vídeo</div>
+                <div class="call-mockup-avatar">e</div>
+                <div class="call-mockup-name">ehsan mohamdi</div>
+                <div class="call-mockup-info">👍 0 · 📍 United States</div>
+                <div class="call-mockup-status">Conectando...</div>
+                <div class="call-mockup-earn">Ganhos: <span>🪙</span> 80/min</div>
+                <div class="call-mockup-type">Ligação para Amigos</div>
+                <div class="call-mockup-buttons">
+                  <div class="call-mockup-btn call-mockup-btn-red">📞</div>
+                  <div class="call-mockup-btn call-mockup-btn-green">🎥</div>
+                </div>
+              </div>
             </div>
             <div
               class="call-card"
               style="
-                background: rgba(255, 255, 255, 0.04);
-                border-color: rgba(255, 255, 255, 0.08);
+                background: linear-gradient(135deg, rgba(59,26,92,0.6), rgba(107,47,160,0.6));
+                border-color: rgba(167,97,235,0.2);
               "
             >
               <div class="call-name call-name-dark">Chamada da Deusa</div>
@@ -2260,6 +2381,19 @@
                 quando seu Status Deusa ou LivMate tá ligado. Começa a pagar
                 depois de 30 segundos, a 80 moedas por minuto.
               </p>
+              <div class="call-mockup call-mockup-deusa">
+                <div class="call-mockup-header">🎥 Chamada de vídeo</div>
+                <div class="call-mockup-avatar" style="background: #a855f7; color: white; font-size: 20px; font-weight: 600;">N</div>
+                <div class="call-mockup-name">nit</div>
+                <div class="call-mockup-info">👍 219 · 📍 Brazil</div>
+                <div class="call-mockup-status">Conectando...</div>
+                <div class="call-mockup-earn">Ganhos: <span>🪙</span> 80/min</div>
+                <div class="call-mockup-type">Lista de Chamadas da Goddess</div>
+                <div class="call-mockup-buttons">
+                  <div class="call-mockup-btn call-mockup-btn-red">📞</div>
+                  <div class="call-mockup-btn call-mockup-btn-green">🎥</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
