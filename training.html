@@ -1159,6 +1159,41 @@
         transform: translateY(0);
       }
 
+      /* STAGGER — filhos aparecem em sequência */
+      .stagger > * {
+        opacity: 0;
+        transform: translateY(14px);
+        transition: opacity 0.45s ease, transform 0.45s ease;
+      }
+      .stagger.visible > * {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .stagger.visible > *:nth-child(1) { transition-delay: 0.05s; }
+      .stagger.visible > *:nth-child(2) { transition-delay: 0.1s; }
+      .stagger.visible > *:nth-child(3) { transition-delay: 0.15s; }
+      .stagger.visible > *:nth-child(4) { transition-delay: 0.2s; }
+      .stagger.visible > *:nth-child(5) { transition-delay: 0.25s; }
+      .stagger.visible > *:nth-child(6) { transition-delay: 0.3s; }
+      .stagger.visible > *:nth-child(7) { transition-delay: 0.35s; }
+      .stagger.visible > *:nth-child(8) { transition-delay: 0.4s; }
+
+      /* HOVER sutil nos cards interativos */
+      .func-item {
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+      .func-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+      }
+      .punish-item {
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+      .punish-item:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+      }
+
       /* MODAL */
       .modal-overlay {
         position: fixed;
@@ -2157,7 +2192,7 @@
           <h2 class="sec-title sec-title-light">
             Tem três tipos de<br /><em>chamada no app.</em>
           </h2>
-          <div class="call-cards">
+          <div class="call-cards stagger fade-up">
             <div
               class="call-card"
               style="
@@ -2948,7 +2983,7 @@
             Dentro de cada chamada tem uns botões que te ajudam a ganhar mais e
             a se proteger. Olha o que cada um faz:
           </p>
-          <div class="func-grid">
+          <div class="func-grid stagger fade-up">
             <div class="func-item">
               <div class="app-btn-sim app-btn-sim--purple">
                 <svg
@@ -3347,7 +3382,7 @@
           As punições aparecem em "Avisos de Sistema" no app — às vezes vem em
           inglês. A agência aceita no máximo 2 punições a cada 30 dias.
         </p>
-        <div class="punish-list">
+        <div class="punish-list stagger fade-up">
           <div class="punish-item">
             <span class="punish-num">1ª vez</span
             ><span class="punish-pct">-10%</span
@@ -3416,7 +3451,7 @@
             O tempo que você fica bloqueada depende de quantas chamadas foram
             encerradas:
           </p>
-          <div class="punish-list">
+          <div class="punish-list stagger fade-up">
             <div class="punish-item">
               <span class="punish-num">1 chamada</span
               ><span class="punish-pct">2h</span
