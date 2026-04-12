@@ -2023,9 +2023,8 @@
           certo!
         </p>
         <div style="margin: 20px 0">
-          <span class="app-popup-label"
-            >É assim que aparece na tela da Lupa/Explorar ↓</span
-          >
+         
+        
           <div
             style="
               display: flex;
@@ -2038,82 +2037,83 @@
             "
           >
             <div>
-              <span class="glass-card-device">iPhone</span>
               <div
-                class="glass-card"
-                style="
-                  background: rgba(255, 255, 255, 0.82);
-                  border-color: rgba(0, 0, 0, 0.08);
-                "
+                
               >
-                <div>
-                  <span class="glass-card-name" style="color: var(--gray-800)"
-                    >Status LivMate</span
-                  >
-                  <span class="glass-card-sub" style="color: var(--gray-400)"
-                    >Offline</span
-                  >
-                </div>
-                <div class="app-toggle" style="background: rgba(0, 0, 0, 0.1)">
-                  <div class="app-toggle-knob" style="background: #fff"></div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <span class="glass-card-device">Android</span>
-              <div
-                class="glass-card"
-                style="
-                  background: rgba(255, 255, 255, 0.82);
-                  border-color: rgba(0, 0, 0, 0.08);
-                "
-              >
-                <div>
-                  <span class="glass-card-name" style="color: var(--gray-800)"
-                    >Status da Deusa</span
-                  >
-                  <span class="glass-card-sub" style="color: var(--gray-400)"
-                    >Offline</span
-                  >
-                </div>
-                <div class="app-toggle" style="background: rgba(0, 0, 0, 0.1)">
-                  <div class="app-toggle-knob" style="background: #fff"></div>
-                </div>
+ 
               </div>
             </div>
           </div>
         </div>
-        <p class="sec-body">Se não tiver aparecendo, faz assim:</p>
-        <div class="steps stagger fade-up">
-          <div class="step-row">
-            <span class="step-n">01</span>
-            <div>
-              <span class="step-title">Se tem Android</span
-              ><span class="step-desc"
-                >Vai em Definições (na tela do seu ID) → Sair → e entra de
-                novo</span
-              >
+
+        <!-- Android -->
+        <div style="margin-top: 24px;">
+          <span class="sec-tag" style="margin-bottom: 8px;">📱 Android</span>
+          <p class="sec-body" style="margin-bottom: 12px;">
+            No Android, aparece assim na tela da Lupa/Explorar:
+          </p>
+          <div style="max-width: 300px; margin: 0 auto 16px;">
+            <div
+              class="glass-card"
+              style="
+                background: rgba(255, 255, 255, 0.82);
+                border-color: rgba(0, 0, 0, 0.08);
+              "
+            >
+              <div>
+                <span class="glass-card-name" style="color: var(--gray-800)">Status da Deusa</span>
+                <span class="glass-card-sub" style="color: var(--gray-400)">Offline</span>
+              </div>
+              <div class="app-toggle" style="background: rgba(0, 0, 0, 0.1)">
+                <div class="app-toggle-knob" style="background: #fff"></div>
+              </div>
             </div>
           </div>
-          <div class="step-row">
-            <span class="step-n">02</span>
-            <div>
-              <span class="step-title">Se tem iPhone</span
-              ><span class="step-desc"
-                >Toca no ícone de engrenagem (⚙️ lá em cima no canto) → Sair → e
-                entra de novo</span
-              >
+          <div class="alert-box alert-tip">
+            <span class="alert-icon">💡</span>
+            <p>
+              <strong>Não apareceu?</strong> Vai em Definições (na tela do seu ID) → Sair → e entra de novo.
+            </p>
+          </div>
+        </div>
+
+        <!-- iPhone -->
+        <div style="margin-top: 28px;">
+          <span class="sec-tag" style="margin-bottom: 8px;">🍎 iPhone</span>
+          <p class="sec-body" style="margin-bottom: 12px;">
+            No iPhone, aparece assim na tela da Lupa/Explorar:
+          </p>
+          <div style="max-width: 300px; margin: 0 auto 16px;">
+            <div
+              class="glass-card"
+              style="
+                background: rgba(255, 255, 255, 0.82);
+                border-color: rgba(0, 0, 0, 0.08);
+              "
+            >
+              <div>
+                <span class="glass-card-name" style="color: var(--gray-800)">Status LivMate</span>
+                <span class="glass-card-sub" style="color: var(--gray-400)">Offline</span>
+              </div>
+              <div class="app-toggle" style="background: rgba(0, 0, 0, 0.1)">
+                <div class="app-toggle-knob" style="background: #fff"></div>
+              </div>
             </div>
           </div>
-          <div class="step-row">
-            <span class="step-n">03</span>
-            <div>
-              <span class="step-title">Não deu certo?</span
-              ><span class="step-desc"
-                >Manda mensagem pra gente no WhatsApp que a gente resolve</span
-              >
-            </div>
+          <div class="alert-box alert-tip">
+            <span class="alert-icon">💡</span>
+            <p>
+              <strong>Não apareceu?</strong> Toca no ícone de engrenagem (⚙️ lá em cima no canto) → Sair → e entra de novo.
+            </p>
           </div>
+        </div>
+
+        <!-- Fallback -->
+        <div class="alert-box alert-warn" style="margin-top: 28px;">
+          <span class="alert-icon">📩</span>
+          <p>
+            <strong>Ainda não deu certo?</strong> Manda mensagem pra gente no WhatsApp que a gente resolve.
+          </p>
         </div>
       </div>
     </div>
@@ -2130,7 +2130,7 @@
           <p class="sec-body">
             O app vai pedir pra você provar quem você é. Pode mandar o
             <strong>RG ou a CNH</strong>. Isso tem que fazer, se não fizer,
-            pode não receber o dinheiro ou ter o perfil bloqueado.
+            não recebe o dinheiro e tem o perfil bloqueado.
           </p>
           <div style="margin: 20px 0">
             <span class="app-popup-label"
@@ -2346,11 +2346,11 @@
               <div class="call-name call-name-dark">Chamada de Amigo</div>
               <span class="badge badge-sim">paga moedas ✓</span>
               <p class="call-desc call-desc-dark">
-                É quando alguém te liga no privado. Essa é a
+                É quando alguém te liga no privado.
                 <strong style="color: rgba(255, 255, 255, 0.85)"
-                  >chamada que mais importa</strong
+                  >Essa é a chamada que mais importa, foca nela!</strong
                 >
-                . Foca nela. Você começa a ganhar moedas depois de 30 segundos.
+                <br>Você começa a ganhar moedas depois de 30 segundos.
                 Começa ganhando 80 moedas por minuto e pode chegar até 120.
               </p>
               <div class="call-mockup call-mockup-amigo">
@@ -3397,7 +3397,7 @@
             <li>Com a câmera ligada e mostrando o rosto</li>
             <li>Num lugar com luz e arrumado</li>
             <li>
-              Com roupa fechada, sem decote, alça fina, biquíni ou cropped
+              Com roupa fechada, comportada
             </li>
           </ul>
           <p class="sec-tag" style="margin-top: 24px; color: var(--danger)">
