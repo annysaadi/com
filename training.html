@@ -1374,6 +1374,57 @@
         display: block;
         margin-bottom: 6px;
       }
+
+      /* APP BUTTON SIMULATIONS */
+      .app-btn-sim {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .app-btn-sim--purple {
+        background: #6c5ce7;
+        color: #fff;
+      }
+      .app-btn-sim--gray {
+        background: rgba(0, 0, 0, 0.06);
+        border: 1.5px solid rgba(0, 0, 0, 0.12);
+        color: var(--gray-500);
+      }
+      .app-blur-sim {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(0, 0, 0, 0.08);
+        border-radius: 100px;
+        padding: 4px 6px 4px 14px;
+        flex-shrink: 0;
+      }
+      .app-blur-sim-label {
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--gray-500);
+      }
+      .app-blur-sim-toggle {
+        width: 36px;
+        height: 22px;
+        border-radius: 11px;
+        background: rgba(0, 0, 0, 0.12);
+        position: relative;
+      }
+      .app-blur-sim-knob {
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: #fff;
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+      }
     </style>
   </head>
   <body>
@@ -2000,7 +2051,21 @@
             <span class="step-n">01</span>
             <div>
               <span class="step-title">Vai em "Centro de Lives"</span
-              ><span class="step-desc">Tá na tela inicial do app</span>
+              ><span class="step-desc"
+                >Tá na tela inicial do app. É esse botão aqui:</span
+              >
+              <div style="margin-top: 10px">
+                <img
+                  src="centro-lives.jpeg"
+                  alt="Botão Centro de Lives no app"
+                  style="
+                    max-width: 140px;
+                    border-radius: 10px;
+                    border: 1px solid var(--gray-200);
+                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+                  "
+                />
+              </div>
             </div>
           </div>
           <div class="step-row">
@@ -2048,7 +2113,23 @@
           </p>
           <div class="func-grid">
             <div class="func-item">
-              <div class="func-icon">👤</div>
+              <div class="app-btn-sim app-btn-sim--purple">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <line x1="19" y1="8" x2="19" y2="14" />
+                  <line x1="22" y1="11" x2="16" y2="11" />
+                </svg>
+              </div>
               <div>
                 <span class="func-title">Adicionar como amigo</span>
                 <span class="func-desc"
@@ -2059,7 +2140,49 @@
               </div>
             </div>
             <div class="func-item">
-              <div class="func-icon">🎁</div>
+              <div
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  flex-shrink: 0;
+                  gap: 2px;
+                "
+              >
+                <div
+                  style="
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 10px;
+                    background: linear-gradient(
+                      135deg,
+                      #ffb347,
+                      #ff6b6b,
+                      #e84393
+                    );
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
+                  "
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff">
+                    <path
+                      d="M20 7h-1.5A3.5 3.5 0 0 0 12 4.5 3.5 3.5 0 0 0 5.5 7H4a2 2 0 0 0-2 2v1a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V9a2 2 0 0 0-2-2zM12 7a1.5 1.5 0 0 1-1.5-1.5A1.5 1.5 0 0 1 12 4a1.5 1.5 0 0 1 1.5 1.5A1.5 1.5 0 0 1 12 7zm-9 5v7a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7H3z"
+                    />
+                  </svg>
+                </div>
+                <span
+                  id="giftTimer"
+                  style="
+                    font-size: 10px;
+                    font-weight: 500;
+                    color: var(--gray-400);
+                    font-variant-numeric: tabular-nums;
+                  "
+                  >00:00</span
+                >
+              </div>
               <div>
                 <span class="func-title">Mandar presente</span>
                 <span class="func-desc"
@@ -2070,9 +2193,14 @@
               </div>
             </div>
             <div class="func-item">
-              <div class="func-icon">🔵</div>
+              <div class="app-blur-sim">
+                <span class="app-blur-sim-label">Blur</span>
+                <div class="app-blur-sim-toggle">
+                  <div class="app-blur-sim-knob"></div>
+                </div>
+              </div>
               <div>
-                <span class="func-title">Borrar a tela (Blur)</span>
+                <span class="func-title">Borrar a tela</span>
                 <span class="func-desc"
                   >Borra a imagem da outra pessoa pra você. Usa quando não quer
                   ver o que a pessoa tá fazendo — e ela nem fica sabendo que
@@ -2081,7 +2209,22 @@
               </div>
             </div>
             <div class="func-item">
-              <div class="func-icon">🚩</div>
+              <div class="app-btn-sim app-btn-sim--gray">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  <line x1="12" y1="8" x2="12" y2="12" />
+                  <line x1="12" y1="16" x2="12.01" y2="16" />
+                </svg>
+              </div>
               <div>
                 <span class="func-title">Denunciar</span>
                 <span class="func-desc"
@@ -2498,6 +2641,19 @@
       document.addEventListener("keydown", (e) => {
         if (e.key === "Escape") closeModal();
       });
+
+      // Gift timer animation
+      (function () {
+        const el = document.getElementById("giftTimer");
+        if (!el) return;
+        let secs = 0;
+        setInterval(() => {
+          secs = secs >= 60 ? 0 : secs + 1;
+          const m = String(Math.floor(secs / 60)).padStart(2, "0");
+          const s = String(secs % 60).padStart(2, "0");
+          el.textContent = m + ":" + s;
+        }, 1000);
+      })();
     </script>
   </body>
 </html>
