@@ -1483,6 +1483,14 @@
         max-height: 200px;
         background: #fafafa;
         -webkit-overflow-scrolling: touch;
+        position: relative;
+      }
+      .chat-messages::-webkit-scrollbar {
+        width: 4px;
+      }
+      .chat-messages::-webkit-scrollbar-thumb {
+        background: var(--gray-300);
+        border-radius: 4px;
       }
       .chat-msg {
         max-width: 82%;
@@ -1517,6 +1525,13 @@
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
       }
+      .chat-options::-webkit-scrollbar {
+        width: 4px;
+      }
+      .chat-options::-webkit-scrollbar-thumb {
+        background: var(--green-300);
+        border-radius: 4px;
+      }
       .chat-opt {
         background: var(--green-100);
         border: none;
@@ -1533,6 +1548,20 @@
       .chat-opt:hover {
         background: var(--green-600);
         color: white;
+      }
+      .chat-scroll-hint {
+        text-align: center;
+        font-size: 11px;
+        font-weight: 500;
+        color: var(--green-600);
+        padding: 6px 0 0;
+        background: var(--green-50);
+        border-top: 2px solid var(--green-200);
+        animation: hintPulse 1.5s ease-in-out infinite;
+      }
+      @keyframes hintPulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.5; }
       }
 
       /* WEEK TIMELINE */
@@ -1692,15 +1721,17 @@
           flex: 1;
           max-height: none;
           min-height: 0;
-          overflow-y: auto;
+          overflow-y: scroll;
           -webkit-overflow-scrolling: touch;
+          overscroll-behavior: contain;
         }
         .chat-options {
-          max-height: 45vh;
-          overflow-y: auto;
+          max-height: 40vh;
+          overflow-y: scroll;
           -webkit-overflow-scrolling: touch;
           flex-shrink: 0;
           flex-wrap: wrap;
+          overscroll-behavior: contain;
         }
         .chat-opt {
           white-space: normal;
@@ -3862,6 +3893,15 @@
           btn.onclick = () => sendQuestion(i);
           opts.appendChild(btn);
         });
+        // Indicador de scroll
+        const hint = document.createElement("div");
+        hint.className = "chat-scroll-hint";
+        hint.textContent = "↓ Role pra ver mais perguntas";
+        opts.parentNode.insertBefore(hint, opts);
+        opts.addEventListener("scroll", () => {
+          if (opts.scrollTop > 20) hint.style.display = "none";
+          else hint.style.display = "block";
+        }, { passive: true });
       }
 
       function sendQuestion(i) {
