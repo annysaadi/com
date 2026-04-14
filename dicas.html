@@ -129,74 +129,51 @@
 
     /* HERO */
     .hero {
-      background: var(--green-deep);
+      background: linear-gradient(160deg, #0a2e14 0%, #145a32 40%, #0f3d1e 100%);
       position: relative;
       overflow: hidden;
-      min-height: 520px;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-    }
-
-    .hero-bg-grid {
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-      background-size: 60px 60px;
+      justify-content: flex-end;
     }
 
     .hero-bg-noise {
       position: absolute;
       inset: 0;
-      opacity: 0.04;
+      opacity: 0.03;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
       background-size: 128px 128px;
     }
 
     .hero-bg-glow {
       position: absolute;
-      top: -80px;
+      top: 5%;
       left: 50%;
       transform: translateX(-50%);
-      width: 700px;
-      height: 400px;
-      background: radial-gradient(ellipse,
-          rgba(34, 197, 94, 0.22) 0%,
-          rgba(34, 197, 94, 0.08) 40%,
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle,
+          rgba(39, 174, 96, 0.2) 0%,
+          rgba(39, 174, 96, 0.06) 40%,
           transparent 70%);
-      animation: glowPulse 4s ease-in-out infinite alternate;
-    }
-
-    @keyframes glowPulse {
-      0% {
-        opacity: 0.7;
-        transform: translateX(-50%) scale(1);
-      }
-
-      100% {
-        opacity: 1;
-        transform: translateX(-50%) scale(1.08);
-      }
     }
 
     .hero-bg-glow-2 {
       position: absolute;
-      bottom: -60px;
-      right: -80px;
-      width: 300px;
-      height: 300px;
+      bottom: -100px;
+      left: -60px;
+      width: 400px;
+      height: 400px;
       background: radial-gradient(circle,
-          rgba(74, 222, 128, 0.1) 0%,
-          transparent 70%);
-      border-radius: 50%;
+          rgba(110, 232, 154, 0.08) 0%,
+          transparent 60%);
     }
 
     .hero-content {
       position: relative;
       z-index: 1;
-      padding: 120px 28px 56px;
+      padding: 120px 28px 48px;
       max-width: 680px;
     }
 
@@ -348,31 +325,40 @@
     }
 
     .hero-stats {
-      display: flex;
-      gap: 32px;
-      margin-top: 44px;
-      padding-top: 32px;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
       opacity: 0;
-      transform: translateY(12px);
       animation: heroFadeUp 0.6s ease forwards 0.85s;
     }
 
+    .hero-stat {
+      padding: 24px 28px;
+      border-right: 1px solid rgba(255, 255, 255, 0.08);
+      text-align: center;
+    }
+
+    .hero-stat:last-child {
+      border-right: none;
+    }
+
     .hero-stat-value {
-      font-size: 22px;
+      font-size: 20px;
       font-weight: 600;
-      color: #fff;
+      color: var(--green-accent);
       display: block;
       line-height: 1;
-      letter-spacing: -0.5px;
+      margin-bottom: 4px;
     }
 
     .hero-stat-label {
-      font-size: 11px;
-      font-weight: 400;
-      color: rgba(255, 255, 255, 0.55);
-      margin-top: 4px;
-      display: block;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.4);
     }
 
     @keyframes heroFadeUp {
@@ -1297,8 +1283,15 @@
       }
 
       .hero-stats {
-        gap: 20px;
-        flex-wrap: wrap;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      .hero-stat {
+        padding: 18px 12px;
+      }
+
+      .hero-stat-value {
+        font-size: 16px;
       }
 
       .section {
@@ -1371,7 +1364,6 @@
 
   <!-- HERO -->
   <div class="hero">
-    <div class="hero-bg-grid"></div>
     <div class="hero-bg-noise"></div>
     <div class="hero-bg-glow"></div>
     <div class="hero-bg-glow-2"></div>
@@ -1399,19 +1391,19 @@
           <path d="m12 5 7 7-7 7" />
         </svg>
       </a>
-      <div class="hero-stats">
-        <div>
-          <span class="hero-stat-value">14</span>
-          <span class="hero-stat-label">dicas práticas</span>
-        </div>
-        <div>
-          <span class="hero-stat-value">100%</span>
-          <span class="hero-stat-label">testado por hosts</span>
-        </div>
-        <div>
-          <span class="hero-stat-value">5 min</span>
-          <span class="hero-stat-label">de leitura</span>
-        </div>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="hero-stat-value">14</span>
+        <span class="hero-stat-label">dicas práticas</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-value">100%</span>
+        <span class="hero-stat-label">testado por hosts</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-value">5 min</span>
+        <span class="hero-stat-label">de leitura</span>
       </div>
     </div>
   </div>
