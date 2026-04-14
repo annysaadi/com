@@ -895,6 +895,30 @@
     }
 
     /* ── ANIMATIONS ── */
+    @keyframes heroFadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-fade {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+
+    .hero-fade-1 {
+      animation: heroFadeUp 0.6s ease forwards 0.1s;
+    }
+
+    .hero-fade-2 {
+      animation: heroFadeUp 0.7s ease forwards 0.25s;
+    }
+
+    .hero-fade-3 {
+      animation: heroFadeUp 0.6s ease forwards 0.4s;
+    }
+
     .fade-up {
       opacity: 0;
       transform: translateY(20px);
@@ -1096,12 +1120,12 @@
   <!-- MAIN CONTENT -->
   <div class="main">
     <!-- HERO -->
-    <div class="hero fade-up">
-      <div class="hero-badge">✨ Resumo rápido</div>
-      <h1 class="hero-title">
+    <div class="hero">
+      <div class="hero-badge hero-fade hero-fade-1">✨ Resumo rápido</div>
+      <h1 class="hero-title hero-fade hero-fade-2">
         Bem-vinda!<br /><em>Leia antes de começar.</em>
       </h1>
-      <p class="hero-sub">
+      <p class="hero-sub hero-fade hero-fade-3">
         Esse é um resumo rápido com o essencial pra você responder o
         formulário. Depois de aprovada, você recebe o material completo de
         treinamento.

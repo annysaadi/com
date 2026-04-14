@@ -326,6 +326,19 @@
     }
 
     /* ANIMATIONS */
+    @keyframes cardFadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .card {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: cardFadeIn 0.7s ease forwards 0.15s;
+    }
+
     .fade-up {
       opacity: 0;
       transform: translateY(20px);
@@ -357,7 +370,7 @@
   </header>
 
   <main>
-    <div class="card fade-up">
+    <div class="card">
       <h1 class="card-title">Pronta pra <em>começar?</em></h1>
       <p class="card-body">É rápido, gratuito e você já pode começar hoje.</p>
 

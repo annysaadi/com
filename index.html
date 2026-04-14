@@ -722,6 +722,38 @@
     }
 
     /* ANIMATIONS */
+    @keyframes heroFadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-fade {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+
+    .hero-fade-1 {
+      animation: heroFadeUp 0.6s ease forwards 0.1s;
+    }
+
+    .hero-fade-2 {
+      animation: heroFadeUp 0.6s ease forwards 0.25s;
+    }
+
+    .hero-fade-3 {
+      animation: heroFadeUp 0.7s ease forwards 0.4s;
+    }
+
+    .hero-fade-4 {
+      animation: heroFadeUp 0.6s ease forwards 0.55s;
+    }
+
+    .hero-fade-5 {
+      animation: heroFadeUp 0.6s ease forwards 0.7s;
+    }
+
     .fade-up {
       opacity: 0;
       transform: translateY(20px);
@@ -1168,23 +1200,23 @@
 
   <section class="hero" style="padding: 0">
     <div class="hero-left">
-      <div class="deco"></div>
-      <span class="tag">trabalho online</span>
-      <h1 class="hero-title">
+      <div class="deco hero-fade hero-fade-1"></div>
+      <span class="tag hero-fade hero-fade-1">trabalho online</span>
+      <h1 class="hero-title hero-fade hero-fade-2">
         Ganhe dinheiro atendendo chamadas de vídeo pelo celular.
         <em>Sem chefes, sem horários fixos e com pagamentos toda semana direto
           no seu PIX.</em>
       </h1>
-      <p class="hero-body">
+      <p class="hero-body hero-fade hero-fade-3">
         Não precisa ter experiência. Não precisa falar inglês.<br />
         Só precisa do celular e de tempo disponível.
       </p>
-      <p class="hero-content">
+      <p class="hero-content hero-fade hero-fade-3">
         ✔ Começa rápido<br />
         ✔ Pagamento semanal<br />
         ✔ Só precisa do celular
       </p>
-      <button class="btn-primary" onclick="window.location.href = 'inscricao.html'">
+      <button class="btn-primary hero-fade hero-fade-4" onclick="window.location.href = 'inscricao.html'">
         Quero começar a ganhar hoje
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
           <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
@@ -1199,7 +1231,7 @@
             text-decoration: underline;
             text-underline-offset: 3px;
           ">Ver como funciona</a>
-      <div class="hero-proof">
+      <div class="hero-proof hero-fade hero-fade-5">
         <div>
           <span class="proof-num" data-target="5" data-suffix="+">0+</span>
           <span class="proof-label">anos no app</span>
