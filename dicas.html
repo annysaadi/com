@@ -269,8 +269,8 @@
     .hero-title {
       font-family: "Poppins", -apple-system, BlinkMacSystemFont, sans-serif;
       font-size: clamp(38px, 10vw, 56px);
-      font-weight: 800;
-      color: #ffffff;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.85);
       line-height: 1.08;
       letter-spacing: -1.5px;
       margin-bottom: 20px;
@@ -279,9 +279,14 @@
       animation: heroFadeUp 0.7s ease forwards 0.25s;
     }
 
+    .hero-title strong {
+      font-weight: 800;
+      color: #ffffff;
+    }
+
     .hero-title em {
       font-style: normal;
-      font-weight: 400;
+      font-weight: 800;
       color: var(--green-accent);
       display: block;
     }
@@ -1378,7 +1383,7 @@
         </div>
       </div>
       <h1 class="hero-title">
-        O guia pra bater
+        O guia <strong>pra bater</strong>
         <em>sua meta.</em>
       </h1>
       <div class="hero-divider"></div>
