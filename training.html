@@ -27,27 +27,18 @@
     }
 
     :root {
-      --green-50: #f0fdf4;
-      --green-100: #dcfce7;
-      --green-200: #bbf7d0;
-      --green-400: #4ade80;
-      --green-500: #22c55e;
-      --green-600: #16a34a;
-      --green-700: #15803d;
-      --green-800: #166534;
-      --green-900: #14532d;
-      --green-950: #052e16;
+      --green-bg: #f0faf2;
+      --green-light: #d4f0dc;
+      --green: #27ae60;
+      --green-dark: #1e8449;
+      --green-deep: #145a32;
+      --green-accent: #6ee89a;
       --white: #ffffff;
-      --gray-50: #f9fafb;
-      --gray-100: #f3f4f6;
-      --gray-200: #e5e7eb;
-      --gray-300: #d1d5db;
-      --gray-400: #9ca3af;
-      --gray-500: #6b7280;
-      --gray-600: #4b5563;
-      --gray-700: #374151;
-      --gray-800: #1f2937;
-      --gray-900: #111827;
+      --coal: #1a1a1a;
+      --mid: #444444;
+      --light: #888888;
+      --border: #d0e8d8;
+      --card-bg: #ffffff;
       --red-500: #ef4444;
       --red-50: #fef2f2;
       --amber-500: #f59e0b;
@@ -56,15 +47,12 @@
       --shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
       --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.1);
       --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      /* aliases para compatibilidade com classes existentes */
-      --cream: var(--green-50);
-      --cream-d: var(--green-100);
-      --coal: var(--gray-900);
-      --dark: var(--green-950);
-      --mid: var(--gray-500);
-      --light: var(--gray-400);
-      --border: var(--green-200);
-      --accent: var(--green-600);
+      /* aliases */
+      --cream: var(--green-bg);
+      --cream-d: var(--green-light);
+      --dark: var(--green-deep);
+      --accent: var(--green);
+      --accent-hover: var(--green-dark);
       --warn-bg: var(--amber-50);
       --warn: var(--amber-500);
       --danger: var(--red-500);
@@ -75,8 +63,8 @@
     }
 
     body {
-      background: var(--green-50);
-      color: var(--gray-800);
+      background: var(--green-bg);
+      color: var(--coal);
       font-family:
         "Poppins",
         -apple-system,
@@ -99,7 +87,7 @@
 
     /* TICKER */
     .ticker-wrap {
-      background: var(--green-950);
+      background: var(--green-deep);
       overflow: hidden;
       border-bottom: 1px solid rgba(255, 255, 255, 0.04);
       padding: 10px 0;
@@ -118,12 +106,12 @@
       font-weight: 600;
       letter-spacing: 3.5px;
       text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.2);
+      color: rgba(255, 255, 255, 0.4);
       padding: 0 36px;
     }
 
     .ticker-item span {
-      color: var(--green-400);
+      color: var(--green-accent);
       opacity: 0.35;
       margin: 0 10px;
     }
@@ -140,7 +128,7 @@
 
     /* HERO */
     .hero {
-      background: var(--green-950);
+      background: var(--green-deep);
       position: relative;
       overflow: hidden;
       min-height: 100vh;
@@ -209,7 +197,7 @@
       font-weight: 500;
       letter-spacing: 2.5px;
       text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.3);
+      color: rgba(255, 255, 255, 0.5);
     }
 
     .hero-badge {
@@ -230,7 +218,7 @@
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      background: var(--green-400);
+      background: var(--green-accent);
       animation: heroPulse 2s ease-in-out infinite;
     }
 
@@ -269,13 +257,13 @@
     .hero-title em {
       font-style: normal;
       font-weight: 400;
-      color: var(--green-400);
+      color: var(--green-accent);
     }
 
     .hero-divider {
       width: 48px;
       height: 2px;
-      background: linear-gradient(90deg, var(--green-400), transparent);
+      background: linear-gradient(90deg, var(--green-accent), transparent);
       margin-bottom: 20px;
       border-radius: 2px;
       opacity: 0;
@@ -313,7 +301,7 @@
       font-weight: 500;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.2);
+      color: rgba(255, 255, 255, 0.4);
     }
 
     .hero-stats {
@@ -339,7 +327,7 @@
     .hero-stat-val {
       font-size: 20px;
       font-weight: 700;
-      color: var(--green-400);
+      color: var(--green-accent);
       display: block;
       line-height: 1;
       margin-bottom: 4px;
@@ -350,7 +338,7 @@
       font-weight: 500;
       letter-spacing: 1px;
       text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.25);
+      color: rgba(255, 255, 255, 0.45);
     }
 
     @keyframes heroFloat {
@@ -453,16 +441,16 @@
     }
 
     .top-nav-brand span {
-      color: var(--green-400);
+      color: var(--green-accent);
       transition: color 0.3s ease;
     }
 
     .top-nav.scrolled .top-nav-brand {
-      color: var(--gray-800);
+      color: var(--coal);
     }
 
     .top-nav.scrolled .top-nav-brand span {
-      color: var(--green-600);
+      color: var(--green);
     }
 
     .top-nav-label {
@@ -473,7 +461,7 @@
     }
 
     .top-nav.scrolled .top-nav-label {
-      color: var(--gray-400);
+      color: var(--light);
     }
 
     .mobile-nav-toggle {
@@ -487,7 +475,7 @@
       background: rgba(255, 255, 255, 0.06);
       cursor: pointer;
       transition: var(--transition);
-      color: var(--green-400);
+      color: var(--green-accent);
     }
 
     .mobile-nav-toggle:hover {
@@ -495,9 +483,9 @@
     }
 
     .top-nav.scrolled .mobile-nav-toggle {
-      border-color: var(--gray-200);
-      background: var(--green-50);
-      color: var(--green-700);
+      border-color: #e5e7eb;
+      background: var(--green-bg);
+      color: var(--green-dark);
     }
 
     /* SIDEBAR / DRAWER */
@@ -514,7 +502,7 @@
       z-index: 150;
       background: var(--white);
       box-shadow: var(--shadow-lg);
-      border-left: 1px solid var(--gray-200);
+      border-left: 1px solid #e5e7eb;
       overflow-y: auto;
     }
 
@@ -527,7 +515,7 @@
       font-weight: 600;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      color: var(--gray-400);
+      color: var(--light);
       padding: 0 12px;
       margin-bottom: 8px;
     }
@@ -540,20 +528,20 @@
       border-radius: 10px;
       font-size: 13px;
       font-weight: 500;
-      color: var(--gray-500);
+      color: var(--mid);
       text-decoration: none;
       transition: var(--transition);
       position: relative;
     }
 
     .nav-link:hover {
-      background: var(--green-50);
-      color: var(--gray-700);
+      background: var(--green-bg);
+      color: var(--mid);
     }
 
     .nav-link.active {
-      background: var(--green-100);
-      color: var(--green-800);
+      background: var(--green-light);
+      color: var(--green-dark);
       font-weight: 600;
     }
 
@@ -565,14 +553,14 @@
       transform: translateY(-50%);
       width: 3px;
       height: 18px;
-      background: var(--green-600);
+      background: var(--green);
       border-radius: 3px 0 0 3px;
     }
 
     .nav-num {
       font-size: 11px;
       font-weight: 700;
-      color: var(--gray-300);
+      color: #d1d5db;
       min-width: 18px;
     }
 
@@ -610,7 +598,7 @@
     }
 
     .section.bg-dark {
-      background: var(--green-950);
+      background: var(--green-deep);
       max-width: 100%;
       padding: 56px 24px;
     }
@@ -625,7 +613,7 @@
       font-weight: 900;
       line-height: 1;
       background: linear-gradient(180deg,
-          var(--green-200) 0%,
+          var(--border) 0%,
           transparent 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -640,13 +628,13 @@
       font-weight: 600;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      color: var(--green-600);
+      color: var(--green);
       display: inline-block;
       margin-bottom: 10px;
     }
 
     .sec-tag-dark {
-      color: rgba(255, 255, 255, 0.3);
+      color: rgba(255, 255, 255, 0.5);
     }
 
     .sec-title {
@@ -655,12 +643,12 @@
       line-height: 1.2;
       letter-spacing: -0.8px;
       margin-bottom: 16px;
-      color: var(--gray-900);
+      color: var(--coal);
     }
 
     .sec-title em {
       font-style: normal;
-      color: var(--green-600);
+      color: var(--green);
     }
 
     .sec-title-light {
@@ -670,7 +658,7 @@
     .sec-body {
       font-size: 15px;
       font-weight: 400;
-      color: var(--gray-700);
+      color: var(--mid);
       line-height: 1.8;
       margin-bottom: 16px;
     }
@@ -681,7 +669,7 @@
 
     .sec-body strong {
       font-weight: 600;
-      color: var(--gray-900);
+      color: var(--coal);
     }
 
     .sec-body-dark strong {
@@ -792,16 +780,16 @@
     }
 
     .dark-list {
-      border-top-color: rgba(255, 255, 255, 0.07);
+      border-top-color: rgba(255, 255, 255, 0.1);
     }
 
     .dark-list li {
-      border-bottom-color: rgba(255, 255, 255, 0.07);
+      border-bottom-color: rgba(255, 255, 255, 0.1);
       color: rgba(255, 255, 255, 0.5);
     }
 
     .dark-list li::before {
-      color: rgba(255, 255, 255, 0.15);
+      color: rgba(255, 255, 255, 0.4);
     }
 
     .dark-list.no-list li::before {
@@ -825,7 +813,7 @@
 
     .card-dark {
       background: rgba(255, 255, 255, 0.04);
-      border-color: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.1);
     }
 
     .card-label {
@@ -839,7 +827,7 @@
     }
 
     .card-label-dark {
-      color: rgba(255, 255, 255, 0.3);
+      color: rgba(255, 255, 255, 0.5);
     }
 
     .card-val {
@@ -868,7 +856,7 @@
     }
 
     .card-sub-dark {
-      color: rgba(255, 255, 255, 0.35);
+      color: rgba(255, 255, 255, 0.55);
     }
 
     /* CALL CARDS */
@@ -914,8 +902,8 @@
     }
 
     .badge-sim {
-      background: var(--green-100);
-      color: var(--green-700);
+      background: var(--green-light);
+      color: var(--green-dark);
     }
 
     .badge-nao {
@@ -948,7 +936,7 @@
 
     th {
       background: transparent;
-      color: rgba(255, 255, 255, 0.35);
+      color: rgba(255, 255, 255, 0.55);
       font-weight: 500;
       font-size: 10px;
       letter-spacing: 1px;
@@ -972,7 +960,7 @@
     .table-note {
       font-size: 12px;
       font-weight: 400;
-      color: rgba(255, 255, 255, 0.25);
+      color: rgba(255, 255, 255, 0.45);
       margin-top: 10px;
       font-style: italic;
     }
@@ -1030,7 +1018,7 @@
     .info-box {
       margin-top: 16px;
       padding: 16px 20px;
-      border-left: 3px solid var(--green-600);
+      border-left: 3px solid var(--green);
       border-radius: 12px;
       background: var(--white);
     }
@@ -1081,8 +1069,8 @@
     }
 
     .alert-box.alert-tip {
-      background: var(--green-50);
-      border: 1px solid var(--green-200);
+      background: var(--green-bg);
+      border: 1px solid var(--border);
     }
 
     .alert-icon {
@@ -1190,7 +1178,7 @@
 
     /* FINAL */
     .final {
-      background: var(--green-950);
+      background: var(--green-deep);
       padding: 64px 24px 56px;
       text-align: center;
     }
@@ -1211,7 +1199,7 @@
 
     .final-title em {
       font-style: normal;
-      color: var(--green-400);
+      color: var(--green-accent);
     }
 
     .final-sub {
@@ -1262,14 +1250,14 @@
     footer p {
       font-family: "Poppins", -apple-system, BlinkMacSystemFont, sans-serif;
       font-size: 11px;
-      color: rgba(255, 255, 255, 0.2);
+      color: rgba(255, 255, 255, 0.4);
       letter-spacing: 0.5px;
       line-height: 1.8;
     }
 
     .footer-brand {
       font-weight: 600;
-      color: rgba(255, 255, 255, 0.35);
+      color: rgba(255, 255, 255, 0.55);
       margin-bottom: 4px;
     }
 
@@ -1280,7 +1268,7 @@
 
     .fade-up {
       opacity: 0;
-      transform: translateY(18px);
+      transform: translateY(20px);
       transition:
         opacity 0.6s ease,
         transform 0.6s ease;
@@ -1445,7 +1433,7 @@
 
     .call-mockup-type {
       font-size: 9px;
-      color: rgba(255, 255, 255, 0.35);
+      color: rgba(255, 255, 255, 0.55);
       margin-top: 4px;
       letter-spacing: 0.5px;
     }
@@ -1453,7 +1441,7 @@
     .call-mockup-nopay {
       font-size: 11px;
       font-weight: 600;
-      color: rgba(255, 255, 255, 0.3);
+      color: rgba(255, 255, 255, 0.5);
       margin-top: 10px;
       letter-spacing: 0.5px;
     }
@@ -1497,7 +1485,7 @@
     }
 
     .call-mockup-btn-green {
-      background: #22c55e;
+      background: #27ae60;
     }
 
     /* MODAL */
@@ -1598,7 +1586,7 @@
       width: 60px;
       height: 60px;
       border-radius: 50%;
-      background: var(--green-600);
+      background: var(--green);
       color: white;
       border: none;
       cursor: pointer;
@@ -1636,7 +1624,7 @@
     }
 
     .chat-header {
-      background: var(--green-600);
+      background: var(--green);
       color: white;
       padding: 18px 20px;
       font-size: 16px;
@@ -1678,7 +1666,7 @@
     }
 
     .chat-messages::-webkit-scrollbar-thumb {
-      background: var(--gray-300);
+      background: #d1d5db;
       border-radius: 4px;
     }
 
@@ -1692,14 +1680,14 @@
 
     .chat-msg.bot {
       background: white;
-      color: var(--gray-800);
+      color: var(--coal);
       align-self: flex-start;
       border-radius: 18px 18px 18px 4px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     }
 
     .chat-msg.user {
-      background: var(--green-600);
+      background: var(--green);
       color: white;
       align-self: flex-end;
       border-radius: 18px 18px 4px 18px;
@@ -1708,8 +1696,8 @@
 
     .chat-options {
       padding: 16px;
-      background: var(--green-50);
-      border-top: 2px solid var(--green-200);
+      background: var(--green-bg);
+      border-top: 2px solid var(--border);
       box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.06);
       display: flex;
       flex-wrap: wrap;
@@ -1724,14 +1712,14 @@
     }
 
     .chat-options::-webkit-scrollbar-thumb {
-      background: var(--green-300);
+      background: var(--border);
       border-radius: 4px;
     }
 
     .chat-opt {
-      background: var(--green-100);
+      background: var(--green-light);
       border: none;
-      color: var(--green-900);
+      color: var(--green-deep);
       padding: 8px 16px;
       border-radius: 50px;
       font-size: 13px;
@@ -1743,7 +1731,7 @@
     }
 
     .chat-opt:hover {
-      background: var(--green-600);
+      background: var(--green);
       color: white;
     }
 
@@ -1751,10 +1739,10 @@
       text-align: center;
       font-size: 11px;
       font-weight: 500;
-      color: var(--green-600);
+      color: var(--green);
       padding: 6px 0 0;
-      background: var(--green-50);
-      border-top: 2px solid var(--green-200);
+      background: var(--green-bg);
+      border-top: 2px solid var(--border);
       animation: hintPulse 1.5s ease-in-out infinite;
     }
 
@@ -1792,7 +1780,7 @@
       font-weight: 600;
       letter-spacing: 0.5px;
       text-transform: uppercase;
-      color: var(--gray-400);
+      color: var(--light);
       display: block;
       margin-bottom: 6px;
     }
@@ -1809,8 +1797,8 @@
     }
 
     .week-day-dot--moedas {
-      background: var(--green-100);
-      border: 2px solid var(--green-400);
+      background: var(--green-light);
+      border: 2px solid var(--green-accent);
     }
 
     .week-day-dot--planilha {
@@ -1824,14 +1812,14 @@
     }
 
     .week-day-dot--off {
-      background: var(--gray-100);
-      border: 2px solid var(--gray-200);
+      background: #f3f4f6;
+      border: 2px solid #e5e7eb;
     }
 
     .week-day-label {
       font-size: 8px;
       font-weight: 500;
-      color: var(--gray-500);
+      color: var(--mid);
       display: block;
       line-height: 1.3;
     }
@@ -1849,7 +1837,7 @@
       gap: 6px;
       font-size: 11px;
       font-weight: 500;
-      color: var(--gray-500);
+      color: var(--mid);
     }
 
     .week-legend-dot {
@@ -1868,9 +1856,9 @@
       height: 44px;
       border-radius: 50%;
       background: var(--white);
-      border: 1px solid var(--gray-200);
+      border: 1px solid #e5e7eb;
       box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-      color: var(--gray-500);
+      color: var(--mid);
       cursor: pointer;
       z-index: 300;
       display: flex;
@@ -1887,9 +1875,9 @@
     }
 
     .back-to-top:hover {
-      background: var(--green-50);
-      color: var(--green-700);
-      border-color: var(--green-200);
+      background: var(--green-bg);
+      color: var(--green-dark);
+      border-color: var(--border);
     }
 
     /* PROGRESS BAR */
@@ -1899,13 +1887,13 @@
       left: 0;
       right: 0;
       height: 3px;
-      background: var(--gray-100);
+      background: #f3f4f6;
     }
 
     .progress-bar {
       height: 100%;
       width: 0%;
-      background: linear-gradient(90deg, var(--green-400), var(--green-600));
+      background: linear-gradient(90deg, var(--green-accent), var(--green));
       transition: width 0.15s linear;
     }
 
@@ -1916,6 +1904,59 @@
 
       .hero-content {
         padding: 90px 24px 40px;
+      }
+
+      .hero-title {
+        font-size: 32px;
+      }
+
+      .hero-stats {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      .hero-stat {
+        padding: 16px 12px;
+      }
+
+      .hero-stat-val {
+        font-size: 16px;
+      }
+
+      .section {
+        padding: 40px 20px;
+      }
+
+      .section.bg-white {
+        padding: 40px 20px;
+      }
+
+      .section.bg-dark {
+        padding: 40px 20px;
+      }
+
+      .sec-title {
+        font-size: 22px;
+      }
+
+      .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .sub-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .final {
+        padding: 48px 20px 40px;
+      }
+
+      .final-title {
+        font-size: 26px;
+      }
+
+      footer {
+        padding: 16px 16px;
       }
 
       .chat-box {
@@ -1949,7 +1990,7 @@
     .app-popup {
       background: var(--white);
       border-radius: 16px;
-      border: 1px solid var(--gray-200);
+      border: 1px solid #e5e7eb;
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
       padding: 28px 24px;
       text-align: center;
@@ -1962,7 +2003,7 @@
       font-weight: 600;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      color: var(--gray-400);
+      color: var(--light);
       display: block;
       text-align: center;
     }
@@ -1977,7 +2018,7 @@
     .app-popup-text {
       font-size: 13px;
       font-weight: 400;
-      color: var(--gray-600);
+      color: #4b5563;
       line-height: 1.65;
       margin-bottom: 16px;
     }
@@ -2104,7 +2145,7 @@
       font-weight: 500;
       letter-spacing: 1px;
       text-transform: uppercase;
-      color: var(--gray-300);
+      color: #d1d5db;
       display: block;
       margin-bottom: 6px;
       text-align: center;
@@ -2129,7 +2170,7 @@
     .app-btn-sim--gray {
       background: rgba(0, 0, 0, 0.06);
       border: 1.5px solid rgba(0, 0, 0, 0.12);
-      color: var(--gray-500);
+      color: var(--mid);
     }
 
     .app-blur-sim {
@@ -2145,7 +2186,7 @@
     .app-blur-sim-label {
       font-size: 13px;
       font-weight: 500;
-      color: var(--gray-500);
+      color: var(--mid);
     }
 
     .app-blur-sim-toggle {
@@ -2277,8 +2318,8 @@
                 border-color: rgba(0, 0, 0, 0.08);
               ">
             <div>
-              <span class="glass-card-name" style="color: var(--gray-800)">Status da Deusa</span>
-              <span class="glass-card-sub" style="color: var(--gray-400)">Offline</span>
+              <span class="glass-card-name" style="color: var(--coal)">Status da Deusa</span>
+              <span class="glass-card-sub" style="color: var(--light)">Offline</span>
             </div>
             <div class="app-toggle" style="background: rgba(0, 0, 0, 0.1)">
               <div class="app-toggle-knob" style="background: #fff"></div>
@@ -2306,8 +2347,8 @@
                 border-color: rgba(0, 0, 0, 0.08);
               ">
             <div>
-              <span class="glass-card-name" style="color: var(--gray-800)">Status LivMate</span>
-              <span class="glass-card-sub" style="color: var(--gray-400)">Offline</span>
+              <span class="glass-card-name" style="color: var(--coal)">Status LivMate</span>
+              <span class="glass-card-sub" style="color: var(--light)">Offline</span>
             </div>
             <div class="app-toggle" style="background: rgba(0, 0, 0, 0.1)">
               <div class="app-toggle-knob" style="background: #fff"></div>
@@ -2351,11 +2392,11 @@
         <div style="margin: 20px 0">
           <span class="app-popup-label">Essa mensagem vai aparecer no app ↓</span>
           <div class="app-popup" style="text-align: center; padding: 28px 24px 24px">
-            <div class="app-popup-title" style="color: var(--gray-900); font-size: 17px">
+            <div class="app-popup-title" style="color: var(--coal); font-size: 17px">
               Verificação KYC
             </div>
             <p class="app-popup-text" style="
-                  color: var(--gray-500);
+                  color: var(--mid);
                   font-size: 13px;
                   line-height: 1.6;
                   margin-bottom: 20px;
@@ -2383,8 +2424,8 @@
                   padding: 12px;
                   font-size: 15px;
                   font-weight: 500;
-                  color: var(--gray-500);
-                  border: 1px solid var(--gray-200);
+                  color: var(--mid);
+                  border: 1px solid #e5e7eb;
                   border-radius: 100px;
                 ">Ignorar</span>
           </div>
@@ -2421,7 +2462,7 @@
               <img src="centro-lives.jpeg" alt="Botão Centro de Lives no app" style="
                     max-width: 140px;
                     border-radius: 10px;
-                    border: 1px solid var(--gray-200);
+                    border: 1px solid #e5e7eb;
                     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
                   " />
             </div>
@@ -2486,7 +2527,7 @@
   <div id="chamadas">
     <div class="section bg-dark fade-up">
       <div class="inner">
-        <span class="sec-num" style="color: rgba(255, 255, 255, 0.08)">04</span>
+        <span class="sec-num" style="color: rgba(255, 255, 255, 0.4)">04</span>
         <span class="sec-tag sec-tag-dark">entenda as chamadas</span>
         <h2 class="sec-title sec-title-light">
           Tem três tipos de<br /><em>chamada no app.</em>
@@ -2494,7 +2535,7 @@
         <div class="call-cards stagger fade-up">
           <div class="call-card" style="
                 background: rgba(255, 255, 255, 0.04);
-                border-color: rgba(255, 255, 255, 0.08);
+                border-color: rgba(255, 255, 255, 0.1);
               ">
             <div class="call-name call-name-dark">
               Chamada da Lupa/Explorar
@@ -2633,7 +2674,7 @@
             </div>
           </div>
         </div>
-        <div class="info-box info-box-dark" style="margin-top: 20px; border-left-color: var(--green-400)">
+        <div class="info-box info-box-dark" style="margin-top: 20px; border-left-color: var(--green-accent)">
           <p>
             ⚠️ Você
             <strong>só ganha moedas quando a outra pessoa liga pra você</strong>. Se você ligar pra alguém, não ganha
@@ -2678,11 +2719,11 @@
                 align-items: center;
                 padding: 14px 18px;
               ">
-            <span style="font-size: 14px; color: var(--gray-500)">20 mil moedas</span>
+            <span style="font-size: 14px; color: var(--mid)">20 mil moedas</span>
             <span style="
                   font-size: 16px;
                   font-weight: 700;
-                  color: var(--green-700);
+                  color: var(--green-dark);
                 ">R$ 117</span>
           </div>
           <div class="call-card" style="
@@ -2691,11 +2732,11 @@
                 align-items: center;
                 padding: 14px 18px;
               ">
-            <span style="font-size: 14px; color: var(--gray-500)">40 mil moedas</span>
+            <span style="font-size: 14px; color: var(--mid)">40 mil moedas</span>
             <span style="
                   font-size: 16px;
                   font-weight: 700;
-                  color: var(--green-700);
+                  color: var(--green-dark);
                 ">R$ 235</span>
           </div>
           <div class="call-card" style="
@@ -2704,11 +2745,11 @@
                 align-items: center;
                 padding: 14px 18px;
               ">
-            <span style="font-size: 14px; color: var(--gray-500)">100 mil moedas</span>
+            <span style="font-size: 14px; color: var(--mid)">100 mil moedas</span>
             <span style="
                   font-size: 16px;
                   font-weight: 700;
-                  color: var(--green-700);
+                  color: var(--green-dark);
                 ">R$ 588</span>
           </div>
           <div class="call-card" style="
@@ -2717,11 +2758,11 @@
                 align-items: center;
                 padding: 14px 18px;
               ">
-            <span style="font-size: 14px; color: var(--gray-500)">200 mil moedas</span>
+            <span style="font-size: 14px; color: var(--mid)">200 mil moedas</span>
             <span style="
                   font-size: 16px;
                   font-weight: 700;
-                  color: var(--green-700);
+                  color: var(--green-dark);
                 ">R$ 1.176</span>
           </div>
           <div class="call-card" style="
@@ -2730,18 +2771,18 @@
                 align-items: center;
                 padding: 14px 18px;
               ">
-            <span style="font-size: 14px; color: var(--gray-500)">500 mil moedas</span>
+            <span style="font-size: 14px; color: var(--mid)">500 mil moedas</span>
             <span style="
                   font-size: 16px;
                   font-weight: 700;
-                  color: var(--green-700);
+                  color: var(--green-dark);
                 ">R$ 2.941</span>
           </div>
         </div>
 
         <div class="divider" style="margin: 28px 0"></div>
 
-        <p class="sec-tag" style="color: var(--green-700)">
+        <p class="sec-tag" style="color: var(--green-dark)">
           ★ Nível 1 (o melhor, paga mais)
         </p>
         <p class="sec-body" style="margin-bottom: 12px">
@@ -2754,11 +2795,11 @@
                 align-items: center;
                 padding: 14px 18px;
               ">
-            <span style="font-size: 14px; color: var(--gray-500)">20 mil moedas</span>
+            <span style="font-size: 14px; color: var(--mid)">20 mil moedas</span>
             <span style="
                   font-size: 16px;
                   font-weight: 700;
-                  color: var(--green-700);
+                  color: var(--green-dark);
                 ">R$ 133</span>
           </div>
           <div class="call-card" style="
@@ -2767,11 +2808,11 @@
                 align-items: center;
                 padding: 14px 18px;
               ">
-            <span style="font-size: 14px; color: var(--gray-500)">40 mil moedas</span>
+            <span style="font-size: 14px; color: var(--mid)">40 mil moedas</span>
             <span style="
                   font-size: 16px;
                   font-weight: 700;
-                  color: var(--green-700);
+                  color: var(--green-dark);
                 ">R$ 266</span>
           </div>
           <div class="call-card" style="
@@ -2780,11 +2821,11 @@
                 align-items: center;
                 padding: 14px 18px;
               ">
-            <span style="font-size: 14px; color: var(--gray-500)">100 mil moedas</span>
+            <span style="font-size: 14px; color: var(--mid)">100 mil moedas</span>
             <span style="
                   font-size: 16px;
                   font-weight: 700;
-                  color: var(--green-700);
+                  color: var(--green-dark);
                 ">R$ 666</span>
           </div>
           <div class="call-card" style="
@@ -2793,11 +2834,11 @@
                 align-items: center;
                 padding: 14px 18px;
               ">
-            <span style="font-size: 14px; color: var(--gray-500)">200 mil moedas</span>
+            <span style="font-size: 14px; color: var(--mid)">200 mil moedas</span>
             <span style="
                   font-size: 16px;
                   font-weight: 700;
-                  color: var(--green-700);
+                  color: var(--green-dark);
                 ">R$ 1.333</span>
           </div>
           <div class="call-card" style="
@@ -2806,11 +2847,11 @@
                 align-items: center;
                 padding: 14px 18px;
               ">
-            <span style="font-size: 14px; color: var(--gray-500)">500 mil moedas</span>
+            <span style="font-size: 14px; color: var(--mid)">500 mil moedas</span>
             <span style="
                   font-size: 16px;
                   font-weight: 700;
-                  color: var(--green-700);
+                  color: var(--green-dark);
                 ">R$ 3.333</span>
           </div>
         </div>
@@ -2836,16 +2877,16 @@
         </h2>
         <div class="cards-grid">
           <div class="card card-dark" style="
-                background: #052e16;
-                border-color: rgba(255, 255, 255, 0.12);
+                background: #145a32;
+                border-color: rgba(255, 255, 255, 0.1);
               ">
             <span class="card-label card-label-dark">meta mínima</span>
             <span class="card-val card-val-dark">20.000</span>
             <span class="card-sub card-sub-dark">moedas por semana</span>
           </div>
           <div class="card card-dark" style="
-                background: #052e16;
-                border-color: rgba(255, 255, 255, 0.12);
+                background: #145a32;
+                border-color: rgba(255, 255, 255, 0.1);
               ">
             <span class="card-label card-label-dark">dia do pagamento</span>
             <span class="card-val card-val-dark">Sexta</span>
@@ -2857,9 +2898,9 @@
 
           <div style="
                 padding: 16px;
-                background: var(--gray-50);
+                background: var(--green-bg);
                 border-radius: 12px;
-                border: 1px solid var(--gray-100);
+                border: 1px solid #f3f4f6;
                 margin-top: 16px;
               ">
             <p style="
@@ -2867,7 +2908,7 @@
                   font-weight: 600;
                   letter-spacing: 1px;
                   text-transform: uppercase;
-                  color: var(--green-700);
+                  color: var(--green-dark);
                   margin: 0 0 8px;
                 ">
               Semana 1 → você trabalha
@@ -2924,9 +2965,9 @@
 
         <div style="
               padding: 16px;
-              background: var(--gray-50);
+              background: var(--green-bg);
               border-radius: 12px;
-              border: 1px solid var(--gray-100);
+              border: 1px solid #f3f4f6;
               margin-top: 10px;
             ">
           <p style="
@@ -2984,9 +3025,9 @@
               gap: 16px;
               margin-top: 14px;
               padding: 12px 16px;
-              background: var(--gray-50);
+              background: var(--green-bg);
               border-radius: 10px;
-              border: 1px solid var(--gray-100);
+              border: 1px solid #f3f4f6;
             ">
           <div style="
                 display: flex;
@@ -2994,13 +3035,13 @@
                 gap: 5px;
                 font-size: 10px;
                 font-weight: 500;
-                color: var(--gray-400);
+                color: var(--light);
               ">
             <span style="
                   width: 8px;
                   height: 8px;
                   border-radius: 50%;
-                  background: var(--green-400);
+                  background: var(--green-accent);
                   flex-shrink: 0;
                 "></span>
             Ganhando moedas
@@ -3011,7 +3052,7 @@
                 gap: 5px;
                 font-size: 10px;
                 font-weight: 500;
-                color: var(--gray-400);
+                color: var(--light);
               ">
             <span style="
                   width: 8px;
@@ -3028,7 +3069,7 @@
                 gap: 5px;
                 font-size: 10px;
                 font-weight: 500;
-                color: var(--gray-400);
+                color: var(--light);
               ">
             <span style="
                   width: 8px;
@@ -3053,10 +3094,10 @@
               align-items: flex-start;
               gap: 10px;
               font-size: 14px;
-              color: var(--gray-700);
+              color: var(--mid);
               line-height: 1.7;
             ">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green-500)" stroke-width="2.5"
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5"
             stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 4px">
             <polyline points="9 18 15 12 9 6" />
           </svg>
@@ -3072,10 +3113,10 @@
               align-items: flex-start;
               gap: 10px;
               font-size: 14px;
-              color: var(--gray-700);
+              color: var(--mid);
               line-height: 1.7;
             ">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green-500)" stroke-width="2.5"
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5"
             stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 4px">
             <polyline points="9 18 15 12 9 6" />
           </svg>
@@ -3090,10 +3131,10 @@
               align-items: flex-start;
               gap: 10px;
               font-size: 14px;
-              color: var(--gray-700);
+              color: var(--mid);
               line-height: 1.7;
             ">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green-500)" stroke-width="2.5"
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5"
             stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 4px">
             <polyline points="9 18 15 12 9 6" />
           </svg>
@@ -3123,7 +3164,7 @@
       </p>
       <div class="steps stagger fade-up">
         <div class="step-row">
-          <span class="step-n" style="color: var(--green-600)">★</span>
+          <span class="step-n" style="color: var(--green)">★</span>
           <div>
             <span class="step-title">Nível 1 (o melhor)</span>
             <span class="step-desc">Mais de 13% das suas chamadas de amigo passaram de 5 minutos.
@@ -3131,7 +3172,7 @@
           </div>
         </div>
         <div class="step-row">
-          <span class="step-n" style="color: var(--gray-300)">—</span>
+          <span class="step-n" style="color: #d1d5db">—</span>
           <div>
             <span class="step-title">Nível do meio</span>
             <span class="step-desc">Entre 0% e 13% das chamadas passaram de 5 minutos. Dá pra
@@ -3139,7 +3180,7 @@
           </div>
         </div>
         <div class="step-row">
-          <span class="step-n" style="color: var(--gray-300)">●</span>
+          <span class="step-n" style="color: #d1d5db">●</span>
           <div>
             <span class="step-title">Nível Nova (quando você começa)</span>
             <span class="step-desc">Todo mundo começa aqui. É só ir atendendo que você sobe.</span>
@@ -3174,7 +3215,7 @@
               <img src="centro-lives.jpeg" alt="Botão Centro de Lives no app" style="
                     max-width: 140px;
                     border-radius: 10px;
-                    border: 1px solid var(--gray-200);
+                    border: 1px solid #e5e7eb;
                     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
                   " />
             </div>
@@ -3272,7 +3313,7 @@
               <span id="giftTimer" style="
                     font-size: 10px;
                     font-weight: 500;
-                    color: var(--gray-400);
+                    color: var(--light);
                     font-variant-numeric: tabular-nums;
                   ">00:00</span>
             </div>
@@ -3343,7 +3384,7 @@
                   margin-top: 10px;
                   padding: 10px 16px 10px 10px;
                   background: #fff;
-                  border: 1px solid var(--gray-200);
+                  border: 1px solid #e5e7eb;
                   border-radius: 14px;
                   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
                   max-width: 260px;
@@ -3352,13 +3393,13 @@
                     width: 42px;
                     height: 42px;
                     border-radius: 10px;
-                    background: var(--gray-100);
+                    background: #f3f4f6;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     flex-shrink: 0;
                   ">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gray-800)" stroke-width="2.5"
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--coal)" stroke-width="2.5"
                   stroke-linecap="round">
                   <line x1="12" y1="5" x2="12" y2="19" />
                   <line x1="5" y1="12" x2="19" y2="12" />
@@ -3368,13 +3409,13 @@
                 <span style="
                       font-size: 14px;
                       font-weight: 600;
-                      color: var(--gray-800);
+                      color: var(--coal);
                       display: block;
                       line-height: 1.3;
                     ">Faça mais vídeos</span>
                 <span style="
                       font-size: 11px;
-                      color: var(--gray-400);
+                      color: var(--light);
                       display: block;
                     ">Conte sua história com um vídeo</span>
               </div>
@@ -3420,7 +3461,7 @@
           chamadas. Se levar 2 punições em 30 dias, a agência pode desligar
           seu perfil.
         </p>
-        <p class="sec-tag" style="margin-top: 20px; color: var(--green-600)">
+        <p class="sec-tag" style="margin-top: 20px; color: var(--green)">
           ✓ Jeito certo de atender
         </p>
         <ul class="check-list">
@@ -3680,9 +3721,7 @@
 
   <!-- CHATBOT -->
   <button class="chat-toggle" onclick="toggleChat()" aria-label="Abrir chat">
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
-      <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
-    </svg>
+    💬
   </button>
   <div class="chat-box" id="chatBox">
     <div class="chat-header">

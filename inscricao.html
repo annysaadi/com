@@ -296,6 +296,46 @@
       color: var(--coal);
       margin-bottom: 4px;
     }
+
+    /* RESPONSIVE */
+    @media (max-width: 640px) {
+      header {
+        padding: 14px 20px;
+      }
+
+      main {
+        padding: 32px 16px;
+      }
+
+      .card {
+        padding: 32px 20px;
+      }
+
+      .card-title {
+        font-size: 24px;
+      }
+
+      .wa-btn {
+        font-size: 13px;
+        padding: 14px 20px;
+      }
+
+      footer {
+        padding: 16px 16px;
+      }
+    }
+
+    /* ANIMATIONS */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
 
@@ -317,7 +357,7 @@
   </header>
 
   <main>
-    <div class="card">
+    <div class="card fade-up">
       <h1 class="card-title">Pronta pra <em>começar?</em></h1>
       <p class="card-body">É rápido, gratuito e você já pode começar hoje.</p>
 
@@ -384,6 +424,22 @@
     const number = waNumbers[ref] || waNumbers.a1;
     document.getElementById("wa-link").href =
       "https://wa.me/" + number + "?text=Li";
+
+    // Scroll reveal
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("visible");
+            observer.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.08 },
+    );
+    document
+      .querySelectorAll(".fade-up")
+      .forEach((el) => observer.observe(el));
   </script>
 </body>
 

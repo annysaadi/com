@@ -14,7 +14,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bem-vinda | Leia antes de começar</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet" />
   <style>
     *,
@@ -26,27 +26,18 @@
     }
 
     :root {
-      --green-50: #f0fdf4;
-      --green-100: #dcfce7;
-      --green-200: #bbf7d0;
-      --green-400: #4ade80;
-      --green-500: #22c55e;
-      --green-600: #16a34a;
-      --green-700: #15803d;
-      --green-800: #166534;
-      --green-900: #14532d;
-      --green-950: #052e16;
+      --green-bg: #f0faf2;
+      --green-light: #d4f0dc;
+      --green: #27ae60;
+      --green-dark: #1e8449;
+      --green-deep: #145a32;
+      --green-accent: #6ee89a;
       --white: #ffffff;
-      --gray-50: #f9fafb;
-      --gray-100: #f3f4f6;
-      --gray-200: #e5e7eb;
-      --gray-300: #d1d5db;
-      --gray-400: #9ca3af;
-      --gray-500: #6b7280;
-      --gray-600: #4b5563;
-      --gray-700: #374151;
-      --gray-800: #1f2937;
-      --gray-900: #111827;
+      --coal: #1a1a1a;
+      --mid: #444444;
+      --light: #888888;
+      --border: #d0e8d8;
+      --card-bg: #ffffff;
       --red-500: #ef4444;
       --red-50: #fef2f2;
       --amber-500: #f59e0b;
@@ -55,6 +46,15 @@
       --shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
       --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.1);
       --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      /* aliases */
+      --cream: var(--green-bg);
+      --cream-d: var(--green-light);
+      --dark: var(--green-deep);
+      --accent: var(--green);
+      --accent-hover: var(--green-dark);
+      --warn-bg: var(--amber-50);
+      --warn: var(--amber-500);
+      --danger: var(--red-500);
     }
 
     html {
@@ -62,15 +62,15 @@
     }
 
     body {
-      background: var(--gray-50);
-      color: var(--gray-800);
+      background: var(--green-bg);
+      color: var(--coal);
       font-family:
-        "Inter",
+        "Poppins",
         -apple-system,
         BlinkMacSystemFont,
         sans-serif;
-      font-size: 15px;
-      line-height: 1.7;
+      font-size: 16px;
+      line-height: 1.6;
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
     }
@@ -102,18 +102,18 @@
     .top-nav-logo {
       font-size: 13px;
       font-weight: 500;
-      color: var(--gray-400);
+      color: var(--light);
     }
 
     .top-nav-brand {
       font-size: 17px;
       font-weight: 700;
-      color: var(--gray-800);
+      color: var(--coal);
       letter-spacing: -0.3px;
     }
 
     .top-nav-brand span {
-      color: var(--green-600);
+      color: var(--green);
     }
 
     /* ── SIDEBAR ── */
@@ -135,7 +135,7 @@
       font-weight: 600;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      color: var(--gray-400);
+      color: var(--light);
       padding: 0 12px;
       margin-bottom: 8px;
     }
@@ -148,20 +148,20 @@
       border-radius: 10px;
       font-size: 13px;
       font-weight: 500;
-      color: var(--gray-500);
+      color: var(--mid);
       text-decoration: none;
       transition: var(--transition);
       position: relative;
     }
 
     .nav-link:hover {
-      background: var(--green-50);
-      color: var(--gray-700);
+      background: var(--green-bg);
+      color: var(--mid);
     }
 
     .nav-link.active {
-      background: var(--green-100);
-      color: var(--green-800);
+      background: var(--green-light);
+      color: var(--green-dark);
       font-weight: 600;
     }
 
@@ -173,19 +173,19 @@
       transform: translateY(-50%);
       width: 3px;
       height: 18px;
-      background: var(--green-600);
+      background: var(--green);
       border-radius: 3px 0 0 3px;
     }
 
     .nav-num {
       font-size: 11px;
       font-weight: 700;
-      color: var(--gray-300);
+      color: #d1d5db;
       min-width: 18px;
     }
 
     .nav-link.active .nav-num {
-      color: var(--green-600);
+      color: var(--green);
     }
 
     /* ── MAIN ── */
@@ -202,8 +202,8 @@
 
     /* ── HERO ── */
     .hero {
-      padding: 56px 56px 40px;
-      max-width: 780px;
+      padding: 56px 24px 40px;
+      max-width: 680px;
     }
 
     .hero-badge {
@@ -214,8 +214,8 @@
       font-weight: 600;
       letter-spacing: 1px;
       text-transform: uppercase;
-      color: var(--green-700);
-      background: var(--green-100);
+      color: var(--green-dark);
+      background: var(--green-light);
       padding: 6px 14px;
       border-radius: 100px;
       margin-bottom: 20px;
@@ -224,7 +224,7 @@
     .hero-title {
       font-size: 40px;
       font-weight: 900;
-      color: var(--gray-900);
+      color: var(--coal);
       line-height: 1.1;
       letter-spacing: -1.5px;
       margin-bottom: 14px;
@@ -232,7 +232,7 @@
 
     .hero-title em {
       font-style: normal;
-      background: linear-gradient(135deg, var(--green-600), var(--green-400));
+      background: linear-gradient(135deg, var(--green), var(--green-accent));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -240,7 +240,7 @@
 
     .hero-sub {
       font-size: 15px;
-      color: var(--gray-600);
+      color: #4b5563;
       line-height: 1.7;
       max-width: 520px;
       margin-bottom: 28px;
@@ -273,20 +273,20 @@
 
     .alert-box-text {
       font-size: 13px;
-      color: var(--gray-700);
+      color: var(--mid);
       line-height: 1.65;
     }
 
     .alert-box-text strong {
       font-weight: 600;
-      color: var(--gray-900);
+      color: var(--coal);
     }
 
     /* ── SECTIONS ── */
     .section {
-      max-width: 780px;
-      padding: 56px 56px;
-      border-bottom: 1px solid var(--gray-200);
+      max-width: 680px;
+      padding: 56px 24px;
+      border-bottom: 1px solid #e5e7eb;
       position: relative;
     }
 
@@ -299,7 +299,7 @@
       font-weight: 900;
       line-height: 1;
       background: linear-gradient(180deg,
-          var(--green-200) 0%,
+          var(--border) 0%,
           transparent 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -314,7 +314,7 @@
       font-weight: 600;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      color: var(--green-600);
+      color: var(--green);
       display: inline-block;
       margin-bottom: 10px;
     }
@@ -322,7 +322,7 @@
     .section-title {
       font-size: 28px;
       font-weight: 800;
-      color: var(--gray-900);
+      color: var(--coal);
       line-height: 1.2;
       letter-spacing: -0.8px;
       margin-bottom: 16px;
@@ -330,12 +330,12 @@
 
     .section-title em {
       font-style: normal;
-      color: var(--green-600);
+      color: var(--green);
     }
 
     .section-body {
       font-size: 14px;
-      color: var(--gray-700);
+      color: var(--mid);
       line-height: 1.8;
       margin-bottom: 16px;
     }
@@ -350,25 +350,25 @@
 
     .card {
       padding: 20px;
-      border: 1px solid var(--gray-200);
+      border: 1px solid #e5e7eb;
       border-radius: 14px;
       background: var(--white);
       transition: var(--transition);
     }
 
     .card:hover {
-      border-color: var(--green-200);
+      border-color: var(--border);
       box-shadow: var(--shadow);
       transform: translateY(-2px);
     }
 
     .card-dark {
-      background: var(--green-950);
+      background: var(--green-deep);
       border-color: transparent;
     }
 
     .card-dark:hover {
-      border-color: var(--green-800);
+      border-color: var(--green-dark);
       transform: translateY(-2px);
     }
 
@@ -377,19 +377,19 @@
       font-weight: 600;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      color: var(--gray-400);
+      color: var(--light);
       display: block;
       margin-bottom: 8px;
     }
 
     .card-dark .card-label {
-      color: rgba(255, 255, 255, 0.35);
+      color: rgba(255, 255, 255, 0.55);
     }
 
     .card-value {
       font-size: 28px;
       font-weight: 900;
-      color: var(--gray-900);
+      color: var(--coal);
       line-height: 1;
       display: block;
       letter-spacing: -0.5px;
@@ -401,13 +401,13 @@
 
     .card-sub {
       font-size: 12px;
-      color: var(--gray-600);
+      color: #4b5563;
       margin-top: 4px;
       display: block;
     }
 
     .card-dark .card-sub {
-      color: rgba(255, 255, 255, 0.35);
+      color: rgba(255, 255, 255, 0.55);
     }
 
     /* ── DANGER BOX ── */
@@ -442,7 +442,7 @@
       font-size: 12px;
       font-weight: 600;
       letter-spacing: 0.5px;
-      color: var(--gray-800);
+      color: var(--coal);
       margin-bottom: 10px;
       display: flex;
       align-items: center;
@@ -457,7 +457,7 @@
     }
 
     .dot-green {
-      background: var(--green-500);
+      background: var(--green);
     }
 
     .dot-red {
@@ -470,9 +470,9 @@
 
     .rule-list li {
       font-size: 13px;
-      color: var(--gray-700);
+      color: var(--mid);
       padding: 9px 0;
-      border-bottom: 1px solid var(--gray-100);
+      border-bottom: 1px solid #f3f4f6;
       display: flex;
       align-items: center;
       gap: 10px;
@@ -500,7 +500,7 @@
 
     .call-card {
       padding: 24px;
-      border: 1px solid var(--gray-200);
+      border: 1px solid #e5e7eb;
       border-radius: 14px;
       background: var(--white);
       transition: var(--transition);
@@ -512,18 +512,18 @@
     }
 
     .call-card-dark {
-      background: var(--green-950);
+      background: var(--green-deep);
       border-color: transparent;
     }
 
     .call-card-dark:hover {
-      border-color: var(--green-800);
+      border-color: var(--green-dark);
     }
 
     .call-name {
       font-size: 18px;
       font-weight: 700;
-      color: var(--gray-900);
+      color: var(--coal);
       margin-bottom: 8px;
     }
 
@@ -543,8 +543,8 @@
     }
 
     .badge-sim {
-      background: var(--green-100);
-      color: var(--green-700);
+      background: var(--green-light);
+      color: var(--green-dark);
     }
 
     .badge-nao {
@@ -554,7 +554,7 @@
 
     .call-desc {
       font-size: 13px;
-      color: var(--gray-600);
+      color: #4b5563;
       line-height: 1.7;
     }
 
@@ -574,19 +574,19 @@
       padding: 18px 20px;
       border-radius: 12px;
       background: var(--white);
-      border: 1px solid var(--gray-200);
+      border: 1px solid #e5e7eb;
       transition: var(--transition);
     }
 
     .tip:hover {
-      border-color: var(--green-200);
+      border-color: var(--border);
       box-shadow: var(--shadow);
     }
 
     .tip-title {
       font-size: 13px;
       font-weight: 600;
-      color: var(--gray-800);
+      color: var(--coal);
       margin-bottom: 4px;
       display: flex;
       align-items: center;
@@ -595,7 +595,7 @@
 
     .tip-text {
       font-size: 13px;
-      color: var(--gray-600);
+      color: #4b5563;
       line-height: 1.65;
       padding-left: 24px;
     }
@@ -607,13 +607,13 @@
       left: 0;
       right: 0;
       height: 3px;
-      background: var(--gray-100);
+      background: #f3f4f6;
     }
 
     .progress-bar {
       height: 100%;
       width: 0%;
-      background: linear-gradient(90deg, var(--green-400), var(--green-600));
+      background: linear-gradient(90deg, var(--green-accent), var(--green));
       transition: width 0.15s linear;
     }
 
@@ -624,7 +624,7 @@
       text-align: center;
       position: relative;
       overflow: hidden;
-      border-top: 1px solid var(--gray-200);
+      border-top: 1px solid #e5e7eb;
     }
 
     .final::before {
@@ -651,7 +651,7 @@
       font-weight: 600;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: var(--green-600);
+      color: var(--green);
       display: block;
       margin-bottom: 12px;
     }
@@ -659,7 +659,7 @@
     .final-title {
       font-size: 26px;
       font-weight: 900;
-      color: var(--gray-900);
+      color: var(--coal);
       line-height: 1.2;
       letter-spacing: -0.8px;
       margin-bottom: 10px;
@@ -667,12 +667,12 @@
 
     .final-title em {
       font-style: normal;
-      color: var(--green-600);
+      color: var(--green);
     }
 
     .final-text {
       font-size: 13px;
-      color: var(--gray-500);
+      color: var(--mid);
       line-height: 1.7;
       margin-bottom: 24px;
     }
@@ -681,11 +681,11 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      font-family: "Inter", sans-serif;
+      font-family: "Poppins", sans-serif;
       font-size: 14px;
       font-weight: 700;
       color: var(--white);
-      background: var(--green-600);
+      background: var(--green);
       padding: 14px 32px;
       border-radius: 100px;
       text-decoration: none;
@@ -696,14 +696,14 @@
     }
 
     .final-btn:hover {
-      background: var(--green-700);
+      background: var(--green-dark);
       transform: translateY(-2px);
       box-shadow: 0 8px 30px rgba(22, 163, 74, 0.35);
     }
 
     /* ── FOOTER ── */
     footer {
-      background: var(--green-950);
+      background: var(--green-deep);
       padding: 28px 24px;
       text-align: center;
       border-top: 1px solid rgba(255, 255, 255, 0.06);
@@ -712,14 +712,14 @@
     footer p {
       font-family: "Poppins", -apple-system, BlinkMacSystemFont, sans-serif;
       font-size: 11px;
-      color: rgba(255, 255, 255, 0.2);
+      color: rgba(255, 255, 255, 0.4);
       letter-spacing: 0.5px;
       line-height: 1.8;
     }
 
     footer .footer-brand {
       font-weight: 600;
-      color: rgba(255, 255, 255, 0.35);
+      color: rgba(255, 255, 255, 0.55);
       margin-bottom: 4px;
     }
 
@@ -749,7 +749,7 @@
       width: 60px;
       height: 60px;
       border-radius: 50%;
-      background: var(--green-600);
+      background: var(--green);
       color: white;
       border: none;
       cursor: pointer;
@@ -787,7 +787,7 @@
     }
 
     .chat-header {
-      background: var(--green-600);
+      background: var(--green);
       color: white;
       padding: 18px 20px;
       font-size: 16px;
@@ -833,14 +833,14 @@
 
     .chat-msg.bot {
       background: white;
-      color: var(--gray-800);
+      color: var(--coal);
       align-self: flex-start;
       border-radius: 18px 18px 18px 4px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     }
 
     .chat-msg.user {
-      background: var(--green-600);
+      background: var(--green);
       color: white;
       align-self: flex-end;
       border-radius: 18px 18px 4px 18px;
@@ -859,21 +859,21 @@
     }
 
     .chat-opt {
-      background: var(--green-100);
+      background: var(--green-light);
       border: none;
-      color: var(--green-900);
+      color: var(--green-deep);
       padding: 8px 16px;
       border-radius: 50px;
       font-size: 13px;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.2s;
-      font-family: "Inter", sans-serif;
+      font-family: "Poppins", sans-serif;
       white-space: nowrap;
     }
 
     .chat-opt:hover {
-      background: var(--green-600);
+      background: var(--green);
       color: white;
     }
 
@@ -897,7 +897,7 @@
     /* ── ANIMATIONS ── */
     .fade-up {
       opacity: 0;
-      transform: translateY(24px);
+      transform: translateY(20px);
       transition:
         opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
         transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
@@ -925,7 +925,7 @@
         left: auto;
         background: var(--white);
         box-shadow: var(--shadow-lg);
-        border-left: 1px solid var(--gray-200);
+        border-left: 1px solid #e5e7eb;
       }
 
       .main {
@@ -944,15 +944,15 @@
         width: 40px;
         height: 40px;
         border-radius: 10px;
-        border: 1px solid var(--gray-200);
-        background: var(--green-50);
+        border: 1px solid #e5e7eb;
+        background: var(--green-bg);
         cursor: pointer;
         transition: var(--transition);
-        color: var(--green-700);
+        color: var(--green-dark);
       }
 
       .mobile-nav-toggle:hover {
-        background: var(--green-100);
+        background: var(--green-light);
       }
 
       .mobile-overlay {
@@ -1200,19 +1200,19 @@
           </div>
           <ul class="rule-list">
             <li>
-              <span class="rule-icon" style="color: var(--green-600)">✓</span>
+              <span class="rule-icon" style="color: var(--green)">✓</span>
               Atender sozinha
             </li>
             <li>
-              <span class="rule-icon" style="color: var(--green-600)">✓</span>
+              <span class="rule-icon" style="color: var(--green)">✓</span>
               Com roupa adequada
             </li>
             <li>
-              <span class="rule-icon" style="color: var(--green-600)">✓</span>
+              <span class="rule-icon" style="color: var(--green)">✓</span>
               Com câmera ligada
             </li>
             <li>
-              <span class="rule-icon" style="color: var(--green-600)">✓</span>
+              <span class="rule-icon" style="color: var(--green)">✓</span>
               Em ambiente claro e neutro
             </li>
           </ul>
@@ -1279,7 +1279,7 @@
             <span style="font-size: 15px">👁️</span>
             <p style="
                   font-size: 13px;
-                  color: var(--gray-700);
+                  color: var(--mid);
                   line-height: 1.5;
                   margin: 0;
                 ">
@@ -1378,9 +1378,9 @@
           Leu tudo?<br /><em>Agora é só confirmar!</em>
         </h2>
         <p class="final-text">
-          <span style="color: var(--green-600)">✓</span> Responda o formulário
+          <span style="color: var(--green)">✓</span> Responda o formulário
           pra seguir com a inscrição.<br />
-          <span style="color: var(--green-500)">→</span> Depois de aprovada,
+          <span style="color: var(--green)">→</span> Depois de aprovada,
           você recebe o material completo.
         </p>
         <a href="https://forms.gle/Bs3mg8Jtg3cVQCFs5" target="_blank" class="final-btn">
@@ -1391,8 +1391,8 @@
 
     <footer>
       <p class="footer-brand">@agencia.zara</p>
-      <p>🔒 Só pra quem trabalha com a gente</p>
       <p>🤫 Não compartilha esse link</p>
+      <p>🔒 Só pra quem trabalha com a gente</p>
       <p>© 2026 · trabalhecomocelular.com</p>
     </footer>
   </div>
@@ -1484,7 +1484,7 @@
         botMsg.className = "chat-msg bot";
         if (chatData[i].a === "__CTA__") {
           botMsg.innerHTML =
-            'Boa! 🚀 Clica aqui pra ir pro formulário:<br><br><a href="https://forms.gle/Bs3mg8Jtg3cVQCFs5" target="_blank" style="display:inline-block;background:#16a34a;color:white;padding:10px 20px;border-radius:50px;text-decoration:none;font-weight:700;font-size:13px;">Ir para o formulário →</a>';
+            'Boa! 🚀 Clica aqui pra ir pro formulário:<br><br><a href="https://forms.gle/Bs3mg8Jtg3cVQCFs5" target="_blank" style="display:inline-block;background:#27ae60;color:white;padding:10px 20px;border-radius:50px;text-decoration:none;font-weight:700;font-size:13px;">Ir para o formulário →</a>';
         } else {
           botMsg.textContent = chatData[i].a;
         }
