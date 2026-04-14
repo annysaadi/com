@@ -1079,6 +1079,198 @@
       border: 0;
     }
 
+    /* CHATBOT */
+    @keyframes chatBounce {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.06);
+      }
+    }
+
+    .chat-toggle {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: var(--green);
+      color: white;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 24px rgba(39, 174, 96, 0.4);
+      z-index: 300;
+      font-size: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: chatBounce 2s ease-in-out infinite;
+    }
+
+    .chat-toggle:hover {
+      animation: none;
+      transform: scale(1.08);
+    }
+
+    .chat-box {
+      position: fixed;
+      bottom: 96px;
+      right: 24px;
+      width: 360px;
+      max-height: 520px;
+      background: #fafafa;
+      border-radius: 24px;
+      box-shadow: 0 12px 48px rgba(0, 0, 0, 0.18);
+      z-index: 300;
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .chat-box.open {
+      display: flex;
+    }
+
+    .chat-header {
+      background: var(--green);
+      color: white;
+      padding: 18px 20px;
+      font-size: 16px;
+      font-weight: 700;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 24px 24px 0 0;
+    }
+
+    .chat-header button {
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .chat-messages {
+      overflow-y: auto;
+      padding: 20px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-height: 200px;
+      background: #fafafa;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .chat-messages::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    .chat-messages::-webkit-scrollbar-thumb {
+      background: #d1d5db;
+      border-radius: 4px;
+    }
+
+    .chat-msg {
+      max-width: 82%;
+      padding: 12px 16px;
+      font-size: 14px;
+      line-height: 1.6;
+      font-weight: 400;
+    }
+
+    .chat-msg.bot {
+      background: white;
+      color: var(--coal);
+      align-self: flex-start;
+      border-radius: 18px 18px 18px 4px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    .chat-msg.user {
+      background: var(--green);
+      color: white;
+      align-self: flex-end;
+      border-radius: 18px 18px 4px 18px;
+      font-weight: 500;
+    }
+
+    .chat-options {
+      padding: 16px;
+      background: var(--green-bg);
+      border-top: 2px solid var(--border);
+      box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.06);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      max-height: 200px;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .chat-opt {
+      background: var(--green-light);
+      border: none;
+      color: var(--green-deep);
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: "Poppins", sans-serif;
+      white-space: nowrap;
+    }
+
+    .chat-opt:hover {
+      background: var(--green);
+      color: white;
+    }
+
+    /* BACK TO TOP */
+    .back-to-top {
+      position: fixed;
+      bottom: 24px;
+      left: 24px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+      color: var(--mid);
+      cursor: pointer;
+      z-index: 300;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .back-to-top:hover {
+      background: var(--green-bg);
+      color: var(--green-dark);
+      border-color: var(--green);
+    }
+
     /* RESPONSIVE */
     @media (max-width: 900px) {
       .hero {
@@ -1128,6 +1320,28 @@
 
       footer {
         padding: 16px 16px;
+      }
+
+      .back-to-top {
+        bottom: 20px;
+        left: 16px;
+        width: 40px;
+        height: 40px;
+      }
+
+      .chat-box {
+        width: calc(100vw - 32px);
+        right: 16px;
+        bottom: 92px;
+        max-height: 70vh;
+      }
+
+      .chat-toggle {
+        bottom: 20px;
+        right: 16px;
+        width: 54px;
+        height: 54px;
+        font-size: 24px;
       }
     }
   </style>
@@ -2313,6 +2527,102 @@
     <p>© 2026 · trabalhecomocelular.com</p>
   </footer>
 
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" id="backToTop" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+    aria-label="Voltar ao topo">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+      stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15" />
+    </svg>
+  </button>
+
+  <!-- CHATBOT -->
+  <button class="chat-toggle" onclick="toggleChat()" aria-label="Abrir chat">
+    💬
+  </button>
+  <div class="chat-box" id="chatBox">
+    <div class="chat-header">
+      <span>Tire suas dúvidas 💌</span>
+      <button onclick="toggleChat()">✕</button>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="chat-msg bot">
+        Oi! 🤍 Tem alguma dúvida sobre as dicas? Escolhe uma pergunta abaixo!
+      </div>
+    </div>
+    <div class="chat-options" id="chatOptions"></div>
+  </div>
+
+  <script>
+    /* ── CHATBOT ── */
+    const chatData = [
+      {
+        q: "Qual o melhor horário pra ficar online?",
+        a: "Os melhores horários são entre 18h e 00h (horário de Brasília). É quando tem mais usuários online e as chamadas duram mais!",
+      },
+      {
+        q: "Preciso falar inglês?",
+        a: "Não precisa! Usa o chat com tradutor do app. Se travar na pronúncia, ri e fala que tá aprendendo — eles adoram.",
+      },
+      {
+        q: "Como fazer o usuário ficar mais tempo?",
+        a: "Faz perguntas, mostra interesse de verdade, sorri bastante. Quanto mais a conversa fluir, mais tempo ele fica e mais moedas você ganha!",
+      },
+      {
+        q: "O que fazer quando a conversa trava?",
+        a: "Muda de assunto! Pergunta sobre o país dele, mostra algo do seu dia, ou usa os temas de conversa que estão na seção 'O que falar'.",
+      },
+      {
+        q: "Como ganhar mais presentes?",
+        a: "Seja simpática, crie vínculo. Não peça presentes diretamente — deixa rolar naturalmente. Usuários que gostam de você mandam sem você pedir.",
+      },
+      {
+        q: "Posso atender de qualquer lugar?",
+        a: "Sim! Só precisa de boa iluminação, fundo limpo e internet estável. Evita lugares barulhentos.",
+      },
+      { q: "Quero falar com a equipe!", a: "__CTA__" },
+    ];
+
+    function toggleChat() {
+      document.getElementById("chatBox").classList.toggle("open");
+    }
+
+    function renderOptions() {
+      const opts = document.getElementById("chatOptions");
+      opts.innerHTML = "";
+      chatData.forEach((item, i) => {
+        const btn = document.createElement("button");
+        btn.className = "chat-opt";
+        btn.textContent = item.q;
+        btn.onclick = () => sendQuestion(i);
+        opts.appendChild(btn);
+      });
+    }
+
+    function sendQuestion(i) {
+      const msgs = document.getElementById("chatMessages");
+      const userMsg = document.createElement("div");
+      userMsg.className = "chat-msg user";
+      userMsg.textContent = chatData[i].q;
+      msgs.appendChild(userMsg);
+      setTimeout(() => {
+        const botMsg = document.createElement("div");
+        botMsg.className = "chat-msg bot";
+        if (chatData[i].a === "__CTA__") {
+          botMsg.innerHTML =
+            'Claro! 🚀 Fala com a gente no WhatsApp:<br><br><a href="https://wa.me/5521972804151" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:#25d366;color:white;padding:10px 20px;border-radius:50px;text-decoration:none;font-weight:700;font-size:13px;">Chamar no WhatsApp →</a>';
+        } else {
+          botMsg.textContent = chatData[i].a;
+        }
+        msgs.appendChild(botMsg);
+        msgs.scrollTop = msgs.scrollHeight;
+      }, 600);
+      msgs.scrollTop = msgs.scrollHeight;
+    }
+
+    renderOptions();
+  </script>
+
   <script>
     const observer = new IntersectionObserver(
       (entries) => {
@@ -2340,6 +2650,7 @@
     const sidebar = document.getElementById("sidebar");
     const overlay = document.getElementById("overlay");
     const topNav = document.getElementById("topNav");
+    const backToTop = document.getElementById("backToTop");
 
     let ticking = false;
     window.addEventListener(
@@ -2352,6 +2663,8 @@
               "scrolled",
               window.scrollY > heroHeight - 80,
             );
+
+            backToTop.classList.toggle("visible", window.scrollY > 600);
 
             let cur = "";
             sections.forEach((s) => {

@@ -1026,6 +1026,46 @@
       footer {
         padding: 16px 16px;
       }
+
+      .back-to-top {
+        bottom: 20px;
+        left: 16px;
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    /* BACK TO TOP */
+    .back-to-top {
+      position: fixed;
+      bottom: 24px;
+      left: 24px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+      color: var(--mid);
+      cursor: pointer;
+      z-index: 300;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .back-to-top:hover {
+      background: var(--green-bg);
+      color: var(--green-dark);
+      border-color: var(--green);
     }
 
     /* CHATBOT */
@@ -1781,6 +1821,15 @@
     <p>© 2026 · trabalhecomocelular.com</p>
   </footer>
 
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" id="backToTop" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+    aria-label="Voltar ao topo">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+      stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15" />
+    </svg>
+  </button>
+
   <script>
     // Captura e armazena o parâmetro de referência na URL
     (function () {
@@ -1812,6 +1861,12 @@
     document
       .querySelectorAll(".fade-up")
       .forEach((el) => observer.observe(el));
+
+    // Back to top
+    const backToTop = document.getElementById("backToTop");
+    window.addEventListener("scroll", () => {
+      backToTop.classList.toggle("visible", window.scrollY > 600);
+    });
 
     // Counter animation
     function animateCounter(el) {
@@ -1850,6 +1905,7 @@
       .querySelectorAll(".proof-num[data-target]")
       .forEach((el) => counterObserver.observe(el));
   </script>
+
   <!-- CHATBOT -->
   <button class="chat-toggle" onclick="toggleChat()" aria-label="Abrir chat">
     💬
