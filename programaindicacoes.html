@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Programa de Indicações - Ganhe US$ 20 por amiga</title>
   <meta name="description"
-    content="Indique amigas e ganhe US$ 20 por cada uma que bater a meta. Sem limite de indicações, pagamento via PIX no mesmo dia." />
+    content="Indique amigas e ganhe US$ 20 por cada uma que bater a meta. Sem limite de indicações, pagamento via PIX." />
 
   <!-- Open Graph / WhatsApp -->
   <meta property="og:type" content="website" />
@@ -214,7 +214,7 @@
 
     /* ─── SEÇÃO ─── */
     .sec {
-      padding: 52px 0 8px;
+      padding: 32px 0 8px;
     }
 
     .sec-tag {
@@ -231,7 +231,7 @@
       font-weight: 700;
       color: #1a1a1a;
       line-height: 1.25;
-      margin-bottom: 28px;
+      margin-bottom: 20px;
     }
 
     /* ─── STEPS ─── */
@@ -281,58 +281,10 @@
 
     }
 
-    /* ─── TICKER ─── */
-    .ticker-wrap {
-      background: #1e8449;
-      padding: 10px 0;
-      margin-top: 0;
-      overflow: hidden;
-      white-space: nowrap;
-    }
-
-    .ticker-track {
-      display: inline-flex;
-      animation: ticker 40s linear infinite;
-    }
-
-    .ticker-item {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 11px;
-      font-weight: 500;
-      color: rgba(255, 255, 255, 0.7);
-      padding-right: 32px;
-      letter-spacing: 0.3px;
-    }
-
-    .ticker-sep {
-      width: 3px;
-      height: 3px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.3);
-      flex-shrink: 0;
-    }
-
-    @keyframes ticker {
-      0% {
-        transform: translateX(0);
-      }
-
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .ticker-track {
-        animation: none;
-      }
-    }
 
     /* ─── CARDS ─── */
     .cards-wrap {
-      padding: 8px 0 52px;
+      padding: 8px 0 32px;
       display: flex;
       flex-direction: column;
       gap: 12px;
@@ -552,11 +504,11 @@
     .gap-block {
       height: 1px;
       background: #d4f0dc;
-      margin-top: 44px;
+      margin-top: 32px;
     }
 
     .calc-inner {
-      padding: 52px 0 52px;
+      padding: 32px 0 32px;
     }
 
     .calc-box {
@@ -760,7 +712,7 @@
 
     /* ─── FAQ ─── */
     .faq {
-      padding: 52px 0 8px;
+      padding: 32px 0 8px;
     }
 
     .faq-list {
@@ -816,7 +768,7 @@
     }
 
     .faq-a-inner {
-      padding: 0 20px 18px;
+      padding: 8px 20px 18px;
       font-size: 13px;
       color: #555;
       line-height: 1.7;
@@ -824,6 +776,105 @@
 
     .faq-item.active .faq-a {
       max-height: 500px;
+    }
+
+    /* ─── CTA FLUTUANTE ─── */
+    .floating-cta {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #fff;
+      border-top: 0px solid #d4f0dc;
+      padding: 12px 20px;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08);
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+
+    .floating-cta.visible {
+      display: flex;
+      transform: translateY(0);
+    }
+
+    .floating-cta-btn {
+      display: inline-block;
+      background: #27ae60;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 14px 32px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: background .2s, transform .15s;
+      width: 100%;
+      max-width: 320px;
+      text-align: center;
+    }
+
+    .floating-cta-btn:active {
+      transform: scale(0.97);
+      background: #1e8449;
+    }
+
+    @media (min-width: 768px) {
+      .floating-cta {
+        display: none !important;
+      }
+    }
+
+    /* ─── CTA FLUTUANTE ─── */
+    .floating-cta {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: transparent;
+      padding: 12px 20px 20px;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+      pointer-events: none;
+    }
+
+    .floating-cta.visible {
+      display: flex;
+      transform: translateY(0);
+    }
+
+    .floating-cta-btn {
+      display: inline-block;
+      background: #27ae60;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 14px 32px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: background .2s, transform .15s;
+      width: 100%;
+      max-width: 320px;
+      text-align: center;
+      box-shadow: 0 4px 16px rgba(39, 174, 96, 0.4);
+      pointer-events: auto;
+    }
+
+    .floating-cta-btn:active {
+      transform: scale(0.97);
+      background: #1e8449;
+    }
+
+    @media (min-width: 768px) {
+      .floating-cta {
+        display: none !important;
+      }
     }
   </style>
 </head>
@@ -856,22 +907,7 @@
     </div>
   </section>
 
-  <!-- TICKER -->
-  <div class="ticker-wrap">
-    <div class="ticker-track">
-      <span class="ticker-item">Sem teto de ganhos <span class="ticker-sep"></span></span>
-      <span class="ticker-item">US$ 20 por indicação <span class="ticker-sep"></span></span>
-      <span class="ticker-item">Sem limite de indicações <span class="ticker-sep"></span></span>
-      <span class="ticker-item">Receba via PIX no mesmo dia <span class="ticker-sep"></span></span>
-      <span class="ticker-item">Quanto mais indica, mais ganha <span class="ticker-sep"></span></span>
-      <!-- cópia para loop contínuo -->
-      <span class="ticker-item">Sem teto de ganhos <span class="ticker-sep"></span></span>
-      <span class="ticker-item">US$ 20 por indicação <span class="ticker-sep"></span></span>
-      <span class="ticker-item">Sem limite de indicações <span class="ticker-sep"></span></span>
-      <span class="ticker-item">Receba via PIX no mesmo dia <span class="ticker-sep"></span></span>
-      <span class="ticker-item">Quanto mais indica, mais ganha <span class="ticker-sep"></span></span>
-    </div>
-  </div>
+
 
   <!-- COMO FUNCIONA -->
   <div class="col">
@@ -898,16 +934,17 @@
         <div class="step">
           <div class="step-dot">03</div>
           <div>
-            <p class="step-name">Ela confirma no grupo</p>
-            <p class="step-desc">Sua amiga responde 5 perguntinhas no grupo. Acertando tudo, ela já começa na
-              segunda-feira.</p>
+            <p class="step-name">Ela responde o formulário de confirmação</p>
+            <p class="step-desc">Sua amiga responde 5 perguntinhas no formulário que iremos enviar. Acertando tudo, ela
+              já começa no mesmo dia.</p>
           </div>
         </div>
         <div class="step">
           <div class="step-dot">04</div>
           <div>
             <p class="step-name">Ela bate a meta e você recebe!</p>
-            <p class="step-desc">Assim que ela bater a meta da semana, você recebe via PIX no mesmo dia. Simples assim.
+            <p class="step-desc">Assim que ela bater a meta da semana, você recebe via PIX no mesmo dia que ela receber
+              o primeiro pagamento. Simples assim.
             </p>
           </div>
         </div>
@@ -943,6 +980,41 @@
             pagamento</p>
           <div class="calc-bonus-tag" id="bonus-tag">🎁 + R$ 100 de bônus especial se todas as 5 baterem a meta no mesmo
             mês!</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="gap-block"></div>
+
+  <!-- BÔNUS ESPECIAL -->
+  <div class="col">
+    <div class="sec">
+      <p class="sec-tag">Ganhe ainda mais</p>
+      <p class="sec-title">Bônus especial de R$ 100</p>
+    </div>
+    <div class="cards-wrap" style="padding-bottom: 8px;">
+      <div class="card card-gold">
+        <div class="card-top">
+          <div class="card-icon">🎁</div>
+          <div>
+            <p class="card-lbl">Bônus especial</p>
+            <p class="card-ttl">R$ 100 a mais a cada 5 amigas!</p>
+          </div>
+        </div>
+        <p class="card-body">Indicou 5 amigas no mesmo mês e <strong>todas as 5 bateram a meta</strong>? Você ganha
+          <strong>R$ 100 de bônus extra</strong>, além dos US$ 20 de cada uma!
+        </p>
+        <p class="card-body" style="margin-top:8px;">A cada grupo de 5 que entrar e bater meta no mesmo mês, você recebe
+          mais R$ 100. Sem limite!</p>
+        <div class="bonus-exemplo">
+          <strong>Exemplo prático:</strong> Você indicou 5 amigas em junho. As 5 entraram no app e bateram a meta em
+          junho. Você recebe os US$ 20 de cada uma <em>mais</em> R$ 100 de bônus = entrada turbinada! 🚀
+        </div>
+        <div class="aviso" style="margin-top:12px;">
+          <span>⚠️</span>
+          <span>Só vale para amigas que <strong>nunca tiveram conta no app antes</strong>. Tem que ser novata
+            mesmo!</span>
         </div>
       </div>
     </div>
@@ -1012,32 +1084,7 @@
         </div>
         <div class="aviso">
           <span>⚠️</span>
-          <span>O valor não é pago pelo app. A gente te chama no privado e paga via PIX.</span>
-        </div>
-      </div>
-
-      <!-- Bônus especial R$100 -->
-      <div class="card card-gold">
-        <div class="card-top">
-          <div class="card-icon">🎁</div>
-          <div>
-            <p class="card-lbl">Bônus especial</p>
-            <p class="card-ttl">R$ 100 a mais a cada 5 amigas!</p>
-          </div>
-        </div>
-        <p class="card-body">Indicou 5 amigas no mesmo mês e <strong>todas as 5 bateram a meta</strong>? Você ganha
-          <strong>R$ 100 de bônus extra</strong>, além dos US$ 20 de cada uma!
-        </p>
-        <p class="card-body" style="margin-top:8px;">A cada grupo de 5 que entrar e bater meta no mesmo mês, você recebe
-          mais R$ 100. Sem limite!</p>
-        <div class="bonus-exemplo">
-          <strong>Exemplo prático:</strong> Você indicou 5 amigas em junho. As 5 entraram no app e bateram a meta em
-          junho. Você recebe os US$ 20 de cada uma <em>mais</em> R$ 100 de bônus = entrada turbinada! 🚀
-        </div>
-        <div class="aviso" style="margin-top:12px;">
-          <span>⚠️</span>
-          <span>Só vale para amigas que <strong>nunca tiveram conta no app antes</strong>. Tem que ser novata
-            mesmo!</span>
+          <span>O valor não é pago pelo app. Nossa equipe te chama no privado do WhatsApp e paga via PIX.</span>
         </div>
       </div>
 
@@ -1054,7 +1101,7 @@
 
       <div class="faq-list">
 
-        <div class="faq-item">
+        <div class="faq-item active">
           <button class="faq-q" onclick="toggleFaq(this)">
             <span>E se minha amiga não bater a meta?</span>
             <span class="faq-icon">+</span>
@@ -1074,8 +1121,8 @@
           </button>
           <div class="faq-a">
             <div class="faq-a-inner">
-              O pagamento cai no mesmo dia que ela receber o primeiro pagamento dela. A gente te chama no privado e paga
-              via PIX.
+              O pagamento cai no mesmo dia que ela receber o primeiro pagamento dela. Nossa equipe te chama no privado
+              do WhatsApp e paga via PIX.
             </div>
           </div>
         </div>
@@ -1134,6 +1181,11 @@
     </div>
   </div>
 
+  <!-- CTA FLUTUANTE (mobile only) -->
+  <div class="floating-cta" id="floatingCta">
+    <a href="cronogramadasadms.html" class="floating-cta-btn">Quero indicar →</a>
+  </div>
+
   <script>
     let n = 5;
 
@@ -1177,6 +1229,26 @@
         item.classList.add('active');
       }
     }
+
+    // CTA flutuante - aparece após scroll
+    let lastScroll = 0;
+    const floatingCta = document.getElementById('floatingCta');
+    const footer = document.querySelector('.footer');
+
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      const footerTop = footer.offsetTop;
+      const windowBottom = scrollY + window.innerHeight;
+
+      // Mostra CTA se scrollou mais de 300px e não chegou no footer
+      if (scrollY > 300 && windowBottom < footerTop - 100) {
+        floatingCta.classList.add('visible');
+      } else {
+        floatingCta.classList.remove('visible');
+      }
+
+      lastScroll = scrollY;
+    });
   </script>
 
 </body>
