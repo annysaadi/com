@@ -285,7 +285,7 @@
     .ticker-wrap {
       background: #1e8449;
       padding: 10px 0;
-      margin-top: 44px;
+      margin-top: 0;
       overflow: hidden;
       white-space: nowrap;
     }
@@ -552,6 +552,7 @@
     .gap-block {
       height: 1px;
       background: #d4f0dc;
+      margin-top: 44px;
     }
 
     .calc-inner {
@@ -855,6 +856,23 @@
     </div>
   </section>
 
+  <!-- TICKER -->
+  <div class="ticker-wrap">
+    <div class="ticker-track">
+      <span class="ticker-item">Sem teto de ganhos <span class="ticker-sep"></span></span>
+      <span class="ticker-item">US$ 20 por indicação <span class="ticker-sep"></span></span>
+      <span class="ticker-item">Sem limite de indicações <span class="ticker-sep"></span></span>
+      <span class="ticker-item">Receba via PIX no mesmo dia <span class="ticker-sep"></span></span>
+      <span class="ticker-item">Quanto mais indica, mais ganha <span class="ticker-sep"></span></span>
+      <!-- cópia para loop contínuo -->
+      <span class="ticker-item">Sem teto de ganhos <span class="ticker-sep"></span></span>
+      <span class="ticker-item">US$ 20 por indicação <span class="ticker-sep"></span></span>
+      <span class="ticker-item">Sem limite de indicações <span class="ticker-sep"></span></span>
+      <span class="ticker-item">Receba via PIX no mesmo dia <span class="ticker-sep"></span></span>
+      <span class="ticker-item">Quanto mais indica, mais ganha <span class="ticker-sep"></span></span>
+    </div>
+  </div>
+
   <!-- COMO FUNCIONA -->
   <div class="col">
     <div class="sec">
@@ -897,22 +915,40 @@
     </div>
   </div>
 
-  <!-- TICKER -->
-  <div class="ticker-wrap">
-    <div class="ticker-track">
-      <span class="ticker-item">Sem teto de ganhos <span class="ticker-sep"></span></span>
-      <span class="ticker-item">US$ 20 por indicação <span class="ticker-sep"></span></span>
-      <span class="ticker-item">Sem limite de indicações <span class="ticker-sep"></span></span>
-      <span class="ticker-item">Receba via PIX no mesmo dia <span class="ticker-sep"></span></span>
-      <span class="ticker-item">Quanto mais indica, mais ganha <span class="ticker-sep"></span></span>
-      <!-- cópia para loop contínuo -->
-      <span class="ticker-item">Sem teto de ganhos <span class="ticker-sep"></span></span>
-      <span class="ticker-item">US$ 20 por indicação <span class="ticker-sep"></span></span>
-      <span class="ticker-item">Sem limite de indicações <span class="ticker-sep"></span></span>
-      <span class="ticker-item">Receba via PIX no mesmo dia <span class="ticker-sep"></span></span>
-      <span class="ticker-item">Quanto mais indica, mais ganha <span class="ticker-sep"></span></span>
+  <!-- CALCULADORA -->
+  <div class="col">
+    <div class="calc-inner">
+      <p class="sec-tag">Simulador</p>
+      <p class="sec-title" style="margin-bottom:20px;">Quanto você pode ganhar?</p>
+      <div class="calc-box">
+        <p class="calc-hdr">Mexa no número abaixo</p>
+        <p class="calc-q">Quantas amigas você vai indicar?</p>
+        <div class="calc-ctrl">
+          <button class="cbtn" onclick="calcular(-1)">−</button>
+          <span class="cnum" id="qty">5</span>
+          <button class="cbtn" onclick="calcular(1)">+</button>
+        </div>
+        <div class="calc-result">
+          <div class="calc-row-vals">
+            <div class="calc-bloco">
+              <p class="calc-rtag">Em dólar</p>
+              <p class="calc-rval" id="total-usd">US$ 100</p>
+            </div>
+            <div class="calc-bloco">
+              <p class="calc-rtag">Estimativa em reais</p>
+              <p class="calc-rval-brl" id="total-brl">R$ 450 – R$ 500</p>
+            </div>
+          </div>
+          <p class="calc-rnote" id="note">com 5 indicações. o valor em reais pode variar conforme o dólar no dia do
+            pagamento</p>
+          <div class="calc-bonus-tag" id="bonus-tag">🎁 + R$ 100 de bônus especial se todas as 5 baterem a meta no mesmo
+            mês!</div>
+        </div>
+      </div>
     </div>
   </div>
+
+  <div class="gap-block"></div>
 
   <!-- DETALHES DA INDICAÇÃO -->
   <div class="col">
@@ -1089,40 +1125,7 @@
 
   <div class="gap-block"></div>
 
-  <!-- CALCULADORA -->
-  <div class="col">
-    <div class="calc-inner">
-      <p class="sec-tag">Simulador</p>
-      <p class="sec-title" style="margin-bottom:20px;">Quanto você pode ganhar?</p>
-      <div class="calc-box">
-        <p class="calc-hdr">Mexa no número abaixo</p>
-        <p class="calc-q">Quantas amigas você vai indicar?</p>
-        <div class="calc-ctrl">
-          <button class="cbtn" onclick="calcular(-1)">−</button>
-          <span class="cnum" id="qty">5</span>
-          <button class="cbtn" onclick="calcular(1)">+</button>
-        </div>
-        <div class="calc-result">
-          <div class="calc-row-vals">
-            <div class="calc-bloco">
-              <p class="calc-rtag">Em dólar</p>
-              <p class="calc-rval" id="total-usd">US$ 100</p>
-            </div>
-            <div class="calc-bloco">
-              <p class="calc-rtag">Estimativa em reais</p>
-              <p class="calc-rval-brl" id="total-brl">R$ 450 – R$ 500</p>
-            </div>
-          </div>
-          <p class="calc-rnote" id="note">com 5 indicações • o valor em reais pode variar conforme o dólar no dia do
-            pagamento</p>
-          <div class="calc-bonus-tag" id="bonus-tag">🎁 + R$ 100 de bônus especial se todas as 5 baterem a meta no mesmo
-            mês!</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- FOOTER -->
+  <!-- FAQ -->
   <div class="footer">
     <div class="col">
       <h2>Pronta pra começar?<br><span>Começa a indicar agora!</span></h2>
