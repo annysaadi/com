@@ -28,7 +28,6 @@
       color: #1a1a1a;
     }
 
-    /* coluna central */
     .col {
       width: 100%;
       max-width: 560px;
@@ -74,11 +73,11 @@
     }
 
     .hero h1 {
-      font-size: clamp(30px, 6vw, 44px);
+      font-size: clamp(28px, 6vw, 42px);
       font-weight: 800;
       color: #fff;
       line-height: 1.15;
-      margin-bottom: 8px;
+      margin-bottom: 20px;
       position: relative;
     }
 
@@ -86,22 +85,48 @@
       color: #6ee89a;
     }
 
-    .hero-valor {
-      font-size: clamp(80px, 18vw, 120px);
-      font-weight: 800;
-      color: #6ee89a;
-      line-height: 1;
-      letter-spacing: -3px;
-      margin: 12px 0 4px;
+    /* bloco de valor */
+    .hero-valores {
       position: relative;
+      margin-bottom: 22px;
     }
 
-    .hero-micro {
-      font-size: 12px;
+    .hero-valor {
+      font-size: clamp(72px, 16vw, 108px);
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1;
+      letter-spacing: -3px;
+    }
+
+    .hero-valor-sub {
+      font-size: 13px;
       font-weight: 500;
       color: rgba(255, 255, 255, 0.4);
-      margin-bottom: 22px;
-      position: relative;
+      margin-top: 4px;
+    }
+
+    .hero-reais {
+      display: inline-flex;
+      flex-direction: column;
+      gap: 4px;
+      background: rgba(110, 232, 154, 0.12);
+      border: 1px solid rgba(110, 232, 154, 0.2);
+      border-radius: 10px;
+      padding: 10px 14px;
+      margin-top: 14px;
+    }
+
+    .hero-reais-val {
+      font-size: 18px;
+      font-weight: 800;
+      color: #6ee89a;
+    }
+
+    .hero-reais-txt {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.55);
+      line-height: 1.4;
     }
 
     .hero-desc {
@@ -110,12 +135,13 @@
       line-height: 1.7;
       max-width: 380px;
       position: relative;
+      margin-top: 18px;
     }
 
     .hero-pills {
       display: flex;
       gap: 8px;
-      margin-top: 24px;
+      margin-top: 20px;
       flex-wrap: wrap;
       position: relative;
     }
@@ -130,7 +156,7 @@
       border-radius: 100px;
     }
 
-    /* ─── SEÇÃO GENÉRICA ─── */
+    /* ─── SEÇÃO ─── */
     .sec {
       padding: 52px 0 8px;
     }
@@ -145,10 +171,10 @@
     }
 
     .sec-title {
-      font-size: clamp(20px, 4vw, 28px);
+      font-size: clamp(20px, 4vw, 26px);
       font-weight: 700;
       color: #1a1a1a;
-      line-height: 1.2;
+      line-height: 1.25;
       margin-bottom: 28px;
     }
 
@@ -189,20 +215,20 @@
       font-size: 15px;
       font-weight: 700;
       color: #1a1a1a;
-      margin-bottom: 3px;
+      margin-bottom: 4px;
     }
 
     .step-desc {
       font-size: 13px;
       color: #555;
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
     /* ─── BANDA VERDE ─── */
     .band {
       background: #27ae60;
       padding: 52px 0;
-      margin-top: 52px;
+      margin-top: 44px;
       text-align: center;
     }
 
@@ -216,18 +242,16 @@
     }
 
     .band h2 {
-      font-size: clamp(22px, 5vw, 34px);
+      font-size: clamp(20px, 5vw, 30px);
       font-weight: 800;
       color: #fff;
-      line-height: 1.2;
+      line-height: 1.25;
       margin-bottom: 10px;
     }
 
     .band h2 em {
       font-style: normal;
-      background: rgba(255, 255, 255, 0.15);
-      border-radius: 6px;
-      padding: 1px 8px;
+      color: #fff;
     }
 
     .band p {
@@ -256,6 +280,11 @@
       border-color: transparent;
     }
 
+    .card-gold {
+      background: #fffbf0;
+      border: 1.5px solid #f5a623;
+    }
+
     .card-top {
       display: flex;
       align-items: flex-start;
@@ -279,6 +308,10 @@
       background: rgba(255, 255, 255, 0.08);
     }
 
+    .card-gold .card-icon {
+      background: rgba(245, 166, 35, 0.12);
+    }
+
     .card-lbl {
       font-size: 10px;
       font-weight: 700;
@@ -292,6 +325,10 @@
       color: #6ee89a;
     }
 
+    .card-gold .card-lbl {
+      color: #c47d0e;
+    }
+
     .card-ttl {
       font-size: 15px;
       font-weight: 700;
@@ -302,14 +339,18 @@
       color: #fff;
     }
 
+    .card-gold .card-ttl {
+      color: #1a1a1a;
+    }
+
     .card-body {
       font-size: 13px;
       color: #555;
-      line-height: 1.65;
+      line-height: 1.7;
     }
 
     .card-dark .card-body {
-      color: rgba(255, 255, 255, 0.6);
+      color: rgba(255, 255, 255, 0.65);
     }
 
     /* dados */
@@ -353,8 +394,8 @@
       align-items: flex-start;
       gap: 10px;
       font-size: 13px;
-      color: rgba(255, 255, 255, 0.7);
-      line-height: 1.55;
+      color: rgba(255, 255, 255, 0.72);
+      line-height: 1.6;
     }
 
     .nb {
@@ -365,11 +406,11 @@
       border-radius: 100px;
       padding: 2px 9px;
       flex-shrink: 0;
-      margin-top: 1px;
+      margin-top: 2px;
     }
 
-    /* aviso pix */
-    .pix-aviso {
+    /* aviso */
+    .aviso {
       background: rgba(245, 166, 35, 0.1);
       border: 1px solid rgba(245, 166, 35, 0.28);
       border-radius: 10px;
@@ -380,22 +421,64 @@
       margin-top: 14px;
     }
 
-    .pix-aviso span:first-child {
+    .aviso span:first-child {
       font-size: 15px;
       flex-shrink: 0;
     }
 
-    .pix-aviso span:last-child {
+    .aviso span:last-child {
       font-size: 12px;
       font-weight: 600;
-      color: #f5a623;
+      color: #b8730a;
       line-height: 1.55;
     }
 
+    /* exemplo bônus */
+    .bonus-exemplo {
+      background: rgba(39, 174, 96, 0.07);
+      border: 1px solid #d4f0dc;
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-top: 14px;
+      font-size: 12px;
+      color: #1e8449;
+      line-height: 1.6;
+    }
+
+    .bonus-exemplo strong {
+      font-weight: 700;
+    }
+
+    /* regras lista */
+    .regras {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .regra {
+      display: flex;
+      gap: 9px;
+      align-items: flex-start;
+      font-size: 13px;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .regra-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #27ae60;
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+
     /* ─── CALCULADORA ─── */
-    .calc-outer {
-      background: #fff;
-      padding: 0;
+    .gap-block {
+      height: 1px;
+      background: #d4f0dc;
     }
 
     .calc-inner {
@@ -480,13 +563,22 @@
       z-index: 1;
     }
 
+    .calc-row-vals {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 8px;
+    }
+
+    .calc-bloco {}
+
     .calc-rtag {
       font-size: 10px;
       font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
       color: #888;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
     }
 
     .calc-rval {
@@ -496,16 +588,31 @@
       line-height: 1;
     }
 
-    .calc-rnote {
-      font-size: 12px;
-      color: #888;
-      margin-top: 6px;
+    .calc-rval-brl {
+      font-size: 32px;
+      font-weight: 700;
+      color: #1e8449;
+      line-height: 1;
     }
 
-    /* ─── DIVISORES ─── */
-    .gap-block {
-      height: 1px;
-      background: #d4f0dc;
+    .calc-rnote {
+      font-size: 11px;
+      color: #888;
+      margin-top: 6px;
+      line-height: 1.5;
+    }
+
+    .calc-bonus-tag {
+      display: none;
+      background: #fffbf0;
+      border: 1px solid #f5a623;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #b8730a;
+      margin-top: 14px;
+      line-height: 1.5;
     }
 
     /* ─── FOOTER ─── */
@@ -529,7 +636,7 @@
     }
 
     .footer h2 {
-      font-size: clamp(26px, 5vw, 40px);
+      font-size: clamp(24px, 5vw, 38px);
       font-weight: 800;
       color: #fff;
       line-height: 1.2;
@@ -566,7 +673,6 @@
       transform: translateY(-2px);
     }
 
-    /* ─── RESPONSIVE ─── */
     @media (max-width: 480px) {
       .dados {
         grid-template-columns: 1fr;
@@ -581,13 +687,23 @@
   <section class="hero">
     <div class="col">
       <p class="hero-chip">✦ Programa de Indicações</p>
-      <h1>Indique uma amiga.<br><span>Ganhe de verdade.</span></h1>
-      <div class="hero-valor">US$ 20</div>
-      <p class="hero-micro">por indicação bem-sucedida</p>
-      <p class="hero-desc">Cada amiga que bater a meta pela primeira vez te rende US$ 20 — sem limite de indicações.</p>
+      <h1>Indica uma amiga.<br><span>Recebe dinheiro de verdade.</span></h1>
+
+      <div class="hero-valores">
+        <div class="hero-valor">US$ 20</div>
+        <p class="hero-valor-sub">por cada amiga que entrar e bater a meta</p>
+        <div class="hero-reais">
+          <span class="hero-reais-val">em torno de R$ 90 a R$ 100</span>
+          <span class="hero-reais-txt">estimativa em reais. varia conforme o dólar no dia do pagamento</span>
+        </div>
+      </div>
+
+      <p class="hero-desc">Cada amiga que você indicar e bater a meta pela primeira vez, você recebe. Não tem limite.
+        Quanto mais você indica, mais você ganha.</p>
+
       <div class="hero-pills">
-        <span class="hpill">Sem limite</span>
-        <span class="hpill">Via PIX</span>
+        <span class="hpill">Sem limite de indicações</span>
+        <span class="hpill">Recebe via PIX</span>
         <span class="hpill">100% online</span>
       </div>
     </div>
@@ -597,34 +713,38 @@
   <div class="col">
     <div class="sec">
       <p class="sec-tag">Passo a passo</p>
-      <p class="sec-title">Como funciona</p>
+      <p class="sec-title">Como funciona?</p>
       <div class="steps">
         <div class="step">
           <div class="step-dot">01</div>
           <div>
-            <p class="step-name">Prepare o perfil</p>
-            <p class="step-desc">Ajude sua amiga a preencher fotos e vídeo conforme as regras do app.</p>
+            <p class="step-name">Você ajuda sua amiga a criar o perfil</p>
+            <p class="step-desc">Ajuda ela a preencher o perfil no app: fotos e vídeo, tudo certinho conforme as regras.
+            </p>
           </div>
         </div>
         <div class="step">
           <div class="step-dot">02</div>
           <div>
-            <p class="step-name">Envie os dados</p>
-            <p class="step-desc">Manda os prints do perfil e as informações necessárias para o registro.</p>
+            <p class="step-name">Manda os dados pra gente</p>
+            <p class="step-desc">Envia os prints do perfil dela e as informações necessárias para registrar a indicação.
+            </p>
           </div>
         </div>
         <div class="step">
           <div class="step-dot">03</div>
           <div>
-            <p class="step-name">Confirmação no grupo</p>
-            <p class="step-desc">Ela responde 5 perguntas. Acertando tudo, começa na segunda-feira.</p>
+            <p class="step-name">Ela confirma no grupo</p>
+            <p class="step-desc">Sua amiga responde 5 perguntinhas no grupo. Acertando tudo, ela já começa na
+              segunda-feira.</p>
           </div>
         </div>
         <div class="step">
           <div class="step-dot">04</div>
           <div>
-            <p class="step-name">Você recebe US$ 20</p>
-            <p class="step-desc">Assim que ela bater a meta da semana, pago via PIX no mesmo dia.</p>
+            <p class="step-name">Ela bate a meta e você recebe!</p>
+            <p class="step-desc">Assim que ela bater a meta da semana, você recebe via PIX no mesmo dia. Simples assim.
+            </p>
           </div>
         </div>
       </div>
@@ -635,16 +755,16 @@
   <div class="band">
     <div class="col">
       <p class="band-micro">Sem teto de ganhos</p>
-      <h2>1 ou 50 indicações —<br><em>cada uma vale US$ 20.</em></h2>
-      <p>Sem limite. Quanto mais você indica, mais você ganha.</p>
+      <h2>Quanto mais você indica,<br>mais você ganha. Sem limite!</h2>
+      <p>Cada amiga que bater a meta vira US$ 20 no seu PIX.</p>
     </div>
   </div>
 
-  <!-- DETALHES -->
+  <!-- DETALHES DA INDICAÇÃO -->
   <div class="col">
     <div class="sec">
       <p class="sec-tag">Detalhes</p>
-      <p class="sec-title">Como enviar sua indicação</p>
+      <p class="sec-title">O que precisa enviar</p>
     </div>
     <div class="cards-wrap">
 
@@ -653,50 +773,81 @@
         <div class="card-top">
           <div class="card-icon">📋</div>
           <div>
-            <p class="card-lbl">Envie junto</p>
-            <p class="card-ttl">Dados necessários</p>
+            <p class="card-lbl">Envie junto com os prints</p>
+            <p class="card-ttl">Informações necessárias</p>
           </div>
         </div>
         <div class="dados">
           <div class="dado"><span class="dado-dot"></span>ID da indicada</div>
-          <div class="dado"><span class="dado-dot"></span>Nome da indicada</div>
+          <div class="dado"><span class="dado-dot"></span>Nome dela</div>
           <div class="dado"><span class="dado-dot"></span>Contato dela</div>
-          <div class="dado"><span class="dado-dot"></span>ID de quem indica</div>
-          <div class="dado" style="grid-column:1/-1"><span class="dado-dot"></span>Contato de quem indica</div>
+          <div class="dado"><span class="dado-dot"></span>Seu ID</div>
+          <div class="dado" style="grid-column:1/-1"><span class="dado-dot"></span>Seu contato</div>
         </div>
-        <p class="card-body">Envie também os prints do perfil completo: parte do ID + fotos &amp; vídeo.</p>
+        <p class="card-body">Manda também os prints do perfil dela: parte do ID + parte das fotos e vídeo.</p>
       </div>
 
-      <!-- Confirmação dark -->
+      <!-- Confirmação -->
       <div class="card card-dark">
         <div class="card-top">
           <div class="card-icon">✅</div>
           <div>
-            <p class="card-lbl">Processo</p>
-            <p class="card-ttl">Confirmação da indicada</p>
+            <p class="card-lbl">Próximo passo</p>
+            <p class="card-ttl">Confirmação da sua amiga</p>
           </div>
         </div>
         <div class="conf-steps">
           <div class="conf-step"><span class="nb">1</span>Ela responde um formulário com 5 perguntas no grupo</div>
-          <div class="conf-step"><span class="nb">2</span>Eu mando um link com as respostas para ela ler</div>
-          <div class="conf-step"><span class="nb">3</span>Acertando tudo, ela começa na segunda-feira</div>
+          <div class="conf-step"><span class="nb">2</span>A gente manda um link com as respostas pra ela ler antes</div>
+          <div class="conf-step"><span class="nb">3</span>Acertando as 5, ela já começa na segunda-feira!</div>
         </div>
       </div>
 
-      <!-- Bônus -->
+      <!-- Bônus pagamento -->
       <div class="card">
         <div class="card-top">
-          <div class="card-icon">💰</div>
+          <div class="card-icon">💸</div>
           <div>
-            <p class="card-lbl">Bônus</p>
-            <p class="card-ttl">Quando você recebe</p>
+            <p class="card-lbl">Importante saber</p>
+            <p class="card-ttl">Como você recebe</p>
           </div>
         </div>
-        <p class="card-body">Você ganha se ela bater a meta da semana. O pagamento sai no mesmo dia que ela receber o
-          primeiro pagamento dela.</p>
-        <div class="pix-aviso">
+        <div class="regras">
+          <div class="regra"><span class="regra-dot"></span>Você só recebe se ela bater a meta da semana. Só indicar não
+            é suficiente</div>
+          <div class="regra"><span class="regra-dot"></span>O pagamento cai no mesmo dia que ela receber o primeiro
+            pagamento dela</div>
+          <div class="regra"><span class="regra-dot"></span>Só vale para amigas que nunca tiveram conta no app antes.
+            Tem que ser novata mesmo!</div>
+        </div>
+        <div class="aviso">
           <span>⚠️</span>
-          <span>O bônus não é pago pelo app — eu te chamo no privado e pago via PIX.</span>
+          <span>O valor não é pago pelo app. A gente te chama no privado e paga via PIX.</span>
+        </div>
+      </div>
+
+      <!-- Bônus especial R$100 -->
+      <div class="card card-gold">
+        <div class="card-top">
+          <div class="card-icon">🎁</div>
+          <div>
+            <p class="card-lbl">Bônus especial</p>
+            <p class="card-ttl">R$ 100 a mais a cada 5 amigas!</p>
+          </div>
+        </div>
+        <p class="card-body">Indicou 5 amigas no mesmo mês e <strong>todas as 5 bateram a meta</strong>? Você ganha
+          <strong>R$ 100 de bônus extra</strong>, além dos US$ 20 de cada uma!
+        </p>
+        <p class="card-body" style="margin-top:8px;">A cada grupo de 5 que entrar e bater meta no mesmo mês, você recebe
+          mais R$ 100. Sem limite!</p>
+        <div class="bonus-exemplo">
+          <strong>Exemplo prático:</strong> Você indicou 5 amigas em junho. As 5 entraram no app e bateram a meta em
+          junho. Você recebe os US$ 20 de cada uma <em>mais</em> R$ 100 de bônus = entrada turbinada! 🚀
+        </div>
+        <div class="aviso" style="margin-top:12px;">
+          <span>⚠️</span>
+          <span>Só vale para amigas que <strong>nunca tiveram conta no app antes</strong>. Tem que ser novata
+            mesmo!</span>
         </div>
       </div>
 
@@ -709,19 +860,30 @@
   <div class="col">
     <div class="calc-inner">
       <p class="sec-tag">Simulador</p>
-      <p class="sec-title" style="margin-bottom:20px;">Calcule seus ganhos</p>
+      <p class="sec-title" style="margin-bottom:20px;">Quanto você pode ganhar?</p>
       <div class="calc-box">
-        <p class="calc-hdr">Indicações</p>
+        <p class="calc-hdr">Mexa no número abaixo</p>
         <p class="calc-q">Quantas amigas você vai indicar?</p>
         <div class="calc-ctrl">
-          <button class="cbtn" onclick="calc(-1)">−</button>
+          <button class="cbtn" onclick="calcular(-1)">−</button>
           <span class="cnum" id="qty">5</span>
-          <button class="cbtn" onclick="calc(1)">+</button>
+          <button class="cbtn" onclick="calcular(1)">+</button>
         </div>
         <div class="calc-result">
-          <p class="calc-rtag">Você pode ganhar</p>
-          <p class="calc-rval" id="total">US$ 100</p>
-          <p class="calc-rnote" id="note">com 5 indicações bem-sucedidas</p>
+          <div class="calc-row-vals">
+            <div class="calc-bloco">
+              <p class="calc-rtag">Em dólar</p>
+              <p class="calc-rval" id="total-usd">US$ 100</p>
+            </div>
+            <div class="calc-bloco">
+              <p class="calc-rtag">Estimativa em reais</p>
+              <p class="calc-rval-brl" id="total-brl">R$ 450 – R$ 500</p>
+            </div>
+          </div>
+          <p class="calc-rnote" id="note">com 5 indicações • o valor em reais pode variar conforme o dólar no dia do
+            pagamento</p>
+          <div class="calc-bonus-tag" id="bonus-tag">🎁 + R$ 100 de bônus especial se todas as 5 baterem a meta no mesmo
+            mês!</div>
         </div>
       </div>
     </div>
@@ -730,19 +892,41 @@
   <!-- FOOTER -->
   <div class="footer">
     <div class="col">
-      <h2>Pronta para<br><span>indicar agora?</span></h2>
-      <p class="footer-sub">Sem limite. Sem complicação. Só ganhos.</p>
+      <h2>Tá esperando o quê?<br><span>Começa a indicar agora!</span></h2>
+      <p class="footer-sub">Sem complicação. Sem limite. Só ganhos.</p>
       <a href="#" class="footer-btn">Quero indicar →</a>
     </div>
   </div>
 
   <script>
     let n = 5;
-    function calc(d) {
+
+    function calcular(d) {
       n = Math.max(1, n + d);
+      const usd = n * 20;
+      const brlMin = n * 90;
+      const brlMax = n * 100;
+      const grupos = Math.floor(n / 5);
+      const bonusExtra = grupos * 100;
+
       document.getElementById('qty').textContent = n;
-      document.getElementById('total').textContent = 'US$ ' + (n * 20).toLocaleString('pt-BR');
-      document.getElementById('note').textContent = 'com ' + n + ' indicaç' + (n === 1 ? 'ão bem-sucedida' : 'ões bem-sucedidas');
+      document.getElementById('total-usd').textContent = 'US$ ' + usd.toLocaleString('pt-BR');
+      document.getElementById('total-brl').textContent = 'R$ ' + brlMin.toLocaleString('pt-BR') + ' – R$ ' + brlMax.toLocaleString('pt-BR');
+
+      let nota = 'com ' + n + ' indicaç' + (n === 1 ? 'ão' : 'ões') + ' • o valor em reais pode variar conforme o dólar no dia do pagamento';
+      document.getElementById('note').textContent = nota;
+
+      const bonusEl = document.getElementById('bonus-tag');
+      if (n >= 5) {
+        bonusEl.style.display = 'block';
+        if (bonusExtra > 0) {
+          bonusEl.innerHTML = '🎁 Se todas as ' + n + ' baterem a meta no mesmo mês: <strong>+ R$ ' + bonusExtra.toLocaleString('pt-BR') + ' de bônus</strong> (R$ 100 a cada grupo de 5)';
+        } else {
+          bonusEl.innerHTML = '🎁 + R$ 100 de bônus se todas as 5 baterem a meta no mesmo mês!';
+        }
+      } else {
+        bonusEl.style.display = 'none';
+      }
     }
   </script>
 
