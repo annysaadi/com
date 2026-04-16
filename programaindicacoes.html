@@ -4,7 +4,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Programa de Indicações</title>
+  <title>Programa de Indicações - Ganhe US$ 20 por amiga</title>
+  <meta name="description"
+    content="Indique amigas e ganhe US$ 20 por cada uma que bater a meta. Sem limite de indicações, pagamento via PIX no mesmo dia." />
+
+  <!-- Open Graph / WhatsApp -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Programa de Indicações - Ganhe US$ 20 por amiga" />
+  <meta property="og:description"
+    content="Indique amigas e ganhe US$ 20 por cada uma que bater a meta. Sem limite de indicações!" />
+  <meta property="og:image" content="https://trabalhecomocelular.com/og-indicacoes.png" />
+  <meta property="og:url" content="https://trabalhecomocelular.com/programaindicacoes.html" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
@@ -267,42 +278,7 @@
       font-size: 13px;
       color: #555;
       line-height: 1.65;
-    }
 
-    /* ─── BANDA VERDE ─── */
-    .band {
-      background: #27ae60;
-      padding: 52px 0;
-      margin-top: 44px;
-      text-align: center;
-    }
-
-    .band-micro {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.5);
-      margin-bottom: 12px;
-    }
-
-    .band h2 {
-      font-size: clamp(20px, 5vw, 30px);
-      font-weight: 800;
-      color: #fff;
-      line-height: 1.25;
-      margin-bottom: 10px;
-    }
-
-    .band h2 em {
-      font-style: normal;
-      color: #fff;
-    }
-
-    .band p {
-      font-size: 14px;
-      color: rgba(255, 255, 255, 0.65);
-      line-height: 1.65;
     }
 
     /* ─── TICKER ─── */
@@ -345,6 +321,12 @@
 
       100% {
         transform: translateX(-50%);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .ticker-track {
+        animation: none;
       }
     }
 
@@ -632,11 +614,16 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: background .15s;
+      transition: all .15s;
     }
 
     .cbtn:hover {
       background: #d4f0dc;
+    }
+
+    .cbtn:active {
+      transform: scale(0.92);
+      background: #c8ebd4;
     }
 
     .cnum {
@@ -769,6 +756,74 @@
         grid-template-columns: 1fr;
       }
     }
+
+    /* ─── FAQ ─── */
+    .faq {
+      padding: 52px 0 8px;
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .faq-item {
+      background: #fff;
+      border: 1px solid #d4f0dc;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .faq-q {
+      width: 100%;
+      text-align: left;
+      background: none;
+      border: none;
+      padding: 18px 20px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: #1a1a1a;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      transition: background .15s;
+    }
+
+    .faq-q:hover {
+      background: #f0faf2;
+    }
+
+    .faq-icon {
+      font-size: 18px;
+      color: #27ae60;
+      transition: transform .2s;
+      flex-shrink: 0;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .3s ease;
+    }
+
+    .faq-a-inner {
+      padding: 0 20px 18px;
+      font-size: 13px;
+      color: #555;
+      line-height: 1.7;
+    }
+
+    .faq-item.active .faq-a {
+      max-height: 500px;
+    }
   </style>
 </head>
 
@@ -846,18 +901,16 @@
   <div class="ticker-wrap">
     <div class="ticker-track">
       <span class="ticker-item">Sem teto de ganhos <span class="ticker-sep"></span></span>
-      <span class="ticker-item">Quanto mais você indica, mais você ganha <span class="ticker-sep"></span></span>
-      <span class="ticker-item">Cada amiga que bater a meta vira US$ 20 no seu PIX <span
-          class="ticker-sep"></span></span>
+      <span class="ticker-item">US$ 20 por indicação <span class="ticker-sep"></span></span>
       <span class="ticker-item">Sem limite de indicações <span class="ticker-sep"></span></span>
       <span class="ticker-item">Receba via PIX no mesmo dia <span class="ticker-sep"></span></span>
+      <span class="ticker-item">Quanto mais indica, mais ganha <span class="ticker-sep"></span></span>
       <!-- cópia para loop contínuo -->
       <span class="ticker-item">Sem teto de ganhos <span class="ticker-sep"></span></span>
-      <span class="ticker-item">Quanto mais você indica, mais você ganha <span class="ticker-sep"></span></span>
-      <span class="ticker-item">Cada amiga que bater a meta vira US$ 20 no seu PIX <span
-          class="ticker-sep"></span></span>
+      <span class="ticker-item">US$ 20 por indicação <span class="ticker-sep"></span></span>
       <span class="ticker-item">Sem limite de indicações <span class="ticker-sep"></span></span>
       <span class="ticker-item">Receba via PIX no mesmo dia <span class="ticker-sep"></span></span>
+      <span class="ticker-item">Quanto mais indica, mais ganha <span class="ticker-sep"></span></span>
     </div>
   </div>
 
@@ -957,6 +1010,85 @@
 
   <div class="gap-block"></div>
 
+  <!-- FAQ -->
+  <div class="col">
+    <div class="faq">
+      <p class="sec-tag">Dúvidas frequentes</p>
+      <p class="sec-title" style="margin-bottom:20px;">Perguntas comuns</p>
+
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>E se minha amiga não bater a meta?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              Você só recebe se ela bater a meta da semana. Só indicar não é suficiente. O pagamento acontece quando ela
+              receber o primeiro pagamento dela.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>Quanto tempo demora o pagamento?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              O pagamento cai no mesmo dia que ela receber o primeiro pagamento dela. A gente te chama no privado e paga
+              via PIX.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>Posso indicar quem já teve conta no app?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              Não. Só vale para amigas que nunca tiveram conta no app antes. Tem que ser novata mesmo!
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>Tem limite de quantas amigas posso indicar?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              Não tem limite! Quanto mais você indica, mais você ganha. Cada amiga que bater a meta vira US$ 20 no seu
+              PIX.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>Como funciona o bônus de R$ 100?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              Se você indicar 5 amigas no mesmo mês e todas as 5 baterem a meta naquele mês, você ganha R$ 100 de bônus
+              extra, além dos US$ 20 de cada uma. A cada grupo de 5 que entrar e bater meta no mesmo mês, você recebe
+              mais R$ 100!
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="gap-block"></div>
+
   <!-- CALCULADORA -->
   <div class="col">
     <div class="calc-inner">
@@ -993,7 +1125,7 @@
   <!-- FOOTER -->
   <div class="footer">
     <div class="col">
-      <h2>Tá esperando o quê?<br><span>Começa a indicar agora!</span></h2>
+      <h2>Pronta pra começar?<br><span>Começa a indicar agora!</span></h2>
       <p class="footer-sub">Sem complicação. Sem limite. Só ganhos.</p>
       <a href="cronogramadasadms.html" class="footer-btn">Quero indicar →</a>
     </div>
@@ -1014,7 +1146,7 @@
       document.getElementById('total-usd').textContent = 'US$ ' + usd.toLocaleString('pt-BR');
       document.getElementById('total-brl').textContent = 'R$ ' + brlMin.toLocaleString('pt-BR') + ' – R$ ' + brlMax.toLocaleString('pt-BR');
 
-      let nota = 'com ' + n + ' indicaç' + (n === 1 ? 'ão' : 'ões') + ' • o valor em reais pode variar conforme o dólar no dia do pagamento';
+      let nota = 'com ' + n + ' indicaç' + (n === 1 ? 'ão' : 'ões') + '. o valor em reais pode variar conforme o dólar no dia do pagamento';
       document.getElementById('note').textContent = nota;
 
       const bonusEl = document.getElementById('bonus-tag');
@@ -1027,6 +1159,19 @@
         }
       } else {
         bonusEl.style.display = 'none';
+      }
+    }
+
+    function toggleFaq(btn) {
+      const item = btn.parentElement;
+      const wasActive = item.classList.contains('active');
+
+      // Fecha todos
+      document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('active'));
+
+      // Abre o clicado se não estava aberto
+      if (!wasActive) {
+        item.classList.add('active');
       }
     }
   </script>
