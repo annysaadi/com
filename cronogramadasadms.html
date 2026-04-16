@@ -4,7 +4,25 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cronograma das Administradoras</title>
+    <meta name="description"
+        content="Veja os horários de atendimento das administradoras do Programa de Indicações. Envie suas indicações no horário certo!" />
+    <meta name="keywords" content="cronograma, administradoras, horários, indicações, atendimento" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Cronograma das Administradoras" />
+    <meta property="og:description"
+        content="Veja os horários de atendimento de cada administradora para enviar suas indicações." />
+    <meta property="og:image" content="og-indicacoes.png" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Cronograma das Administradoras" />
+    <meta name="twitter:description"
+        content="Veja os horários de atendimento de cada administradora para enviar suas indicações." />
+
+    <title>Cronograma das Administradoras | Programa de Indicações</title>
+    <link rel="icon" type="image/png" href="hero.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
@@ -209,6 +227,145 @@
             color: #1a1a1a;
         }
 
+        /* ─── BOTÃO WHATSAPP ─── */
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: #25D366;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 700;
+            padding: 12px 24px;
+            border-radius: 100px;
+            text-decoration: none;
+            transition: background .2s, transform .15s;
+            margin-top: 12px;
+            width: 100%;
+        }
+
+        .whatsapp-btn:hover {
+            background: #20BA5A;
+        }
+
+        .whatsapp-btn:active {
+            transform: scale(0.97);
+        }
+
+        /* ─── STATUS ─── */
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 100px;
+            margin-top: 8px;
+        }
+
+        .status-online {
+            background: rgba(39, 174, 96, 0.1);
+            color: #27ae60;
+        }
+
+        .status-offline {
+            background: rgba(0, 0, 0, 0.05);
+            color: #888;
+        }
+
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: currentColor;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        /* ─── DESTAQUE HOJE ─── */
+        .card-today {
+            border: 2px solid #27ae60;
+            box-shadow: 0 4px 20px rgba(39, 174, 96, 0.15);
+            position: relative;
+        }
+
+        .card-today::before {
+            content: '🌟 Hoje';
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: #27ae60;
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 100px;
+            letter-spacing: 0.5px;
+        }
+
+        .card-highlight {
+            background: linear-gradient(135deg, #f0faf2 0%, #e8f5e9 100%);
+        }
+
+        /* ─── CHECKLIST ─── */
+        .checklist {
+            background: #fff;
+            border: 1px solid #d4f0dc;
+            border-radius: 18px;
+            padding: 24px 22px;
+            margin-bottom: 32px;
+        }
+
+        .checklist-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .checklist-items {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            color: #555;
+        }
+
+        .checklist-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            background: #e8f5e9;
+            color: #27ae60;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            flex-shrink: 0;
+        }
+
         /* ─── FOOTER ─── */
         .footer {
             background: #145a32;
@@ -240,206 +397,369 @@
 <body>
 
     <!-- HERO -->
-    <section class="hero">
+    <header class="hero" role="banner">
         <div class="col">
             <a href="programaindicacoes.html" class="hero-back">← Voltar</a>
             <h1>Cronograma das <span>Administradoras</span></h1>
             <p class="hero-desc">Veja os horários de atendimento de cada administradora para enviar suas indicações.</p>
         </div>
-    </section>
+        </section>
 
-    <!-- CONTEÚDO -->
-    <div class="col">
-        <div class="content">
-            <p class="sec-tag">Equipe</p>
-            <p class="sec-title">Quem está disponível?</p>
-
-            <!-- Semana -->
-            <p
-                style="font-size: 12px; font-weight: 600; color: #27ae60; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px;">
-                Durante a semana</p>
-
-            <div class="cards">
-
-                <!-- Mariana -->
-                <div class="card">
-                    <div class="card-header">
-                        <div class="card-avatar">
-                            <img src="adm-mari.png" alt="Mariana">
-                        </div>
-                        <div class="card-info">
-                            <p class="card-name">Mariana</p>
-                            <p class="card-role">Administradora</p>
-                        </div>
-                    </div>
-                    <div class="card-schedule">
-                        <div class="schedule-item">
-                            <div class="schedule-icon">📅</div>
-                            <div class="schedule-text">
-                                <span class="schedule-label">Segunda a Sexta</span><br>
-                                09h00 às 16h00
-                            </div>
-                        </div>
-                        <div class="schedule-item">
-                            <div class="schedule-icon">💬</div>
-                            <div class="schedule-text">
-                                <span class="schedule-label">WhatsApp:</span> +55 41 9182-3015
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Vanessa -->
-                <div class="card">
-                    <div class="card-header">
-                        <div class="card-avatar">
-                            <img src="adm-van.png" alt="Vanessa">
-                        </div>
-                        <div class="card-info">
-                            <p class="card-name">Vanessa</p>
-                            <p class="card-role">Administradora</p>
-                        </div>
-                    </div>
-                    <div class="card-schedule">
-                        <div class="schedule-item">
-                            <div class="schedule-icon">📅</div>
-                            <div class="schedule-text">
-                                <span class="schedule-label">Segunda a Sexta</span><br>
-                                16h00 às 22h00
-                            </div>
-                        </div>
-                        <div class="schedule-item">
-                            <div class="schedule-icon">💬</div>
-                            <div class="schedule-text">
-                                <span class="schedule-label">WhatsApp:</span> +55 65 9298-7656
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Fim de Semana -->
-            <p
-                style="font-size: 12px; font-weight: 600; color: #27ae60; margin: 32px 0 12px; text-transform: uppercase; letter-spacing: 1px;">
-                Fim de semana (13h às 22h)</p>
-
-            <div class="cards" id="weekend-cards">
-                <!-- Preenchido via JavaScript -->
-            </div>
-
-        </div>
-    </div>
-
-    <!-- FOOTER -->
-    <div class="footer">
+        <!-- CONTEÚDO -->
         <div class="col">
-            <p>Entre em contato com a administradora disponível no horário desejado.</p>
+            <div class="content">
+                <p class="sec-tag">Equipe</p>
+                <p class="sec-title">Quem está disponível?</p>
+
+                <!-- Checklist -->
+                <div class="checklist">
+                    <div class="checklist-title">
+                        📋 O que enviar para a administradora
+                    </div>
+                    <div class="checklist-items">
+                        <div class="checklist-item">
+                            <div class="checklist-icon">✓</div>
+                            <span>ID da indicada + Nome completo</span>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checklist-icon">✓</div>
+                            <span>Contato dela (WhatsApp)</span>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checklist-icon">✓</div>
+                            <span>Prints do perfil (ID + fotos/vídeo)</span>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checklist-icon">✓</div>
+                            <span>Seu ID + Seu contato</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Semana -->
+                <p
+                    style="font-size: 12px; font-weight: 600; color: #27ae60; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px;">
+                    Durante a semana</p>
+
+                <div class="cards">
+
+                    <!-- Mariana -->
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-avatar">
+                                <img src="adm-mari.png" alt="Mariana">
+                            </div>
+                            <div class="card-info">
+                                <p class="card-name">Mariana</p>
+                                <p class="card-role">Administradora</p>
+                            </div>
+                        </div>
+                        <div class="card-schedule">
+                            <div class="schedule-item">
+                                <div class="schedule-icon">📅</div>
+                                <div class="schedule-text">
+                                    <span class="schedule-label">Segunda a Sexta</span><br>
+                                    09h00 às 16h00
+                                </div>
+                            </div>
+                            <div class="schedule-item">
+                                <div class="schedule-icon">💬</div>
+                                <div class="schedule-text">
+                                    <span class="schedule-label">WhatsApp:</span> +55 41 9182-3015
+                                </div>
+                            </div>
+                            <span class="status-badge status-mari">
+                                <span class="status-dot"></span>
+                                <span class="status-text-mari">Verificando...</span>
+                            </span>
+                            <a href="https://wa.me/5541918230015?text=Oi%20Mariana!%20Quero%20fazer%20uma%20indicação%20😊"
+                                class="whatsapp-btn" target="_blank">
+                                💬 Enviar indicação
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Vanessa -->
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-avatar">
+                                <img src="adm-van.png" alt="Vanessa">
+                            </div>
+                            <div class="card-info">
+                                <p class="card-name">Vanessa</p>
+                                <p class="card-role">Administradora</p>
+                            </div>
+                        </div>
+                        <div class="card-schedule">
+                            <div class="schedule-item">
+                                <div class="schedule-icon">📅</div>
+                                <div class="schedule-text">
+                                    <span class="schedule-label">Segunda a Sexta</span><br>
+                                    16h00 às 23h00
+                                </div>
+                            </div>
+                            <div class="schedule-item">
+                                <div class="schedule-icon">💬</div>
+                                <div class="schedule-text">
+                                    <span class="schedule-label">WhatsApp:</span> +55 65 9298-7656
+                                </div>
+                            </div>
+                            <span class="status-badge status-vanessa">
+                                <span class="status-dot"></span>
+                                <span class="status-text-vanessa">Verificando...</span>
+                            </span>
+                            <a href="https://wa.me/5565929876056?text=Oi%20Vanessa!%20Quero%20fazer%20uma%20indicação%20😊"
+                                class="whatsapp-btn" target="_blank">
+                                💬 Enviar indicação
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Fim de Semana -->
+                <p
+                    style="font-size: 12px; font-weight: 600; color: #27ae60; margin: 32px 0 12px; text-transform: uppercase; letter-spacing: 1px;">
+                    Fim de semana (13h às 22h)</p>
+
+                <div class="cards" id="weekend-cards">
+                    <!-- Preenchido via JavaScript -->
+                </div>
+
+            </div>
         </div>
-    </div>
 
-    <script>
-        // Configuração: primeira semana de referência (Vanessa no sábado, Mariana no domingo)
-        // Data de referência: 19/04/2025 (sábado com Vanessa)
-        const referenceDate = new Date('2025-04-19');
+        <!-- FOOTER -->
+        <div class="footer">
+            <div class="col">
+                <p style="font-size: 15px; font-weight: 600; color: rgba(255,255,255,0.9); margin-bottom: 8px;">Pronta
+                    pra
+                    indicar?</p>
+                <p>Escolha a administradora disponível no horário e envie as informações pelo WhatsApp.</p>
+            </div>
+        </div>
 
-        function getWeekendSchedule() {
-            const today = new Date();
-            const diffTime = today - referenceDate;
-            const diffWeeks = Math.floor(diffTime / (7 * 24 * 60 * 60 * 1000));
+        <script>
+            // Configuração: primeira semana de referência (Vanessa no sábado, Mariana no domingo)
+            // Data de referência: 19/04/2025 (sábado com Vanessa)
+            const referenceDate = new Date('2025-04-19');
 
-            // Se o número de semanas é par, mantém o padrão (Vanessa sábado, Mariana domingo)
-            // Se ímpar, inverte
-            const isVanessaSaturday = diffWeeks % 2 === 0;
+            function getWeekendSchedule() {
+                const today = new Date();
+                const diffTime = today - referenceDate;
+                const diffWeeks = Math.floor(diffTime / (7 * 24 * 60 * 60 * 1000));
 
-            return {
-                saturday: isVanessaSaturday ? 'vanessa' : 'mariana',
-                sunday: isVanessaSaturday ? 'mariana' : 'vanessa'
-            };
-        }
+                // Se o número de semanas é par, mantém o padrão (Vanessa sábado, Mariana domingo)
+                // Se ímpar, inverte
+                const isVanessaSaturday = diffWeeks % 2 === 0;
 
-        function renderWeekendCards() {
-            const schedule = getWeekendSchedule();
-            const container = document.getElementById('weekend-cards');
+                return {
+                    saturday: isVanessaSaturday ? 'vanessa' : 'mariana',
+                    sunday: isVanessaSaturday ? 'mariana' : 'vanessa'
+                };
+            }
 
-            const admData = {
-                vanessa: {
-                    name: 'Vanessa',
-                    img: 'adm-van.png',
-                    phone: '+55 65 9298-7656'
-                },
-                mariana: {
-                    name: 'Mariana',
-                    img: 'adm-mari.png',
-                    phone: '+55 41 9182-3015'
-                }
-            };
+            function renderWeekendCards() {
+                const schedule = getWeekendSchedule();
+                const container = document.getElementById('weekend-cards');
+                const today = new Date().getDay(); // 0 = domingo, 6 = sábado
 
-            const saturdayAdm = admData[schedule.saturday];
-            const sundayAdm = admData[schedule.sunday];
+                const admData = {
+                    vanessa: {
+                        name: 'Vanessa',
+                        img: 'adm-van.png',
+                        phone: '+55 65 92987-6056',
+                        phoneLink: '5565929876056',
+                        waLink: 'https://wa.me/5565929876056?text=Oi%20Vanessa!%20Quero%20fazer%20uma%20indicação%20😊'
+                    },
+                    mariana: {
+                        name: 'Mariana',
+                        img: 'adm-mari.png',
+                        phone: '+55 41 91823-0015',
+                        phoneLink: '5541918230015',
+                        waLink: 'https://wa.me/5541918230015?text=Oi%20Mariana!%20Quero%20fazer%20uma%20indicação%20😊'
+                    }
+                };
 
-            container.innerHTML = `
+                const saturdayAdm = admData[schedule.saturday];
+                const sundayAdm = admData[schedule.sunday];
+
+                // Verifica se é sábado ou domingo para destacar
+                const isSaturday = today === 6;
+                const isSunday = today === 0;
+
+                container.innerHTML = `
                 <!-- Sábado -->
-                <div class="card">
+                <article class="card ${isSaturday ? 'card-today card-highlight' : ''}" role="listitem" id="saturday-card">
                     <div class="card-header">
                         <div class="card-avatar">
-                            <img src="${saturdayAdm.img}" alt="${saturdayAdm.name}">
+                            <img src="${saturdayAdm.img}" alt="Foto de perfil da administradora ${saturdayAdm.name}" loading="lazy" onerror="this.parentElement.innerHTML='👤'">
                         </div>
                         <div class="card-info">
-                            <p class="card-name">${saturdayAdm.name}</p>
+                            <h4 class="card-name">${saturdayAdm.name}</h4>
                             <p class="card-role">Administradora</p>
                         </div>
                     </div>
                     <div class="card-schedule">
                         <div class="schedule-item">
-                            <div class="schedule-icon">📅</div>
+                            <div class="schedule-icon" aria-hidden="true">📅</div>
                             <div class="schedule-text">
                                 <span class="schedule-label">Sábado</span><br>
                                 13h00 às 22h00
                             </div>
                         </div>
                         <div class="schedule-item">
-                            <div class="schedule-icon">💬</div>
+                            <div class="schedule-icon" aria-hidden="true">💬</div>
                             <div class="schedule-text">
-                                <span class="schedule-label">WhatsApp:</span> ${saturdayAdm.phone}
+                                <span class="schedule-label">WhatsApp:</span> <a href="tel:+${saturdayAdm.phoneLink}" style="color: inherit; text-decoration: none;">${saturdayAdm.phone}</a>
                             </div>
                         </div>
+                        <span class="status-badge status-saturday" role="status" aria-live="polite">
+                            <span class="status-dot" aria-hidden="true"></span>
+                            <span class="status-text-saturday">Verificando...</span>
+                        </span>
+                        <a href="${saturdayAdm.waLink}"
+                            class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Enviar indicação para ${saturdayAdm.name} via WhatsApp">
+                            <span aria-hidden="true">💬</span> Enviar indicação
+                        </a>
                     </div>
-                </div>
+                </article>
 
                 <!-- Domingo -->
-                <div class="card">
+                <article class="card ${isSunday ? 'card-today card-highlight' : ''}" role="listitem" id="sunday-card">
                     <div class="card-header">
                         <div class="card-avatar">
-                            <img src="${sundayAdm.img}" alt="${sundayAdm.name}">
+                            <img src="${sundayAdm.img}" alt="Foto de perfil da administradora ${sundayAdm.name}" loading="lazy" onerror="this.parentElement.innerHTML='👤'">
                         </div>
                         <div class="card-info">
-                            <p class="card-name">${sundayAdm.name}</p>
+                            <h4 class="card-name">${sundayAdm.name}</h4>
                             <p class="card-role">Administradora</p>
                         </div>
                     </div>
                     <div class="card-schedule">
                         <div class="schedule-item">
-                            <div class="schedule-icon">📅</div>
+                            <div class="schedule-icon" aria-hidden="true">📅</div>
                             <div class="schedule-text">
                                 <span class="schedule-label">Domingo</span><br>
                                 13h00 às 22h00
                             </div>
                         </div>
                         <div class="schedule-item">
-                            <div class="schedule-icon">💬</div>
+                            <div class="schedule-icon" aria-hidden="true">💬</div>
                             <div class="schedule-text">
-                                <span class="schedule-label">WhatsApp:</span> ${sundayAdm.phone}
+                                <span class="schedule-label">WhatsApp:</span> <a href="tel:+${sundayAdm.phoneLink}" style="color: inherit; text-decoration: none;">${sundayAdm.phone}</a>
                             </div>
                         </div>
+                        <span class="status-badge status-sunday" role="status" aria-live="polite">
+                            <span class="status-dot" aria-hidden="true"></span>
+                            <span class="status-text-sunday">Verificando...</span>
+                        </span>
+                        <a href="${sundayAdm.waLink}"
+                            class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Enviar indicação para ${sundayAdm.name} via WhatsApp">
+                            <span aria-hidden="true">💬</span> Enviar indicação
+                        </a>
                     </div>
-                </div>
+                </article>
             `;
-        }
 
-        // Renderiza ao carregar a página
-        renderWeekendCards();
-    </script>
+                // Verifica status do fim de semana
+                checkWeekendStatus();
+            }
+
+            // Renderiza ao carregar a página
+            renderWeekendCards();
+
+            // Verifica status online/offline
+            function checkStatus() {
+                const now = new Date();
+                const day = now.getDay(); // 0 = domingo, 1 = segunda, etc
+                const hour = now.getHours();
+                const minute = now.getMinutes();
+                const currentTime = hour + minute / 60;
+
+                // Mariana: Segunda a Sexta, 9h às 16h
+                const mariOnline = day >= 1 && day <= 5 && currentTime >= 9 && currentTime < 16;
+                const mariStatus = document.querySelector('.status-mari');
+                const mariText = document.querySelector('.status-text-mari');
+
+                if (mariOnline) {
+                    mariStatus.classList.remove('status-offline');
+                    mariStatus.classList.add('status-online');
+                    mariText.textContent = 'Disponível agora';
+                } else {
+                    mariStatus.classList.remove('status-online');
+                    mariStatus.classList.add('status-offline');
+                    mariText.textContent = 'Fora do horário';
+                }
+
+                // Vanessa: Segunda a Sexta, 16h às 23h
+                const vanessaOnline = day >= 1 && day <= 5 && currentTime >= 16 && currentTime < 23;
+                const vanessaStatus = document.querySelector('.status-vanessa');
+                const vanessaText = document.querySelector('.status-text-vanessa');
+
+                if (vanessaOnline) {
+                    vanessaStatus.classList.remove('status-offline');
+                    vanessaStatus.classList.add('status-online');
+                    vanessaText.textContent = 'Disponível agora';
+                } else {
+                    vanessaStatus.classList.remove('status-online');
+                    vanessaStatus.classList.add('status-offline');
+                    vanessaText.textContent = 'Fora do horário';
+                }
+            }
+
+            // Verifica status do fim de semana
+            function checkWeekendStatus() {
+                const now = new Date();
+                const day = now.getDay();
+                const hour = now.getHours();
+                const minute = now.getMinutes();
+                const currentTime = hour + minute / 60;
+
+                // Sábado: 13h às 22h
+                if (day === 6) {
+                    const saturdayOnline = currentTime >= 13 && currentTime < 22;
+                    const saturdayStatus = document.querySelector('.status-saturday');
+                    const saturdayText = document.querySelector('.status-text-saturday');
+
+                    if (saturdayStatus && saturdayText) {
+                        if (saturdayOnline) {
+                            saturdayStatus.classList.remove('status-offline');
+                            saturdayStatus.classList.add('status-online');
+                            saturdayText.textContent = 'Disponível agora';
+                        } else {
+                            saturdayStatus.classList.remove('status-online');
+                            saturdayStatus.classList.add('status-offline');
+                            saturdayText.textContent = 'Fora do horário';
+                        }
+                    }
+                }
+
+                // Domingo: 13h às 22h
+                if (day === 0) {
+                    const sundayOnline = currentTime >= 13 && currentTime < 22;
+                    const sundayStatus = document.querySelector('.status-sunday');
+                    const sundayText = document.querySelector('.status-text-sunday');
+
+                    if (sundayStatus && sundayText) {
+                        if (sundayOnline) {
+                            sundayStatus.classList.remove('status-offline');
+                            sundayStatus.classList.add('status-online');
+                            sundayText.textContent = 'Disponível agora';
+                        } else {
+                            sundayStatus.classList.remove('status-online');
+                            sundayStatus.classList.add('status-offline');
+                            sundayText.textContent = 'Fora do horário';
+                        }
+                    }
+                }
+            }
+
+            // Verifica status ao carregar e a cada minuto
+            checkStatus();
+            setInterval(checkStatus, 60000);
+            setInterval(checkWeekendStatus, 60000);
+        </script>
 
 </body>
 
