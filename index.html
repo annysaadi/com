@@ -44,6 +44,8 @@
       --green-dark: #1e8449;
       --green-deep: #145a32;
       --white: #ffffff;
+      --beige: #f8f6f2;
+      --beige-border: #e8e4dc;
       --coal: #1a1a1a;
       --mid: #444444;
       --light: #888888;
@@ -453,10 +455,6 @@
       border: 2px solid var(--border);
     }
 
-    .step-item:last-child {
-      border-right: 2px solid var(--border);
-    }
-
     .step-num {
       font-family: "Poppins", sans-serif;
       font-size: 36px;
@@ -810,9 +808,9 @@
     }
 
     .testimonials-track {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
     }
 
     .testimonials-track>div {
@@ -921,21 +919,11 @@
       .steps-grid {
         grid-template-columns: 1fr;
         gap: 16px;
-        padding: 0 2px;
       }
 
       .step-item {
         padding: 24px 20px;
-        border: none !important;
-        box-shadow: 0 0 0 2px var(--border);
-      }
-
-      .step-item:nth-child(2) {
-        border-right: 2px solid var(--border);
-      }
-
-      .step-item:nth-child(3) {
-        border-top: none;
+        border: 2px solid var(--border) !important;
       }
 
       .step-num {
@@ -958,21 +946,11 @@
 
       /* Testimonials */
       .testimonials-track {
-        display: flex;
-        gap: 16px;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-        padding-bottom: 16px;
-      }
-
-      .testimonials-track::-webkit-scrollbar {
-        display: none;
+        max-width: 100%;
       }
 
       .testimonials-track>div {
-        flex: 0 0 78vw;
-        scroll-snap-align: start;
+        flex: none;
       }
 
       .testimonial-card {
@@ -1007,18 +985,9 @@
         }
       }
 
-      /* Footer */
-      .footer-cta {
-        padding: 48px 20px;
-      }
-
-      .footer-title {
-        font-size: 24px;
-      }
-
       /* Green deep section */
       .green-deep-section {
-        padding: 48px 20px !important;
+        padding: 48px 24px !important;
       }
 
       .green-deep-section h2 {
@@ -1032,6 +1001,20 @@
       .btn-light {
         font-size: 13px;
         padding: 14px 28px;
+      }
+
+      /* Footer */
+      .footer-cta {
+        padding: 48px 24px;
+      }
+
+      .footer-title {
+        font-size: 24px;
+      }
+
+      /* Comparação responsiva */
+      section [style*="grid-template-columns: repeat(2, 1fr)"] {
+        grid-template-columns: 1fr !important;
       }
 
       footer {
@@ -1469,9 +1452,18 @@
     }
 
     @media (max-width: 640px) {
+      .modal-overlay {
+        padding: 16px;
+        align-items: center;
+      }
+
       .modal-card {
-        padding: 32px 24px;
-        border-radius: 20px;
+        max-width: 100%;
+        width: 100%;
+        padding: 32px 24px 40px;
+        border-radius: 24px;
+        max-height: 90vh;
+        overflow-y: auto;
       }
 
       .modal-title {
@@ -1481,6 +1473,66 @@
       .modal-wa-btn {
         font-size: 14px;
         padding: 14px 20px;
+      }
+    }
+
+    /* SOCIAL PROOF NOTIFICATION */
+    .social-proof {
+      position: fixed;
+      bottom: 100px;
+      left: 24px;
+      background: var(--white);
+      padding: 14px 18px;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      z-index: 150;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      max-width: 320px;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      border: 2px solid var(--border);
+    }
+
+    .social-proof.show {
+      opacity: 1;
+    }
+
+    .social-proof-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--green-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .social-proof-text {
+      font-size: 13px;
+      line-height: 1.4;
+      color: var(--coal);
+    }
+
+    .social-proof-text strong {
+      font-weight: 700;
+      color: var(--green-dark);
+    }
+
+    .social-proof-time {
+      font-size: 11px;
+      color: var(--light);
+      margin-top: 2px;
+    }
+
+    @media (max-width: 900px) {
+      .social-proof {
+        bottom: 80px;
+        left: 16px;
+        max-width: calc(100vw - 32px);
       }
     }
   </style>
@@ -1493,6 +1545,17 @@
       Quero garantir minha vaga
     </button>
   </nav>
+
+  <!-- SOCIAL PROOF NOTIFICATION -->
+  <div class="social-proof" id="socialProof">
+    <div class="social-proof-avatar">👩</div>
+    <div>
+      <div class="social-proof-text">
+        <strong id="proofName">Ana</strong> acabou de se inscrever
+      </div>
+      <div class="social-proof-time" id="proofTime">há 2 minutos</div>
+    </div>
+  </div>
 
   <section class="hero" style="padding: 0">
     <div class="hero-left">
@@ -1705,13 +1768,13 @@
     </div>
   </section>
 
-  <div class="divider divider-dark"></div>
 
-  <section style="background: var(--green-bg); padding: 80px 32px">
+
+  <section style="background: var(--green-bg); padding: 80px 24px">
     <div class="section-inner">
-      <div class="section-header fade-up" style="text-align: center">
-        <span class="tag" style="text-align: center; display: block">depoimentos</span>
-        <h2 class="section-title">O que elas estão <em>dizendo</em></h2>
+      <div class="section-header fade-up">
+        <span class="tag">depoimentos</span>
+        <h2 class="section-title">Quem tá<br><em>ganhando de verdade.</em></h2>
       </div>
       <div class="testimonials-track fade-up">
         <!-- Card 1 -->
@@ -1739,37 +1802,19 @@
                   d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
               </svg>
             </div>
-            <p style="
-                  font-size: 15px;
-                  color: #444;
-                  line-height: 1.75;
-                  font-style: italic;
-                  margin-bottom: 28px;
-                ">
-              "Comecei para fazer uma renda extra no final de semana, hoje é
-              minha principal fonte de renda. O pagamento cai certinho toda
-              semana via PIX, me salva muito!"
+            <p style="font-size: 15px; color: #444; line-height: 1.75; font-style: italic; margin-bottom: 28px;">
+              "O pagamento cai certinho toda semana via PIX, me salva muito!"
             </p>
           </div>
           <div style="display: flex; align-items: center; gap: 14px">
-            <div style="
-                  width: 48px;
-                  height: 48px;
-                  border-radius: 50%;
-                  background: var(--green-light);
-                  overflow: hidden;
-                  flex-shrink: 0;
-                ">
+            <div
+              style="width: 48px; height: 48px; border-radius: 50%; background: var(--green-light); overflow: hidden; flex-shrink: 0;">
               <img src="dep1.png" alt="Depoimento Mariana - Trabalho pelo celular Agência Zara"
                 style="width: 100%; height: 100%; object-fit: cover" />
             </div>
             <div>
-              <div style="font-size: 15px; font-weight: 700; color: var(--coal)">
-                Mariana C.
-              </div>
-              <div style="font-size: 13px; color: var(--light)">
-                Estudante
-              </div>
+              <div style="font-size: 15px; font-weight: 700; color: var(--coal)">Mariana C.</div>
+              <div style="font-size: 13px; color: var(--light)">Estudante · SP</div>
             </div>
           </div>
         </div>
@@ -1799,37 +1844,19 @@
                   d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
               </svg>
             </div>
-            <p style="
-                  font-size: 15px;
-                  color: #444;
-                  line-height: 1.75;
-                  font-style: italic;
-                  margin-bottom: 28px;
-                ">
-              "O que eu mais gosto do app é a flexibilidade. Como mãe, posso
-              ficar com meu filho e trabalhar nos horários que ele dorme. Pra
-              mim não tem coisa melhor!!!"
+            <p style="font-size: 15px; color: #444; line-height: 1.75; font-style: italic; margin-bottom: 28px;">
+              "Achei que não ia conseguir, mas as admins me ajudaram desde o primeiro dia."
             </p>
           </div>
           <div style="display: flex; align-items: center; gap: 14px">
-            <div style="
-                  width: 48px;
-                  height: 48px;
-                  border-radius: 50%;
-                  background: var(--green-light);
-                  overflow: hidden;
-                  flex-shrink: 0;
-                ">
-              <img src="dep2.png" alt="Depoimento Juliana - Trabalho pelo celular Agência Zara"
+            <div
+              style="width: 48px; height: 48px; border-radius: 50%; background: var(--green-light); overflow: hidden; flex-shrink: 0;">
+              <img src="dep2.png" alt="Depoimento Paula - Trabalho pelo celular Agência Zara"
                 style="width: 100%; height: 100%; object-fit: cover" />
             </div>
             <div>
-              <div style="font-size: 15px; font-weight: 700; color: var(--coal)">
-                Juliana T.
-              </div>
-              <div style="font-size: 13px; color: var(--light)">
-                Mãe em tempo integral
-              </div>
+              <div style="font-size: 15px; font-weight: 700; color: var(--coal)">Paula R.</div>
+              <div style="font-size: 13px; color: var(--light)">Mãe · MG</div>
             </div>
           </div>
         </div>
@@ -1859,48 +1886,31 @@
                   d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
               </svg>
             </div>
-            <p style="
-                  font-size: 15px;
-                  color: #444;
-                  line-height: 1.75;
-                  font-style: italic;
-                  margin-bottom: 28px;
-                ">
-              "Tinha receio no começo, mas as adm's da agência são excelente.
-              Sou só gratidão, queria ter conhecido antes!"
+            <p style="font-size: 15px; color: #444; line-height: 1.75; font-style: italic; margin-bottom: 28px;">
+              "Em duas semanas eu já tinha pago minhas contas. Sou só gratidão!"
             </p>
           </div>
           <div style="display: flex; align-items: center; gap: 14px">
-            <div style="
-                  width: 48px;
-                  height: 48px;
-                  border-radius: 50%;
-                  background: var(--green-light);
-                  overflow: hidden;
-                  flex-shrink: 0;
-                ">
+            <div
+              style="width: 48px; height: 48px; border-radius: 50%; background: var(--green-light); overflow: hidden; flex-shrink: 0;">
               <img src="dep3.png" alt="Depoimento Camila - Trabalho pelo celular Agência Zara"
                 style="width: 100%; height: 100%; object-fit: cover" />
             </div>
             <div>
-              <div style="font-size: 15px; font-weight: 700; color: var(--coal)">
-                Camila R.
-              </div>
-              <div style="font-size: 13px; color: var(--light)">
-                Empreendedora
-              </div>
+              <div style="font-size: 15px; font-weight: 700; color: var(--coal)">Camila R.</div>
+              <div style="font-size: 13px; color: var(--light)">Empreendedora · RJ</div>
             </div>
           </div>
         </div>
       </div>
-      <div class="swipe-hint">Deslize para ver mais →</div>
     </div>
   </section>
 
-  <section class="green-deep-section" style="background: var(--green-deep); padding: 64px 80px">
-    <div style="max-width: 700px">
-      <span class="tag tag-dark" style="margin-bottom: 12px">antes de começar</span>
-      <h2 style="
+  <section class="green-deep-section" style="background: var(--green-deep); padding: 80px 64px">
+    <div class="section-inner">
+      <div class="fade-up" style="max-width: 700px">
+        <span class="tag tag-dark">antes de começar</span>
+        <h2 style="
             font-family: &quot;Poppins&quot;, sans-serif;
             font-size: clamp(26px, 3vw, 40px);
             font-weight: 800;
@@ -1908,28 +1918,28 @@
             margin-bottom: 32px;
             line-height: 1.2;
           ">
-        A maioria começa com medo.<br /><span style="color: #6ee89a">E ganha mesmo assim.</span>
-      </h2>
+          A maioria começa com medo.<br /><span style="color: #6ee89a">E ganha mesmo assim.</span>
+        </h2>
 
-      <p style="
+        <p style="
             font-size: 18px;
             color: rgba(255, 255, 255, 0.75);
             line-height: 1.85;
             font-weight: 400;
             margin-bottom: 40px;
           ">
-        No começo todo mundo acha estranho.<br />
-        Mas depois da primeira chamada,<br />
-        você entende como funciona.<br />
-        E é aí que
-        <strong style="color: #6ee89a; font-weight: 700">começa a ganhar.</strong><br /><br />
-        Não precisa ser perfeita.<br />
-        Não precisa ter experiência.<br />
-        <strong style="color: #6ee89a; font-weight: 700; font-size: 20px">Só precisa começar.</strong>
-      </p>
+          No começo todo mundo acha estranho.<br />
+          Mas depois da primeira chamada,<br />
+          você entende como funciona.<br />
+          E é aí que
+          <strong style="color: #6ee89a; font-weight: 700">começa a ganhar.</strong><br /><br />
+          Não precisa ser perfeita.<br />
+          Não precisa ter experiência.<br />
+          <strong style="color: #6ee89a; font-weight: 700; font-size: 20px">Só precisa começar.</strong>
+        </p>
 
-      <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 32px">
-        <span style="
+        <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 32px">
+          <span style="
               font-size: 14px;
               font-weight: 600;
               color: var(--white);
@@ -1938,7 +1948,7 @@
               padding: 10px 20px;
               border-radius: 8px;
             ">✓ Sem taxa para entrar</span>
-        <span style="
+          <span style="
               font-size: 14px;
               font-weight: 600;
               color: var(--white);
@@ -1947,7 +1957,7 @@
               padding: 10px 20px;
               border-radius: 8px;
             ">✓ Suporte no início</span>
-        <span style="
+          <span style="
               font-size: 14px;
               font-weight: 600;
               color: var(--white);
@@ -1956,9 +1966,9 @@
               padding: 10px 20px;
               border-radius: 8px;
             ">✓ Pagamento via PIX</span>
-      </div>
+        </div>
 
-      <div style="
+        <div style="
             display: flex;
             align-items: center;
             gap: 12px;
@@ -1966,16 +1976,17 @@
             border-radius: 8px;
             padding: 14px 20px;
           ">
-        <span style="font-size: 18px">⚡</span>
-        <p style="
+          <span style="font-size: 18px">⚡</span>
+          <p style="
               font-size: 14px;
               color: rgba(255, 255, 255, 0.7);
               font-weight: 500;
               margin: 0;
             ">
-          As vagas de indicação são limitadas e o cadastro é analisado por
-          ordem de chegada.
-        </p>
+            As vagas de indicação são limitadas e o cadastro é analisado por
+            ordem de chegada.
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -2027,6 +2038,50 @@
             <p>
               Os pagamentos são semanais. O que você fizer nesta semana, cai
               na conta na próxima.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Preciso ter um celular específico?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>
+              Qualquer smartphone com câmera e internet funciona. Android ou iPhone, tanto faz.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Tem idade mínima ou máxima?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>
+              Você precisa ter 18 anos ou mais. Não tem idade máxima.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Posso trabalhar de qualquer lugar do Brasil?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>
+              Sim! De qualquer cidade, qualquer estado. Só precisa de internet.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            E se eu não gostar ou não me adaptar?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>
+              Sem problema! Não tem contrato, não tem multa. Você pode parar quando quiser.
             </p>
           </div>
         </div>
@@ -2084,31 +2139,26 @@
       <button class="modal-close" onclick="closeModal()" aria-label="Fechar">✕</button>
 
       <span class="modal-tag">INSCRIÇÃO · 3 PASSOS</span>
-      <h2 class="modal-title">Fale com a admin<br><em>e garanta sua vaga.</em></h2>
-      <p class="modal-body">É rápido, gratuito e você já pode começar hoje.</p>
+      <h2 class="modal-title">Fale com a admin</h2>
+      <p style="font-size: 16px; color: var(--green); font-weight: 500; margin-bottom: 28px;">e garanta sua vaga.</p>
 
-      <div class="modal-divider"></div>
-
-      <span class="modal-steps-label">Como participar:</span>
-      <div class="modal-steps">
-        <div class="modal-step">
-          <span class="modal-step-n">1</span>
-          <span class="modal-step-text">Clique no botão verde abaixo</span>
-        </div>
-        <div class="modal-step">
-          <span class="modal-step-n">2</span>
-          <span class="modal-step-text">Envie a primeira mensagem pronta</span>
-        </div>
-        <div class="modal-step">
-          <span class="modal-step-n">3</span>
-          <span class="modal-step-text">Espere a admin responder em minutos</span>
-        </div>
-      </div>
-
-      <div class="modal-highlight">
-        <span class="modal-highlight-title">⚡ Vagas limitadas</span>
-        <span class="modal-highlight-subtitle">→ Resposta por ordem de chegada</span>
-      </div>
+      <ol
+        style="list-style: none; counter-reset: modal-steps; padding: 0; margin: 0 0 32px 0; display: flex; flex-direction: column; gap: 16px;">
+        <li
+          style="display: flex; align-items: baseline; gap: 10px; font-size: 15px; color: var(--coal); font-weight: 400; line-height: 1.6;">
+          <span style="font-weight: 700; color: var(--coal); min-width: 20px;">1.</span> Clique no botão verde abaixo
+        </li>
+        <li
+          style="display: flex; align-items: baseline; gap: 10px; font-size: 15px; color: var(--coal); font-weight: 400; line-height: 1.6;">
+          <span style="font-weight: 700; color: var(--coal); min-width: 20px;">2.</span> Envie a primeira mensagem
+          pronta
+        </li>
+        <li
+          style="display: flex; align-items: baseline; gap: 10px; font-size: 15px; color: var(--coal); font-weight: 400; line-height: 1.6;">
+          <span style="font-weight: 700; color: var(--coal); min-width: 20px;">3.</span> Espere a admin responder em
+          minutos
+        </li>
+      </ol>
 
       <a href="https://wa.me/5521972804151?text=Li" target="_blank" class="modal-wa-btn" id="modal-wa-link">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -2160,6 +2210,63 @@
       if (event.key === 'Escape') {
         closeModal();
       }
+    });
+
+    // SOCIAL PROOF - Notificações de inscrição
+    const names = ['Ana', 'Julia', 'Mariana', 'Camila', 'Beatriz', 'Larissa', 'Fernanda', 'Patricia'];
+    const times = ['há 2 minutos', 'há 5 minutos', 'há 8 minutos', 'há 12 minutos'];
+
+    function showSocialProof() {
+      const proof = document.getElementById('socialProof');
+      const randomName = names[Math.floor(Math.random() * names.length)];
+      const randomTime = times[Math.floor(Math.random() * times.length)];
+
+      document.getElementById('proofName').textContent = randomName;
+      document.getElementById('proofTime').textContent = randomTime;
+
+      proof.classList.add('show');
+
+      setTimeout(() => {
+        proof.classList.remove('show');
+      }, 5000);
+    }
+
+    // Mostra primeira notificação após 5 segundos
+    setTimeout(showSocialProof, 5000);
+
+    // Mostra notificações a cada 15-25 segundos
+    setInterval(() => {
+      const randomDelay = 15000 + Math.random() * 10000;
+      setTimeout(showSocialProof, randomDelay);
+    }, 25000);
+
+    // TRACKING DE EVENTOS (Google Analytics)
+    function trackEvent(category, action, label) {
+      if (typeof gtag !== 'undefined') {
+        gtag('event', action, {
+          'event_category': category,
+          'event_label': label
+        });
+      }
+    }
+
+    // Track cliques nos CTAs
+    document.querySelectorAll('.btn-primary, .btn-light, .nav-cta, .sticky-cta-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        trackEvent('CTA', 'click', btn.textContent.trim());
+      });
+    });
+
+    // Track abertura do modal
+    const originalOpenModal = openModal;
+    openModal = function () {
+      trackEvent('Modal', 'open', 'Inscrição');
+      originalOpenModal();
+    };
+
+    // Track clique no WhatsApp
+    document.getElementById('modal-wa-link').addEventListener('click', () => {
+      trackEvent('WhatsApp', 'click', 'Modal');
     });
   </script>
 
@@ -2341,6 +2448,55 @@
     "@type": "Organization",
     "name": "Agência Zara",
     "url": "https://trabalhecomocelular.com/"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Preciso pagar alguma taxa para começar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Não. O cadastro e o suporte são 100% gratuitos. Você entra para ganhar, não para pagar."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Preciso aparecer nua ou fazer algo que não quero?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Os usuários quase sempre pedem isso, a maioria deles busca esse tipo de conteúdo, mas você não é obrigada, ok? O mais importante é saber lidar com as situações para fazer a chamada durar e ganhar moedas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quanto tempo demora para eu receber o meu primeiro PIX?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Os pagamentos são semanais. O que você fizer nesta semana, cai na conta na próxima."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Preciso ter um celular específico?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Qualquer smartphone com câmera e internet funciona. Android ou iPhone, tanto faz."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Tem idade mínima ou máxima?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Você precisa ter 18 anos ou mais. Não tem idade máxima."
+        }
+      }
+    ]
   }
   </script>
 </body>
