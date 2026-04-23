@@ -1484,7 +1484,7 @@
       display: flex;
       align-items: flex-end;
       justify-content: flex-end;
-      padding: 24px;
+      padding: 2px;
       pointer-events: none;
       background: rgba(0, 0, 0, 0);
       transition: background 0.5s ease;
@@ -1749,95 +1749,6 @@
         width: 100%;
         max-width: calc(100vw - 32px);
         margin-bottom: 70px;
-      }
-    }
-
-    /* Botão flutuante para reabrir o vídeo */
-    .vsl-mini-btn {
-      position: fixed;
-      bottom: 96px;
-      right: 24px;
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--green), #6ee89a);
-      border: none;
-      color: #fff;
-      font-size: 22px;
-      cursor: pointer;
-      z-index: 500;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 20px rgba(39, 174, 96, 0.45);
-      opacity: 0;
-      transform: scale(0);
-      transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-      pointer-events: none;
-    }
-
-    .vsl-mini-btn.visible {
-      opacity: 1;
-      transform: scale(1);
-      pointer-events: all;
-      animation: vslMiniBounce 2.5s ease-in-out infinite;
-    }
-
-    .vsl-mini-btn:hover {
-      transform: scale(1.1);
-      animation: none;
-      box-shadow: 0 6px 28px rgba(39, 174, 96, 0.6);
-    }
-
-    @keyframes vslMiniBounce {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.08); }
-    }
-
-    .vsl-mini-btn .vsl-mini-label {
-      position: absolute;
-      right: 64px;
-      background: #1a1a1a;
-      color: #fff;
-      font-size: 12px;
-      font-weight: 600;
-      font-family: "Poppins", sans-serif;
-      padding: 6px 14px;
-      border-radius: 8px;
-      white-space: nowrap;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-      opacity: 0;
-      transform: translateX(8px);
-      transition: all 0.25s ease;
-      pointer-events: none;
-    }
-
-    .vsl-mini-btn .vsl-mini-label::after {
-      content: '';
-      position: absolute;
-      right: -6px;
-      top: 50%;
-      transform: translateY(-50%);
-      border: 6px solid transparent;
-      border-left-color: #1a1a1a;
-    }
-
-    .vsl-mini-btn:hover .vsl-mini-label {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    @media (max-width: 640px) {
-      .vsl-mini-btn {
-        bottom: 86px;
-        right: 16px;
-        width: 50px;
-        height: 50px;
-        font-size: 20px;
-      }
-
-      .vsl-mini-btn .vsl-mini-label {
-        display: none;
       }
     }
 
@@ -2534,12 +2445,6 @@
     </div>
   </div>
 
-  <!-- BOTÃO PARA REABRIR VÍDEO -->
-  <button class="vsl-mini-btn" id="vslMiniBtn" onclick="reopenVSL()" aria-label="Assistir vídeo">
-    ▶
-    <span class="vsl-mini-label">Assistir vídeo</span>
-  </button>
-
   <!-- MODAL DE INSCRIÇÃO -->
   <div class="modal-overlay" id="modalInscricao" onclick="closeModalOnOverlay(event)">
     <div class="modal-card">
@@ -2907,50 +2812,15 @@
   }
   </script>
   <script>
-    // VSL Modal — minimizar / restaurar
-    var vslVideoSrc = 'https://www.youtube.com/embed/6QJxevsI6-Y?autoplay=1&rel=0&modestbranding=1';
-    var vslViewerInterval = null;
-
+    // VSL Modal
     function closeVSL() {
       var modal = document.getElementById('vslModal');
       var card = modal.querySelector('.vsl-card');
       var iframe = document.getElementById('vslIframe');
-
-      // Para o vídeo
       iframe.src = '';
-
-      // Anima saída
       card.style.animation = 'vslSlideOut 0.4s ease forwards';
       modal.classList.remove('vsl-active');
-
-      setTimeout(function () {
-        modal.style.display = 'none';
-        card.style.animation = '';
-        // Mostra botão flutuante
-        document.getElementById('vslMiniBtn').classList.add('visible');
-      }, 400);
-    }
-
-    function reopenVSL() {
-      var modal = document.getElementById('vslModal');
-      var card = modal.querySelector('.vsl-card');
-      var iframe = document.getElementById('vslIframe');
-
-      // Esconde botão flutuante
-      document.getElementById('vslMiniBtn').classList.remove('visible');
-
-      // Recarrega o vídeo
-      iframe.src = vslVideoSrc;
-
-      // Reseta animação de entrada
-      card.style.animation = 'none';
-      card.offsetHeight; // force reflow
-      card.style.animation = 'vslSlideIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards';
-
-      modal.style.display = 'flex';
-      setTimeout(function () {
-        modal.classList.add('vsl-active');
-      }, 50);
+      setTimeout(function () { modal.remove(); }, 400);
     }
 
     // Fechar VSL clicando fora do card
@@ -2962,7 +2832,7 @@
     function updateViewerCount() {
       var el = document.getElementById('vslViewerCount');
       if (!el) return;
-      var base = 38 + Math.floor(Math.random() * 25);
+      var base = 10 + Math.floor(Math.random() * 16);
       el.textContent = base + ' assistindo agora';
     }
 
@@ -2972,7 +2842,7 @@
         modal.style.display = 'flex';
         setTimeout(function () { modal.classList.add('vsl-active'); }, 50);
         updateViewerCount();
-        vslViewerInterval = setInterval(updateViewerCount, 8000);
+        setInterval(updateViewerCount, 8000);
       }, 800);
     });
   </script>
