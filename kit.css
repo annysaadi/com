@@ -578,8 +578,8 @@ body::after {
 .zn-video-cta:hover { background: var(--g-d); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(107,124,78,0.25); }
 .zn-video-cta:hover span { transform: translateX(4px); }
 .zn-video-cta:active { transform: translateY(0) scale(0.98); transition-duration: 0.1s; }
-.zn-video-skip { display: inline-flex; align-items: center; justify-content: center; width: 100%; font-size: 14px; color: var(--ink); margin-top: 8px; cursor: pointer; text-decoration: none; font-weight: 600; font-family: inherit; background: none; border: 1px solid var(--line-2); border-radius: 12px; padding: 14px 28px; transition: all 0.2s; }
-.zn-video-skip:hover { background: var(--bg); border-color: var(--ink-3); text-decoration: none; }
+.zn-video-skip { display: inline-flex; align-items: center; justify-content: center; width: 100%; font-size: 13px; color: var(--g); margin-top: 8px; cursor: pointer; text-decoration: none; font-weight: 600; font-family: inherit; background: none; border: 1px solid var(--g); border-radius: 12px; padding: 11px 28px; transition: all 0.2s; }
+.zn-video-skip:hover { background: var(--g-l); text-decoration: none; }
 
 /* Desktop: vídeo centralizado com max-width */
 @media (min-width: 901px) {
