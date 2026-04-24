@@ -386,7 +386,7 @@ body::after {
 .zn-faq-side h2 { font-size: 40px; font-weight: 700; color: var(--ink); letter-spacing: -1.5px; line-height: 1.05; margin: 0 0 16px; font-family: var(--serif); }
 .zn-faq-side h2 em { font-style: italic; font-weight: 500; color: var(--g-dd); }
 .zn-faq-side p { font-size: 14px; color: var(--ink-2); line-height: 1.65; margin: 0 0 24px; }
-.zn-faq-list { margin-top: 8px; overflow: hidden; }
+.zn-faq-list { margin-top: 0; overflow: hidden; }
 .zn-faq-item { border-top: 1px solid var(--line); transition: all .2s; }
 .zn-faq-item:last-child { border-bottom: 1px solid var(--line); }
 .zn-faq-item.is-open { background: var(--bg); margin: 0 -20px; padding: 0 20px; border-radius: var(--radius); border-color: transparent; box-shadow: var(--shadow-sm); }
@@ -532,7 +532,7 @@ body::after {
   .zn-sim-lead { font-size: 14px; margin: -20px 0 28px; }
   .zn-faq-q { font-size: 16px; padding: 20px 0; }
   .zn-faq-a { font-size: 14px; padding-left: 44px; }
-  .zn-faq-grid { grid-template-columns: 1fr; gap: 40px; }
+  .zn-faq-grid { grid-template-columns: 1fr; gap: 16px; }
   .zn-faq-side h2 { font-size: 30px; }
   .zn-faq-side { order: -1; }
   .zn-btn-primary { font-size: 14px; padding: 16px 28px; }
