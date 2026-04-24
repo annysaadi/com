@@ -423,7 +423,38 @@
         <div class="zn-section-head"><span class="zn-section-num">V</span><span class="zn-section-tag">perguntas</span></div>
         <h2>Perguntas <em>comuns.</em></h2>
         <p>O que toda menina pergunta antes de começar.</p>
-        <button class="zn-btn-primary" data-cta>Tirar dúvida no WhatsApp<span class="zn-btn-arrow">→</span></button>
+        
+        <!-- CHATBOT CARD -->
+        <div class="zn-chatbot" id="chatbot">
+          <div class="zn-chatbot-header">
+            <div class="zn-chatbot-avatar">
+              <div class="zn-chatbot-avatar-circle">M</div>
+              <span class="zn-chatbot-status"></span>
+            </div>
+            <div class="zn-chatbot-info">
+              <div class="zn-chatbot-name">Mari</div>
+              <div class="zn-chatbot-online">online agora</div>
+            </div>
+          </div>
+          
+          <div class="zn-chatbot-messages" id="chat-messages">
+            <div class="zn-chatbot-msg zn-chatbot-msg--bot">
+              <div class="zn-chatbot-bubble">Oi! 👋 Tô aqui pra tirar suas dúvidas. O que você quer saber?</div>
+            </div>
+          </div>
+          
+          <div class="zn-chatbot-options" id="chat-options">
+            <button class="zn-chatbot-option" data-question="ganhar">Quanto vou ganhar?</button>
+            <button class="zn-chatbot-option" data-question="funciona">Como funciona?</button>
+            <button class="zn-chatbot-option" data-question="seguro">É seguro?</button>
+            <button class="zn-chatbot-option" data-question="gratis">É de graça?</button>
+          </div>
+          <button class="zn-chatbot-cta" data-cta>Quero começar agora →</button>
+        </div>
+        
+        <div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--line)">
+          <p style="font-size:14px;color:var(--ink-2);font-weight:600;margin-bottom:16px">Ainda tem dúvida? Veja as perguntas mais comuns:</p>
+        </div>
       </div>
       <div class="zn-faq-list" id="faq-list">
         <div class="zn-faq-item is-open"><button class="zn-faq-q"><span class="zn-faq-num">01</span><span class="zn-faq-txt">Quando e como eu recebo?</span><span class="zn-faq-plus">−</span></button><div class="zn-faq-a">Toda sexta-feira cai PIX direto na sua conta. Não atrasa. Sem taxa, sem desconto.</div></div>
@@ -592,6 +623,87 @@ document.getElementById('signup-modal').addEventListener('click', function(e){
 document.getElementById('wa-link').addEventListener('click', function(){
   track('whatsapp_click');
 });
+
+// === CHATBOT ===
+(function(){
+  var chatMessages = document.getElementById('chat-messages');
+  var chatOptions = document.getElementById('chat-options');
+  
+  var responses = {
+    ganhar: "Você ganha R$ 0,60 a R$ 0,90 por minuto em chamada. Se fizer 3h por dia, 5x na semana, dá R$ 525-675 por semana. 💰",
+    funciona: "Você baixa o app, cria seu perfil, e homens te chamam por vídeo. Você escolhe quem atende e quanto tempo fica. Toda sexta cai PIX. ✅",
+    seguro: "Você usa apelido, escolhe quem atende, e trabalha de casa no seu horário. A maioria dos homens é de fora do Brasil. 🔒",
+    gratis: "100% grátis. Você nunca paga nada. Se alguém pedir dinheiro, é golpe. A gente só te ajuda a começar. ✅"
+  };
+  
+  // Verifica se ainda tem opções visíveis (excluindo o botão "comecar")
+  function checkRemainingOptions(){
+    var remaining = chatOptions.querySelectorAll('.zn-chatbot-option');
+    var allHidden = true;
+    remaining.forEach(function(btn){ if(btn.style.display !== 'none') allHidden = false; });
+    
+    if(allHidden){
+      // Todas as perguntas foram feitas, mostra mensagem final
+      setTimeout(function(){
+        var finalMsg = document.createElement('div');
+        finalMsg.className = 'zn-chatbot-msg zn-chatbot-msg--bot';
+        finalMsg.innerHTML = '<div class="zn-chatbot-bubble">Tirei todas as suas dúvidas! Pronta pra começar? Chama a gente no WhatsApp! 🚀</div>';
+        chatMessages.appendChild(finalMsg);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }, 800);
+    }
+  }
+  
+  document.querySelectorAll('.zn-chatbot-option').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var question = this.getAttribute('data-question');
+      var questionText = this.textContent;
+      
+      // Se clicou em "comecar", abre o modal direto
+      if(question === 'comecar'){
+        track('chatbot_cta_click');
+        document.querySelector('[data-cta]').click();
+        return;
+      }
+      
+      // Adiciona pergunta do usuário
+      var userMsg = document.createElement('div');
+      userMsg.className = 'zn-chatbot-msg zn-chatbot-msg--user';
+      userMsg.innerHTML = '<div class="zn-chatbot-bubble">' + questionText + '</div>';
+      chatMessages.appendChild(userMsg);
+      
+      // Esconde só o botão clicado (as outras continuam visíveis)
+      this.style.display = 'none';
+      
+      // Scroll suave
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+      
+      // Mostra "digitando..." e depois a resposta
+      setTimeout(function(){
+        var typingMsg = document.createElement('div');
+        typingMsg.className = 'zn-chatbot-msg zn-chatbot-msg--bot zn-chatbot-typing';
+        typingMsg.innerHTML = '<div class="zn-chatbot-bubble"><span></span><span></span><span></span></div>';
+        chatMessages.appendChild(typingMsg);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+        
+        setTimeout(function(){
+          typingMsg.remove();
+          
+          var botMsg = document.createElement('div');
+          botMsg.className = 'zn-chatbot-msg zn-chatbot-msg--bot';
+          botMsg.innerHTML = '<div class="zn-chatbot-bubble">' + responses[question] + '</div>';
+          chatMessages.appendChild(botMsg);
+          chatMessages.scrollTop = chatMessages.scrollHeight;
+          
+          // Verifica se ainda tem perguntas disponíveis
+          checkRemainingOptions();
+        }, 1200);
+      }, 400);
+      
+      track('chatbot_question', question);
+    });
+  });
+})();
 
 // === FAQ ACCORDION ===
 document.querySelectorAll('#faq-list .zn-faq-item').forEach(function(item){
