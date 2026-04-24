@@ -65,7 +65,7 @@
   <div class="zn-nav-inner">
     <a class="zn-logo" href="#">trabalhe<em>pelocelular</em></a>
     <div class="zn-nav-right">
-      <div class="zn-nav-online"><span class="zn-nav-dot"></span>347 online</div>
+      <div class="zn-nav-online"><span class="zn-nav-dot"></span><span id="online-count">347</span> online</div>
       <button class="zn-nav-cta" data-cta>Quero começar<span>→</span></button>
     </div>
   </div>
@@ -368,7 +368,7 @@
       <div class="zn-faq-list" id="faq-list">
         <div class="zn-faq-item is-open"><button class="zn-faq-q"><span class="zn-faq-num">01</span><span class="zn-faq-txt">Quando e como eu recebo?</span><span class="zn-faq-plus">−</span></button><div class="zn-faq-a">Toda sexta-feira cai PIX direto na sua conta. Não atrasa. Sem taxa, sem desconto.</div></div>
         <div class="zn-faq-item"><button class="zn-faq-q"><span class="zn-faq-num">02</span><span class="zn-faq-txt">Tem que pagar alguma coisa?</span><span class="zn-faq-plus">+</span></button><div class="zn-faq-a" hidden>Tudo é 100% grátis. A gente nunca vai pedir dinheiro pra você trabalhar. Se alguém cobrar, é golpe.</div></div>
-        <div class="zn-faq-item"><button class="zn-faq-q"><span class="zn-faq-num">03</span><span class="zn-faq-txt">Preciso falar inglês?</span><span class="zn-faq-plus">+</span></button><div class="zn-faq-a" hidden>Não. O app traduz tudo na hora. Você fala normal em português.</div></div>
+        <div class="zn-faq-item"><button class="zn-faq-q"><span class="zn-faq-num">03</span><span class="zn-faq-txt">Preciso falar inglês?</span><span class="zn-faq-plus">+</span></button><div class="zn-faq-a" hidden>Não precisa. Você se vira com gestos e expressões.</div></div>
         <div class="zn-faq-item"><button class="zn-faq-q"><span class="zn-faq-num">04</span><span class="zn-faq-txt">Alguém pode me reconhecer?</span><span class="zn-faq-plus">+</span></button><div class="zn-faq-a" hidden>É bem difícil. A maioria é gringo. E você usa apelido, sem nome real.</div></div>
         <div class="zn-faq-item"><button class="zn-faq-q"><span class="zn-faq-num">05</span><span class="zn-faq-txt">Posso sair quando quiser?</span><span class="zn-faq-plus">+</span></button><div class="zn-faq-a" hidden>Pode. Sem contrato, sem multa. Só para e pronto.</div></div>
         <div class="zn-faq-item"><button class="zn-faq-q"><span class="zn-faq-num">06</span><span class="zn-faq-txt">Preciso tirar a roupa?</span><span class="zn-faq-plus">+</span></button><div class="zn-faq-a" hidden>Não precisa, mas quem mostra mais ganha mais. Você decide o seu limite.</div></div>
@@ -414,7 +414,7 @@
     <ol class="zn-signup-steps">
       <li><strong>1.</strong> Aperta o botão verde aqui embaixo</li>
       <li><strong>2.</strong> Manda um "oi"</li>
-      <li><strong>3.</strong> A gente te ajuda a começar hoje</li>
+      <li><strong>3.</strong> A gente te ajuda a começar rápido</li>
     </ol>
     <a class="zn-btn-primary zn-btn-xl" id="wa-link" style="width:100%" href="https://wa.me/5521972804151?text=Oi" target="_blank" rel="noopener">Abrir WhatsApp</a>
     <p class="zn-signup-foot">resposta em minutos</p>
@@ -427,6 +427,20 @@
 (function(){
   var ref = new URLSearchParams(window.location.search).get("ref");
   if(ref) sessionStorage.setItem("ref", ref);
+})();
+
+// === ONLINE COUNT VARIATION ===
+(function(){
+  var countEl = document.getElementById('online-count');
+  if(!countEl) return;
+  var base = 320;
+  var range = 100;
+  function updateCount(){
+    var count = base + Math.floor(Math.random() * range);
+    countEl.textContent = count;
+  }
+  updateCount();
+  setInterval(updateCount, 45000); // atualiza a cada 45s
 })();
 
 // === TRACKING ===
