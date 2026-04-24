@@ -286,13 +286,13 @@
 
     <div class="zn-earn-grid">
       <div class="zn-earn-context">
-        <p>Depende do seu tempo online. Você ganha por minuto — quanto mais tempo na chamada, mais dinheiro cai na sua conta.</p>
+        <p>Depende do seu tempo em chamada. Você ganha por minuto — quanto mais tempo na chamada, mais dinheiro cai na sua conta.</p>
         <div class="zn-earn-stats">
           <div class="zn-earn-stat">
             <div class="zn-earn-stat-label">Você ganha por minuto</div>
             <div class="zn-earn-stat-value">R$ 0,60 – R$ 0,90</div>
           </div>
-          <div class="zn-earn-tip">Quanto mais você trabalha, mais você ganha por minuto.</div>
+          <div class="zn-earn-tip">Quanto mais você trabalha, mais você ganha por minuto em chamada.</div>
         </div>
       </div>
 
@@ -338,7 +338,7 @@
       </div>
     </div>
 
-    <p class="zn-earn-foot">✦ valores aproximados · depende do tempo online</p>
+    <p class="zn-earn-foot">✦ valores aproximados · depende do tempo em chamada</p>
   </div>
 </section>
 
@@ -400,9 +400,16 @@
 
 <!-- ═══ VIDEO POPUP ═══ -->
 <div class="zn-video-popup" id="video-popup">
-  <button class="zn-video-popup-close" id="close-video">×</button>
-  <div class="zn-video-popup-wrap">
-    <iframe id="video-iframe" src="" title="Como funciona" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <div class="zn-video-popup-container">
+    <button class="zn-video-popup-close" id="close-video">×</button>
+    <div class="zn-video-popup-wrap">
+      <iframe id="video-iframe" src="" title="Como funciona" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="zn-video-popup-footer">
+      <p class="zn-video-popup-label">Ficou com dúvida? Chama a gente.</p>
+      <button class="zn-video-cta" id="popup-btn" data-cta style="display:none">Entendi, quero começar<span>→</span></button>
+      <a class="zn-video-skip" id="close-popup-link">Prefiro ver a página antes</a>
+    </div>
   </div>
 </div>
 
@@ -448,28 +455,46 @@ function track(event, label){
   if(typeof gtag==='function') gtag('event', event, {event_label: label || ''});
 }
 
-// === VIDEO POPUP — after 40% scroll OR 7s ===
+// === VIDEO POPUP — imediato ao carregar ===
 var videoShown = false;
 function showVideo(){
   if(videoShown) return;
   videoShown = true;
   var popup = document.getElementById('video-popup');
   var iframe = document.getElementById('video-iframe');
-  iframe.src = 'https://www.youtube.com/embed/6QJxevsI6-Y?rel=0&modestbranding=1&autoplay=1&mute=1';
+  iframe.src = 'https://www.youtube.com/embed/6QJxevsI6-Y?rel=0&modestbranding=1&autoplay=1';
   popup.classList.add('is-visible');
   track('video_popup_shown');
+  
+  // Mostra o botão após 22 segundos
+  setTimeout(function(){
+    var btn = document.getElementById('popup-btn');
+    if(btn) btn.style.display = 'flex';
+  }, 22000);
 }
-setTimeout(showVideo, 7000);
-window.addEventListener('scroll', function(){
-  var scrollPct = window.scrollY / (document.body.scrollHeight - window.innerHeight);
-  if(scrollPct > 0.35) showVideo();
-}, {passive:true});
+// Mostra o vídeo 1 segundo após carregar a página
+setTimeout(showVideo, 1000);
+
 document.getElementById('close-video').addEventListener('click', function(){
   var popup = document.getElementById('video-popup');
   var iframe = document.getElementById('video-iframe');
   popup.classList.remove('is-visible');
   setTimeout(function(){ iframe.src = ''; }, 400);
   track('video_popup_closed');
+});
+
+// Link "Prefiro ver a página antes" fecha o popup
+document.getElementById('close-popup-link').addEventListener('click', function(e){
+  e.preventDefault();
+  document.getElementById('close-video').click();
+  track('video_skip_to_page');
+});
+
+// Fecha ao clicar no fundo escuro
+document.getElementById('video-popup').addEventListener('click', function(e){
+  if(e.target.id === 'video-popup'){
+    document.getElementById('close-video').click();
+  }
 });
 
 // === CTAs — modal ===
