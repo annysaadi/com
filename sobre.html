@@ -1,6 +1,13 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WEP2D02X35"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WEP2D02X35');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trabalhe pelo celular | Agência Zara</title>
@@ -122,7 +129,7 @@
           <div class="zn-phone-mock">
             <div class="zn-phone-notch"></div>
             <div class="zn-phone-content" style="padding:18px 14px;background:var(--bg)">
-              <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px"><div style="width:26px;height:26px;border-radius:50%;background:var(--g);display:flex;align-items:center;justify-content:center"><span style="color:#fff;font-size:10px;font-weight:700">M</span></div><span style="font-size:11px;font-weight:600;color:var(--ink)">Mari</span></div>
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px"><div style="width:26px;height:26px;border-radius:50%;background:var(--g);display:flex;align-items:center;justify-content:center"><span style="color:#fff;font-size:10px;font-weight:700">A</span></div><span style="font-size:11px;font-weight:600;color:var(--ink)">Admin</span></div>
               <div style="background:var(--g-l);padding:9px 11px;border-radius:0 10px 10px 10px;font-size:10px;color:var(--ink);margin-bottom:7px">Oi, tudo bem? 😊</div>
               <div style="background:var(--g-l);padding:9px 11px;border-radius:0 10px 10px 10px;font-size:10px;color:var(--ink);margin-bottom:7px">Esse é o app que você vai usar 👇</div>
               <div style="background:var(--g);padding:7px 11px;border-radius:7px;font-size:10px;color:#fff">app.exemplo.com 🔗</div>
@@ -381,7 +388,7 @@
   <div class="zn-final-inner">
     <div class="zn-final-tag"><span class="zn-final-tag-dot"></span>pronta pra começar?</div>
     <h2 class="zn-final-h">Sua próxima<br><span class="zn-final-hi">sexta-feira</span><br>pode ser diferente.</h2>
-    <button class="zn-btn-primary zn-btn-xl zn-final-btn" data-cta>Falar com a Mari agora<span class="zn-btn-arrow">→</span></button>
+    <button class="zn-btn-primary zn-btn-xl zn-final-btn" data-cta>Falar com a gente agora<span class="zn-btn-arrow">→</span></button>
     <div class="zn-final-feet"><span>🔒 não paga nada</span><span>⚡ responde rápido</span><span>🤫 ninguém fica sabendo</span></div>
   </div>
 </section>
@@ -392,7 +399,7 @@
     <div class="zn-foot-logo">trabalhe<em>pelocelular</em></div>
     <div class="zn-foot-orn"><span></span><span></span><span></span></div>
     <p class="zn-foot-strip">só para mulheres maiores de 18 anos</p>
-    <p class="zn-foot-copy">© 2025 · Agência Zara</p>
+    <p class="zn-foot-copy">© 2026 · Agência Zara</p>
   </div>
 </footer>
 
@@ -420,6 +427,13 @@
 </div>
 
 <script>
+// === REF TRACKING ===
+// Salva o parâmetro ref no sessionStorage para persistir entre páginas
+(function(){
+  var ref = new URLSearchParams(window.location.search).get("ref");
+  if(ref) sessionStorage.setItem("ref", ref);
+})();
+
 // === TRACKING ===
 function track(event, label){
   if(typeof gtag==='function') gtag('event', event, {event_label: label || ''});
