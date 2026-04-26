@@ -40,18 +40,6 @@
     }
 
     :root {
-      --green-bg: var(--bg, #f5f5f3);
-      --green-light: var(--g-l, #edeee6);
-      --green: var(--g, #6b7c4e);
-      --green-dark: var(--g-d, #4f5e38);
-      --green-deep: var(--g-dd, #3a4528);
-      --green-accent: #a3b18a;
-      --white: #ffffff;
-      --coal: var(--ink, #1a1a1a);
-      --mid: var(--ink-2, #555550);
-      --light: var(--ink-3, #8c8c84);
-      --border: var(--line, rgba(0,0,0,0.06));
-      --card-bg: #ffffff;
       --red-500: #ef4444;
       --red-50: #fef2f2;
       --amber-500: #f59e0b;
@@ -60,14 +48,6 @@
       --shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
       --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.1);
       --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      /* aliases */
-      --cream: var(--green-bg);
-      --cream-d: var(--green-light);
-      --dark: var(--green-deep);
-      --accent: var(--green);
-      --accent-hover: var(--green-dark);
-      --warn-bg: var(--amber-50);
-      --warn: var(--amber-500);
       --danger: var(--red-500);
     }
 
@@ -76,8 +56,8 @@
     }
 
     body {
-      background: var(--green-bg);
-      color: var(--coal);
+      background: var(--bg);
+      color: var(--ink);
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       font-weight: 400;
       line-height: 1.6;
@@ -92,7 +72,7 @@
 
     /* TICKER */
     .ticker-wrap {
-      background: var(--green-deep);
+      background: var(--g-dd);
       overflow: hidden;
       border-bottom: 1px solid rgba(255, 255, 255, 0.04);
       padding: 10px 0;
@@ -116,7 +96,7 @@
     }
 
     .ticker-item span {
-      color: var(--green-accent);
+      color: #a3b18a;
       opacity: 0.35;
       margin: 0 10px;
     }
@@ -214,7 +194,7 @@
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      background: var(--green-accent);
+      background: #a3b18a;
       animation: heroPulse 2s ease-in-out infinite;
     }
 
@@ -260,7 +240,7 @@
     .hero-divider {
       width: 32px;
       height: 2px;
-      background: linear-gradient(90deg, var(--green-accent), transparent);
+      background: linear-gradient(90deg, #a3b18a, transparent);
       margin-bottom: 20px;
       border-radius: 2px;
       opacity: 0;
@@ -324,7 +304,7 @@
     .hero-stat-val {
       font-size: 20px;
       font-weight: 700;
-      color: var(--green-accent);
+      color: #a3b18a;
       display: block;
       line-height: 1;
       margin-bottom: 4px;
@@ -431,33 +411,33 @@
     .top-nav-brand {
       font-size: 17px;
       font-weight: 700;
-      color: var(--coal);
+      color: var(--ink);
       letter-spacing: -0.3px;
       transition: color 0.3s ease;
     }
 
     .top-nav-brand span {
-      color: var(--green);
+      color: var(--g);
       transition: color 0.3s ease;
     }
 
     .top-nav.scrolled .top-nav-brand {
-      color: var(--coal);
+      color: var(--ink);
     }
 
     .top-nav.scrolled .top-nav-brand span {
-      color: var(--green);
+      color: var(--g);
     }
 
     .top-nav-label {
       font-size: 13px;
       font-weight: 500;
-      color: var(--light);
+      color: var(--ink-3);
       transition: color 0.3s ease;
     }
 
     .top-nav.scrolled .top-nav-label {
-      color: var(--light);
+      color: var(--ink-3);
     }
 
     .mobile-nav-toggle {
@@ -468,20 +448,20 @@
       height: 40px;
       border-radius: 10px;
       border: 1px solid rgba(0, 0, 0, 0.08);
-      background: var(--green-bg);
+      background: var(--bg);
       cursor: pointer;
       transition: var(--transition);
-      color: var(--green-dark);
+      color: var(--g-d);
     }
 
     .mobile-nav-toggle:hover {
-      background: var(--green-light);
+      background: var(--g-l);
     }
 
     .top-nav.scrolled .mobile-nav-toggle {
       border-color: rgba(0, 0, 0, 0.08);
-      background: var(--green-bg);
-      color: var(--green-dark);
+      background: var(--bg);
+      color: var(--g-d);
     }
 
     /* SIDEBAR / DRAWER */
@@ -515,12 +495,12 @@
     .sidebar-brand {
       font-size: 15px;
       font-weight: 700;
-      color: var(--coal);
+      color: var(--ink);
       letter-spacing: -0.3px;
     }
 
     .sidebar-brand span {
-      color: var(--green);
+      color: var(--g);
     }
 
     .sidebar-brand-sub {
@@ -528,7 +508,7 @@
       font-weight: 500;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      color: var(--light);
+      color: var(--ink-3);
       margin-top: 3px;
     }
 
@@ -544,7 +524,7 @@
       padding: 16px 20px;
       border-top: 1px solid rgba(0, 0, 0, 0.06);
       font-size: 10px;
-      color: var(--light);
+      color: var(--ink-3);
       line-height: 1.5;
     }
 
@@ -560,7 +540,7 @@
       border-radius: 8px;
       font-size: 13px;
       font-weight: 400;
-      color: var(--mid);
+      color: var(--ink-2);
       text-decoration: none;
       transition: all 0.15s;
       position: relative;
@@ -568,15 +548,15 @@
     }
 
     .nav-link:hover {
-      background: var(--green-bg);
+      background: var(--bg);
     }
 
     .nav-link.active {
-      background: var(--green-bg);
-      border-left: 2px solid var(--green);
+      background: var(--bg);
+      border-left: 2px solid var(--g);
       padding-left: 10px;
       font-weight: 600;
-      color: var(--coal);
+      color: var(--ink);
     }
 
     .nav-link.active::before {
@@ -587,14 +567,14 @@
       font-family: 'Playfair Display', Georgia, serif;
       font-style: italic;
       font-size: 13px;
-      color: var(--green-accent);
+      color: #a3b18a;
       min-width: 20px;
       line-height: 1;
       font-weight: 400;
     }
 
     .nav-link.active .nav-num {
-      color: var(--green-dark);
+      color: var(--g-d);
     }
 
     /* MOBILE OVERLAY */
@@ -614,7 +594,7 @@
     /* SECTIONS */
     .section {
       padding: 56px 32px;
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid var(--line);
       max-width: 680px;
       margin: 0 auto;
       scroll-margin-top: 64px;
@@ -646,7 +626,7 @@
       font-weight: 900;
       line-height: 1;
       background: linear-gradient(180deg,
-          var(--border) 0%,
+          var(--line) 0%,
           transparent 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -661,7 +641,7 @@
       font-weight: 700;
       letter-spacing: 2.5px;
       text-transform: uppercase;
-      color: var(--green);
+      color: var(--g);
       display: inline-block;
       margin-bottom: 10px;
     }
@@ -677,12 +657,12 @@
       line-height: 1.2;
       letter-spacing: -0.5px;
       margin-bottom: 16px;
-      color: var(--coal);
+      color: var(--ink);
     }
 
     .sec-title em {
       font-style: italic;
-      color: var(--green);
+      color: var(--g);
       font-weight: 500;
     }
 
@@ -693,7 +673,7 @@
     .sec-body {
       font-size: 15px;
       font-weight: 400;
-      color: var(--mid);
+      color: var(--ink-2);
       line-height: 1.8;
       margin-bottom: 16px;
     }
@@ -704,7 +684,7 @@
 
     .sec-body strong {
       font-weight: 600;
-      color: var(--coal);
+      color: var(--ink);
     }
 
     .sec-body-dark strong {
@@ -715,7 +695,7 @@
     .deco {
       width: 28px;
       height: 1px;
-      background: var(--border);
+      background: var(--line);
       margin-bottom: 16px;
     }
 
@@ -726,7 +706,7 @@
     .divider {
       width: 100%;
       height: 1px;
-      background: var(--border);
+      background: var(--line);
       margin: 20px 0;
     }
 
@@ -740,7 +720,7 @@
       flex-direction: column;
       gap: 0;
       margin-top: 20px;
-      border-top: 1px solid var(--border);
+      border-top: 1px solid var(--line);
     }
 
     .step-row {
@@ -748,13 +728,13 @@
       align-items: flex-start;
       gap: 16px;
       padding: 14px 0;
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid var(--line);
     }
 
     .step-n {
       font-size: 24px;
       font-weight: 600;
-      color: var(--border);
+      color: var(--line);
       min-width: 28px;
       line-height: 1;
       margin-top: 2px;
@@ -763,14 +743,14 @@
     .step-title {
       font-size: 14px;
       font-weight: 500;
-      color: var(--coal);
+      color: var(--ink);
       display: block;
     }
 
     .step-desc {
       font-size: 13px;
       font-weight: 400;
-      color: var(--mid);
+      color: var(--ink-2);
       display: block;
       margin-top: 3px;
       line-height: 1.6;
@@ -780,15 +760,15 @@
     .check-list {
       list-style: none;
       margin-top: 16px;
-      border-top: 1px solid var(--border);
+      border-top: 1px solid var(--line);
     }
 
     .check-list li {
       padding: 11px 0;
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid var(--line);
       font-size: 14px;
       font-weight: 400;
-      color: var(--mid);
+      color: var(--ink-2);
       display: flex;
       align-items: flex-start;
       gap: 10px;
@@ -797,7 +777,7 @@
 
     .check-list li::before {
       content: "—";
-      color: var(--border);
+      color: var(--line);
       flex-shrink: 0;
       margin-top: 1px;
     }
@@ -836,7 +816,7 @@
 
     .card {
       padding: 20px;
-      border: 1px solid var(--border);
+      border: 1px solid var(--line);
       border-radius: 14px;
       background: var(--white);
     }
@@ -851,7 +831,7 @@
       font-weight: 500;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: var(--light);
+      color: var(--ink-3);
       display: block;
       margin-bottom: 6px;
     }
@@ -868,7 +848,7 @@
         sans-serif;
       font-size: 26px;
       font-weight: 700;
-      color: var(--coal);
+      color: var(--ink);
       line-height: 1;
       display: block;
     }
@@ -880,7 +860,7 @@
     .card-sub {
       font-size: 12px;
       font-weight: 400;
-      color: var(--mid);
+      color: var(--ink-2);
       margin-top: 4px;
       display: block;
     }
@@ -899,7 +879,7 @@
 
     .call-card {
       padding: 20px 22px;
-      border: 1px solid var(--border);
+      border: 1px solid var(--line);
       border-radius: 14px;
       background: var(--white);
     }
@@ -912,7 +892,7 @@
         sans-serif;
       font-size: 20px;
       font-weight: 600;
-      color: var(--coal);
+      color: var(--ink);
       margin-bottom: 4px;
     }
 
@@ -932,8 +912,8 @@
     }
 
     .badge-sim {
-      background: var(--green-light);
-      color: var(--green-dark);
+      background: var(--g-l);
+      color: var(--g-d);
     }
 
     .badge-nao {
@@ -944,7 +924,7 @@
     .call-desc {
       font-size: 13px;
       font-weight: 400;
-      color: var(--mid);
+      color: var(--ink-2);
       line-height: 1.7;
     }
 
@@ -1010,7 +990,7 @@
       padding: 14px 16px;
       border-radius: 14px;
       background: var(--white);
-      border: 1px solid var(--border);
+      border: 1px solid var(--line);
     }
 
     .punish-num {
@@ -1021,7 +1001,7 @@
         sans-serif;
       font-size: 13px;
       font-weight: 600;
-      color: var(--light);
+      color: var(--ink-3);
       min-width: 60px;
       letter-spacing: 0.5px;
     }
@@ -1041,14 +1021,14 @@
     .punish-desc {
       font-size: 13px;
       font-weight: 400;
-      color: var(--mid);
+      color: var(--ink-2);
     }
 
     /* INFO BOX */
     .info-box {
       margin-top: 16px;
       padding: 16px 20px;
-      border-left: 3px solid var(--green);
+      border-left: 3px solid var(--g);
       border-radius: 12px;
       background: var(--white);
     }
@@ -1061,7 +1041,7 @@
     .info-box p {
       font-size: 13px;
       font-weight: 400;
-      color: var(--mid);
+      color: var(--ink-2);
       line-height: 1.7;
     }
 
@@ -1071,7 +1051,7 @@
 
     .info-box strong {
       font-weight: 500;
-      color: var(--coal);
+      color: var(--ink);
     }
 
     .info-box-dark strong {
@@ -1099,8 +1079,8 @@
     }
 
     .alert-box.alert-tip {
-      background: var(--green-bg);
-      border: 1px solid var(--border);
+      background: var(--bg);
+      border: 1px solid var(--line);
     }
 
     .alert-icon {
@@ -1144,7 +1124,7 @@
       align-items: flex-start;
       gap: 14px;
       padding: 16px 18px;
-      border: 1px solid var(--border);
+      border: 1px solid var(--line);
       border-radius: 14px;
       background: var(--white);
     }
@@ -1158,7 +1138,7 @@
     .func-title {
       font-size: 14px;
       font-weight: 500;
-      color: var(--coal);
+      color: var(--ink);
       display: block;
       margin-bottom: 3px;
     }
@@ -1166,7 +1146,7 @@
     .func-desc {
       font-size: 13px;
       font-weight: 400;
-      color: var(--mid);
+      color: var(--ink-2);
       line-height: 1.6;
     }
 
@@ -1181,7 +1161,7 @@
     .sub-item {
       padding: 12px 14px;
       background: var(--white);
-      border: 1px solid var(--border);
+      border: 1px solid var(--line);
       border-radius: 12px;
       display: flex;
       align-items: center;
@@ -1196,14 +1176,14 @@
     }
 
     .sub-arrow {
-      color: var(--border);
+      color: var(--line);
       font-size: 12px;
     }
 
     .sub-to {
       font-size: 13px;
       font-weight: 400;
-      color: var(--coal);
+      color: var(--ink);
     }
 
     /* FINAL */
@@ -1229,7 +1209,7 @@
 
     .final-title em {
       font-style: normal;
-      color: var(--green-accent);
+      color: #a3b18a;
     }
 
     .final-sub {
@@ -1247,7 +1227,7 @@
       display: inline-flex;
       align-items: center;
       gap: 12px;
-      background: var(--green);
+      background: var(--g);
       color: #fff;
       font-family:
         "Poppins",
@@ -1265,7 +1245,7 @@
     }
 
     .wa-btn:hover {
-      background: var(--green-dark);
+      background: var(--g-d);
       transform: scale(1.03);
       box-shadow: 0 8px 24px rgba(107, 124, 78, 0.3);
     }
@@ -1583,7 +1563,7 @@
       margin-top: 16px;
       font-size: 12px;
       font-weight: 500;
-      color: var(--coal);
+      color: var(--ink);
       letter-spacing: 0.5px;
       cursor: pointer;
       background: none;
@@ -1595,13 +1575,13 @@
         BlinkMacSystemFont,
         sans-serif;
       text-decoration: underline;
-      text-decoration-color: var(--border);
+      text-decoration-color: var(--line);
       text-underline-offset: 3px;
       transition: all 0.2s;
     }
 
     .video-btn:hover {
-      text-decoration-color: var(--coal);
+      text-decoration-color: var(--ink);
     }
 
     .video-btn svg {
@@ -1620,7 +1600,7 @@
       width: 60px;
       height: 60px;
       border-radius: 50%;
-      background: var(--green);
+      background: var(--g);
       color: white;
       border: none;
       cursor: pointer;
@@ -1658,7 +1638,7 @@
     }
 
     .chat-header {
-      background: var(--green);
+      background: var(--g);
       color: white;
       padding: 18px 20px;
       font-size: 16px;
@@ -1714,14 +1694,14 @@
 
     .chat-msg.bot {
       background: white;
-      color: var(--coal);
+      color: var(--ink);
       align-self: flex-start;
       border-radius: 18px 18px 18px 4px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     }
 
     .chat-msg.user {
-      background: var(--green);
+      background: var(--g);
       color: white;
       align-self: flex-end;
       border-radius: 18px 18px 4px 18px;
@@ -1730,8 +1710,8 @@
 
     .chat-options {
       padding: 16px;
-      background: var(--green-bg);
-      border-top: 2px solid var(--border);
+      background: var(--bg);
+      border-top: 2px solid var(--line);
       box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.06);
       display: flex;
       flex-wrap: wrap;
@@ -1746,14 +1726,14 @@
     }
 
     .chat-options::-webkit-scrollbar-thumb {
-      background: var(--border);
+      background: var(--line);
       border-radius: 4px;
     }
 
     .chat-opt {
-      background: var(--green-light);
+      background: var(--g-l);
       border: none;
-      color: var(--green-deep);
+      color: var(--g-dd);
       padding: 8px 16px;
       border-radius: 50px;
       font-size: 13px;
@@ -1765,7 +1745,7 @@
     }
 
     .chat-opt:hover {
-      background: var(--green);
+      background: var(--g);
       color: white;
     }
 
@@ -1773,10 +1753,10 @@
       text-align: center;
       font-size: 11px;
       font-weight: 500;
-      color: var(--green);
+      color: var(--g);
       padding: 6px 0 0;
-      background: var(--green-bg);
-      border-top: 2px solid var(--border);
+      background: var(--bg);
+      border-top: 2px solid var(--line);
       animation: hintPulse 1.5s ease-in-out infinite;
     }
 
@@ -1814,7 +1794,7 @@
       font-weight: 600;
       letter-spacing: 0.5px;
       text-transform: uppercase;
-      color: var(--light);
+      color: var(--ink-3);
       display: block;
       margin-bottom: 6px;
     }
@@ -1831,8 +1811,8 @@
     }
 
     .week-day-dot--moedas {
-      background: var(--green-light);
-      border: 2px solid var(--green-accent);
+      background: var(--g-l);
+      border: 2px solid #a3b18a;
     }
 
     .week-day-dot--planilha {
@@ -1853,7 +1833,7 @@
     .week-day-label {
       font-size: 8px;
       font-weight: 500;
-      color: var(--mid);
+      color: var(--ink-2);
       display: block;
       line-height: 1.3;
     }
@@ -1871,7 +1851,7 @@
       gap: 6px;
       font-size: 11px;
       font-weight: 500;
-      color: var(--mid);
+      color: var(--ink-2);
     }
 
     .week-legend-dot {
@@ -1904,7 +1884,7 @@
       margin: 0 auto;
       border-radius: 22px;
       padding: 2px;
-      background: linear-gradient(270deg, var(--border), var(--green), var(--green-dark), var(--border));
+      background: linear-gradient(270deg, var(--line), var(--g), var(--g-d), var(--line));
       background-size: 300% 300%;
       animation: borderGlow 4s ease infinite;
     }
@@ -1912,7 +1892,7 @@
     .dicas-card-wrap a {
       display: flex;
       flex-direction: row;
-      background: var(--green-bg);
+      background: var(--bg);
       border-radius: 20px;
       overflow: hidden;
       text-decoration: none;
@@ -1957,7 +1937,7 @@
       background: var(--white);
       border: 1px solid #e5e7eb;
       box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-      color: var(--mid);
+      color: var(--ink-2);
       cursor: pointer;
       z-index: 300;
       display: flex;
@@ -1974,9 +1954,9 @@
     }
 
     .back-to-top:hover {
-      background: var(--green-bg);
-      color: var(--green-dark);
-      border-color: var(--border);
+      background: var(--bg);
+      color: var(--g-d);
+      border-color: var(--line);
     }
 
     /* PROGRESS BAR */
@@ -1992,7 +1972,7 @@
     .progress-bar {
       height: 100%;
       width: 0%;
-      background: linear-gradient(90deg, var(--green-accent), var(--green));
+      background: linear-gradient(90deg, #a3b18a, var(--g));
       transition: width 0.15s linear;
     }
 
@@ -2102,7 +2082,7 @@
       font-weight: 600;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      color: var(--light);
+      color: var(--ink-3);
       display: block;
       text-align: center;
     }
@@ -2269,7 +2249,7 @@
     .app-btn-sim--gray {
       background: rgba(0, 0, 0, 0.06);
       border: 1.5px solid rgba(0, 0, 0, 0.12);
-      color: var(--mid);
+      color: var(--ink-2);
     }
 
     .app-blur-sim {
@@ -2285,7 +2265,7 @@
     .app-blur-sim-label {
       font-size: 13px;
       font-weight: 500;
-      color: var(--mid);
+      color: var(--ink-2);
     }
 
     .app-blur-sim-toggle {
@@ -2327,7 +2307,7 @@
       background: rgba(255,255,255,0.04);
     }
     .hero-pill-dark {
-      background: var(--green-deep);
+      background: var(--g-dd);
       border-color: rgba(255,255,255,0.08);
       color: rgba(255,255,255,0.7);
     }
@@ -2335,7 +2315,7 @@
       width: 5px;
       height: 5px;
       border-radius: 50%;
-      background: var(--green-accent);
+      background: #a3b18a;
       flex-shrink: 0;
     }
   </style>
@@ -2457,8 +2437,8 @@
                 border-color: rgba(0, 0, 0, 0.08);
               ">
             <div>
-              <span class="glass-card-name" style="color: var(--coal)">Status da Deusa</span>
-              <span class="glass-card-sub" style="color: var(--light)">Offline</span>
+              <span class="glass-card-name" style="color: var(--ink)">Status da Deusa</span>
+              <span class="glass-card-sub" style="color: var(--ink-3)">Offline</span>
             </div>
             <div class="app-toggle" style="background: rgba(0, 0, 0, 0.1)">
               <div class="app-toggle-knob" style="background: #fff"></div>
@@ -2486,8 +2466,8 @@
                 border-color: rgba(0, 0, 0, 0.08);
               ">
             <div>
-              <span class="glass-card-name" style="color: var(--coal)">Status LivMate</span>
-              <span class="glass-card-sub" style="color: var(--light)">Offline</span>
+              <span class="glass-card-name" style="color: var(--ink)">Status LivMate</span>
+              <span class="glass-card-sub" style="color: var(--ink-3)">Offline</span>
             </div>
             <div class="app-toggle" style="background: rgba(0, 0, 0, 0.1)">
               <div class="app-toggle-knob" style="background: #fff"></div>
@@ -2531,11 +2511,11 @@
         <div style="margin: 20px 0">
           <span class="app-popup-label">Essa mensagem vai aparecer no app ↓</span>
           <div class="app-popup" style="text-align: center; padding: 28px 24px 24px">
-            <div class="app-popup-title" style="color: var(--coal); font-size: 17px">
+            <div class="app-popup-title" style="color: var(--ink); font-size: 17px">
               Verificação KYC
             </div>
             <p class="app-popup-text" style="
-                  color: var(--mid);
+                  color: var(--ink-2);
                   font-size: 13px;
                   line-height: 1.6;
                   margin-bottom: 20px;
@@ -2563,7 +2543,7 @@
                   padding: 12px;
                   font-size: 15px;
                   font-weight: 500;
-                  color: var(--mid);
+                  color: var(--ink-2);
                   border: 1px solid #e5e7eb;
                   border-radius: 100px;
                 ">Ignorar</span>
@@ -2813,7 +2793,7 @@
             </div>
           </div>
         </div>
-        <div class="info-box info-box-dark" style="margin-top: 20px; border-left-color: var(--green-accent)">
+        <div class="info-box info-box-dark" style="margin-top: 20px; border-left-color: #a3b18a">
           <p>
             ⚠️ Você
             <strong>só ganha moedas quando a outra pessoa liga pra você</strong>. Se você ligar pra alguém, não ganha
@@ -2845,7 +2825,7 @@
           </p>
         </div>
 
-        <p class="sec-tag" style="margin-top: 24px; color: var(--coal)">
+        <p class="sec-tag" style="margin-top: 24px; color: var(--ink)">
           Nível Nova (quando você começa)
         </p>
         <p class="sec-body" style="margin-bottom: 12px">
@@ -2858,11 +2838,11 @@
                 align-items: center;
                 padding: 14px 18px;
               ">
-            <span style="font-size: 14px; color: var(--mid)">20 mil moedas</span>
+            <span style="font-size: 14px; color: var(--ink-2)">20 mil moedas</span>
             <span style="
                   font-size: 16px;
                   font-weight: 700;
-                  color: var(--green-dark);
+                  color: var(--g-d);
                 ">R$ 117</span>
           </div>
           <div class="call-card" style="
@@ -2871,11 +2851,11 @@
                 align-items: center;
                 padding: 14px 18px;
               ">
-            <span style="font-size: 14px; color: var(--mid)">40 mil moedas</span>
+            <span style="font-size: 14px; color: var(--ink-2)">40 mil moedas</span>
             <span style="
                   font-size: 16px;
                   font-weight: 700;
-                  color: var(--green-dark);
+                  color: var(--g-d);
                 ">R$ 235</span>
           </div>
           <div class="call-card" style="
@@ -2884,11 +2864,11 @@
                 align-items: center;
                 padding: 14px 18px;
               ">
-            <span style="font-size: 14px; color: var(--mid)">100 mil moedas</span>
+            <span style="font-size: 14px; color: var(--ink-2)">100 mil moedas</span>
             <span style="
                   font-size: 16px;
                   font-weight: 700;
-                  color: var(--green-dark);
+                  color: var(--g-d);
                 ">R$ 588</span>
           </div>
           <div class="call-card" style="
@@ -2897,11 +2877,11 @@
                 align-items: center;
                 padding: 14px 18px;
               ">
-            <span style="font-size: 14px; color: var(--mid)">200 mil moedas</span>
+            <span style="font-size: 14px; color: var(--ink-2)">200 mil moedas</span>
             <span style="
                   font-size: 16px;
                   font-weight: 700;
-                  color: var(--green-dark);
+                  color: var(--g-d);
                 ">R$ 1.176</span>
           </div>
           <div class="call-card" style="
@@ -2910,18 +2890,18 @@
                 align-items: center;
                 padding: 14px 18px;
               ">
-            <span style="font-size: 14px; color: var(--mid)">500 mil moedas</span>
+            <span style="font-size: 14px; color: var(--ink-2)">500 mil moedas</span>
             <span style="
                   font-size: 16px;
                   font-weight: 700;
-                  color: var(--green-dark);
+                  color: var(--g-d);
                 ">R$ 2.941</span>
           </div>
         </div>
 
         <div class="divider" style="margin: 28px 0"></div>
 
-        <p class="sec-tag" style="color: var(--green-dark)">
+        <p class="sec-tag" style="color: var(--g-d)">
           ★ Nível 1 (o melhor, paga mais)
         </p>
         <p class="sec-body" style="margin-bottom: 12px">
@@ -2934,11 +2914,11 @@
                 align-items: center;
                 padding: 14px 18px;
               ">
-            <span style="font-size: 14px; color: var(--mid)">20 mil moedas</span>
+            <span style="font-size: 14px; color: var(--ink-2)">20 mil moedas</span>
             <span style="
                   font-size: 16px;
                   font-weight: 700;
-                  color: var(--green-dark);
+                  color: var(--g-d);
                 ">R$ 133</span>
           </div>
           <div class="call-card" style="
@@ -2947,11 +2927,11 @@
                 align-items: center;
                 padding: 14px 18px;
               ">
-            <span style="font-size: 14px; color: var(--mid)">40 mil moedas</span>
+            <span style="font-size: 14px; color: var(--ink-2)">40 mil moedas</span>
             <span style="
                   font-size: 16px;
                   font-weight: 700;
-                  color: var(--green-dark);
+                  color: var(--g-d);
                 ">R$ 266</span>
           </div>
           <div class="call-card" style="
@@ -2960,11 +2940,11 @@
                 align-items: center;
                 padding: 14px 18px;
               ">
-            <span style="font-size: 14px; color: var(--mid)">100 mil moedas</span>
+            <span style="font-size: 14px; color: var(--ink-2)">100 mil moedas</span>
             <span style="
                   font-size: 16px;
                   font-weight: 700;
-                  color: var(--green-dark);
+                  color: var(--g-d);
                 ">R$ 666</span>
           </div>
           <div class="call-card" style="
@@ -2973,11 +2953,11 @@
                 align-items: center;
                 padding: 14px 18px;
               ">
-            <span style="font-size: 14px; color: var(--mid)">200 mil moedas</span>
+            <span style="font-size: 14px; color: var(--ink-2)">200 mil moedas</span>
             <span style="
                   font-size: 16px;
                   font-weight: 700;
-                  color: var(--green-dark);
+                  color: var(--g-d);
                 ">R$ 1.333</span>
           </div>
           <div class="call-card" style="
@@ -2986,11 +2966,11 @@
                 align-items: center;
                 padding: 14px 18px;
               ">
-            <span style="font-size: 14px; color: var(--mid)">500 mil moedas</span>
+            <span style="font-size: 14px; color: var(--ink-2)">500 mil moedas</span>
             <span style="
                   font-size: 16px;
                   font-weight: 700;
-                  color: var(--green-dark);
+                  color: var(--g-d);
                 ">R$ 3.333</span>
           </div>
         </div>
@@ -3016,7 +2996,7 @@
         </h2>
         <div class="cards-grid">
           <div class="card card-dark" style="
-                background: var(--green-deep);
+                background: var(--g-dd);
                 border-color: rgba(255, 255, 255, 0.1);
               ">
             <span class="card-label card-label-dark">meta mínima</span>
@@ -3024,7 +3004,7 @@
             <span class="card-sub card-sub-dark">moedas por semana</span>
           </div>
           <div class="card card-dark" style="
-                background: var(--green-deep);
+                background: var(--g-dd);
                 border-color: rgba(255, 255, 255, 0.1);
               ">
             <span class="card-label card-label-dark">dia do pagamento</span>
@@ -3037,7 +3017,7 @@
 
           <div style="
                 padding: 16px;
-                background: var(--green-bg);
+                background: var(--bg);
                 border-radius: 12px;
                 border: 1px solid #f3f4f6;
                 margin-top: 16px;
@@ -3047,7 +3027,7 @@
                   font-weight: 600;
                   letter-spacing: 1px;
                   text-transform: uppercase;
-                  color: var(--green-dark);
+                  color: var(--g-d);
                   margin: 0 0 8px;
                 ">
               Semana 1 → você trabalha
@@ -3104,7 +3084,7 @@
 
         <div style="
               padding: 16px;
-              background: var(--green-bg);
+              background: var(--bg);
               border-radius: 12px;
               border: 1px solid #f3f4f6;
               margin-top: 10px;
@@ -3164,7 +3144,7 @@
               gap: 16px;
               margin-top: 14px;
               padding: 12px 16px;
-              background: var(--green-bg);
+              background: var(--bg);
               border-radius: 10px;
               border: 1px solid #f3f4f6;
             ">
@@ -3174,13 +3154,13 @@
                 gap: 5px;
                 font-size: 10px;
                 font-weight: 500;
-                color: var(--light);
+                color: var(--ink-3);
               ">
             <span style="
                   width: 8px;
                   height: 8px;
                   border-radius: 50%;
-                  background: var(--green-accent);
+                  background: #a3b18a;
                   flex-shrink: 0;
                 "></span>
             Ganhando moedas
@@ -3191,7 +3171,7 @@
                 gap: 5px;
                 font-size: 10px;
                 font-weight: 500;
-                color: var(--light);
+                color: var(--ink-3);
               ">
             <span style="
                   width: 8px;
@@ -3208,7 +3188,7 @@
                 gap: 5px;
                 font-size: 10px;
                 font-weight: 500;
-                color: var(--light);
+                color: var(--ink-3);
               ">
             <span style="
                   width: 8px;
@@ -3233,10 +3213,10 @@
               align-items: flex-start;
               gap: 10px;
               font-size: 14px;
-              color: var(--mid);
+              color: var(--ink-2);
               line-height: 1.7;
             ">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5"
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--g)" stroke-width="2.5"
             stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 4px">
             <polyline points="9 18 15 12 9 6" />
           </svg>
@@ -3252,10 +3232,10 @@
               align-items: flex-start;
               gap: 10px;
               font-size: 14px;
-              color: var(--mid);
+              color: var(--ink-2);
               line-height: 1.7;
             ">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5"
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--g)" stroke-width="2.5"
             stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 4px">
             <polyline points="9 18 15 12 9 6" />
           </svg>
@@ -3270,10 +3250,10 @@
               align-items: flex-start;
               gap: 10px;
               font-size: 14px;
-              color: var(--mid);
+              color: var(--ink-2);
               line-height: 1.7;
             ">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5"
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--g)" stroke-width="2.5"
             stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 4px">
             <polyline points="9 18 15 12 9 6" />
           </svg>
@@ -3303,7 +3283,7 @@
       </p>
       <div class="steps stagger fade-up">
         <div class="step-row">
-          <span class="step-n" style="color: var(--green)">★</span>
+          <span class="step-n" style="color: var(--g)">★</span>
           <div>
             <span class="step-title">Nível 1 (o melhor)</span>
             <span class="step-desc">Mais de 13% das suas chamadas de amigo passaram de 5 minutos.
@@ -3452,7 +3432,7 @@
               <span id="giftTimer" style="
                     font-size: 10px;
                     font-weight: 500;
-                    color: var(--light);
+                    color: var(--ink-3);
                     font-variant-numeric: tabular-nums;
                   ">00:00</span>
             </div>
@@ -3538,7 +3518,7 @@
                     justify-content: center;
                     flex-shrink: 0;
                   ">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--coal)" stroke-width="2.5"
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="2.5"
                   stroke-linecap="round">
                   <line x1="12" y1="5" x2="12" y2="19" />
                   <line x1="5" y1="12" x2="19" y2="12" />
@@ -3548,13 +3528,13 @@
                 <span style="
                       font-size: 14px;
                       font-weight: 600;
-                      color: var(--coal);
+                      color: var(--ink);
                       display: block;
                       line-height: 1.3;
                     ">Faça mais vídeos</span>
                 <span style="
                       font-size: 11px;
-                      color: var(--light);
+                      color: var(--ink-3);
                       display: block;
                     ">Conte sua história com um vídeo</span>
               </div>
@@ -3600,7 +3580,7 @@
           chamadas. Se levar 2 punições em 30 dias, a agência pode desligar
           seu perfil.
         </p>
-        <p class="sec-tag" style="margin-top: 20px; color: var(--green)">
+        <p class="sec-tag" style="margin-top: 20px; color: var(--g)">
           ✓ Jeito certo de atender
         </p>
         <ul class="check-list">
@@ -3657,7 +3637,7 @@
         <li>Nome de bebida alcoólica</li>
         <li>Tentar levar a pessoa pra outro app</li>
       </ul>
-      <p class="sec-tag" style="margin-top: 24px; color: var(--coal)">
+      <p class="sec-tag" style="margin-top: 24px; color: var(--ink)">
         Se o app bloquear uma palavra, troca por outra:
       </p>
       <div class="sub-grid">
@@ -3825,7 +3805,7 @@
   <div style="
     background: var(--white);
     padding: 48px 36px;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--line);
   ">
     <div class="dicas-card-wrap fade-up">
       <a href="dicas.html">
@@ -3852,7 +3832,7 @@
             box-shadow: 0 1px 6px rgba(0,0,0,0.06);
             white-space: nowrap;
           ">
-            <svg width="10" height="10" viewBox="0 0 24 24" fill="var(--green)" style="flex-shrink: 0; opacity: 0.7;">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="var(--g)" style="flex-shrink: 0; opacity: 0.7;">
               <path
                 d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
             </svg>
@@ -3863,21 +3843,21 @@
         </div>
         <div class="dicas-card-text">
           <p
-            style="font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--green); margin-bottom: 8px;">
+            style="font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--g); margin-bottom: 8px;">
             próximo passo
           </p>
           <p
-            style="font-size: 18px; font-weight: 700; color: var(--coal); line-height: 1.3; margin-bottom: 6px; letter-spacing: -0.3px;">
-            Aprenda a ganhar <span style="color: var(--green);">mais.</span>
+            style="font-size: 18px; font-weight: 700; color: var(--ink); line-height: 1.3; margin-bottom: 6px; letter-spacing: -0.3px;">
+            Aprenda a ganhar <span style="color: var(--g);">mais.</span>
           </p>
-          <p style="font-size: 13px; color: var(--mid); line-height: 1.6; margin-bottom: 14px;">
+          <p style="font-size: 13px; color: var(--ink-2); line-height: 1.6; margin-bottom: 14px;">
             Dicas de quem já bate a meta toda semana.
           </p>
           <span style="
             font-family: 'Inter', sans-serif;
             font-size: 13px;
             font-weight: 600;
-            color: var(--green);
+            color: var(--g);
           ">Ver dicas &nbsp;→</span>
         </div>
       </a>
