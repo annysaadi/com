@@ -175,7 +175,7 @@
     .hero-content {
       position: relative;
       z-index: 1;
-      padding: 24px 24px 36px;
+      padding: 24px 32px 36px;
     }
 
     .hero-eyebrow {
@@ -487,18 +487,17 @@
     /* SIDEBAR / DRAWER */
     .sidebar {
       position: fixed;
-      top: 56px;
+      top: 0;
       right: 0;
       width: 260px;
-      height: calc(100vh - 56px);
-      padding: 24px 16px;
+      height: 100vh;
+      padding: 0;
       display: flex;
       flex-direction: column;
-      gap: 2px;
       z-index: 150;
       background: var(--white);
       box-shadow: var(--shadow-lg);
-      border-left: 1px solid #e5e7eb;
+      border-left: 1px solid rgba(0, 0, 0, 0.07);
       overflow-y: auto;
       transform: translateX(100%);
       transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
@@ -508,58 +507,94 @@
       transform: translateX(0);
     }
 
-    .sidebar-label {
+    .sidebar-head {
+      padding: 20px 20px 16px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .sidebar-brand {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--coal);
+      letter-spacing: -0.3px;
+    }
+
+    .sidebar-brand span {
+      color: var(--green);
+    }
+
+    .sidebar-brand-sub {
       font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 2px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
       color: var(--light);
-      padding: 0 12px;
-      margin-bottom: 8px;
+      margin-top: 3px;
+    }
+
+    .sidebar-links {
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      flex: 1;
+    }
+
+    .sidebar-footer {
+      padding: 16px 20px;
+      border-top: 1px solid rgba(0, 0, 0, 0.06);
+      font-size: 10px;
+      color: var(--light);
+      line-height: 1.5;
+    }
+
+    .sidebar-label {
+      display: none;
     }
 
     .nav-link {
       display: flex;
       align-items: center;
-      gap: 10px;
-      padding: 9px 12px;
-      border-radius: 10px;
+      gap: 12px;
+      padding: 10px 12px;
+      border-radius: 8px;
       font-size: 13px;
-      font-weight: 500;
+      font-weight: 400;
       color: var(--mid);
       text-decoration: none;
-      transition: var(--transition);
+      transition: all 0.15s;
       position: relative;
+      border-left: 2px solid transparent;
     }
 
     .nav-link:hover {
       background: var(--green-bg);
-      color: var(--mid);
     }
 
     .nav-link.active {
-      background: var(--green-light);
-      color: var(--green-dark);
+      background: var(--green-bg);
+      border-left: 2px solid var(--green);
+      padding-left: 10px;
       font-weight: 600;
+      color: var(--coal);
     }
 
     .nav-link.active::before {
-      content: "";
-      position: absolute;
-      right: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 3px;
-      height: 18px;
-      background: var(--green);
-      border-radius: 3px 0 0 3px;
+      display: none;
     }
 
     .nav-num {
-      font-size: 11px;
-      font-weight: 700;
-      color: #d1d5db;
-      min-width: 18px;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-size: 13px;
+      color: var(--green-accent);
+      min-width: 20px;
+      line-height: 1;
+      font-weight: 400;
+    }
+
+    .nav-link.active .nav-num {
+      color: var(--green-dark);
     }
 
     /* MOBILE OVERLAY */
@@ -1967,7 +2002,7 @@
       }
 
       .hero-content {
-        padding: 24px 24px 36px;
+        padding: 24px 36px 36px !important;
       }
 
       .hero-title {
@@ -1987,15 +2022,15 @@
       }
 
       .section {
-        padding: 40px 20px;
+        padding: 40px 36px;
       }
 
       .section.bg-white {
-        padding: 40px 20px;
+        padding: 40px 36px;
       }
 
       .section.bg-dark {
-        padding: 40px 20px;
+        padding: 40px 36px;
       }
 
       .sec-title {
@@ -2012,7 +2047,7 @@
       }
 
       .final {
-        padding: 48px 20px 40px;
+        padding: 48px 36px 40px;
       }
 
       .final-title {
@@ -2358,23 +2393,29 @@
 
   <!-- SIDEBAR -->
   <aside class="sidebar" id="sidebar">
-    <div class="sidebar-label">Navegação</div>
-    <a href="#perfil" class="nav-link active"><span class="nav-num">01</span> Meu perfil</a>
-    <a href="#kyc" class="nav-link"><span class="nav-num">02</span> Documento</a>
-    <a href="#pix" class="nav-link"><span class="nav-num">03</span> Pix</a>
-    <a href="#chamadas" class="nav-link"><span class="nav-num">04</span> Chamadas</a>
-    <a href="#valores" class="nav-link"><span class="nav-num">05</span> Quanto ganha</a>
-    <a href="#pagamento" class="nav-link"><span class="nav-num">06</span> Pagamento</a>
-    <a href="#niveis" class="nav-link"><span class="nav-num">07</span> Níveis</a>
-    <a href="#ganhos" class="nav-link"><span class="nav-num">08</span> Meus ganhos</a>
-    <a href="#funcionalidades" class="nav-link"><span class="nav-num">09</span> Botões do app</a>
-    <a href="#stories" class="nav-link"><span class="nav-num">10</span> Vídeos</a>
-    <a href="#regras" class="nav-link"><span class="nav-num">11</span> Regras</a>
-    <a href="#chat" class="nav-link"><span class="nav-num">12</span> Chat</a>
-    <a href="#seguranca" class="nav-link"><span class="nav-num">13</span> Segurança</a>
-    <a href="#punicoes" class="nav-link"><span class="nav-num">14</span> Punições</a>
-    <a href="#bloqueios" class="nav-link"><span class="nav-num">15</span> Bloqueios</a>
-    <a href="#contato" class="nav-link"><span class="nav-num">16</span> Falar com a gente</a>
+    <div class="sidebar-head">
+      <div class="sidebar-brand">agência <span>zara</span></div>
+      <div class="sidebar-brand-sub">instruções</div>
+    </div>
+    <div class="sidebar-links">
+      <a href="#perfil" class="nav-link active"><span class="nav-num">01</span> Meu perfil</a>
+      <a href="#kyc" class="nav-link"><span class="nav-num">02</span> Documento</a>
+      <a href="#pix" class="nav-link"><span class="nav-num">03</span> Pix</a>
+      <a href="#chamadas" class="nav-link"><span class="nav-num">04</span> Chamadas</a>
+      <a href="#valores" class="nav-link"><span class="nav-num">05</span> Quanto ganha</a>
+      <a href="#pagamento" class="nav-link"><span class="nav-num">06</span> Pagamento</a>
+      <a href="#niveis" class="nav-link"><span class="nav-num">07</span> Níveis</a>
+      <a href="#ganhos" class="nav-link"><span class="nav-num">08</span> Meus ganhos</a>
+      <a href="#funcionalidades" class="nav-link"><span class="nav-num">09</span> Botões do app</a>
+      <a href="#stories" class="nav-link"><span class="nav-num">10</span> Vídeos</a>
+      <a href="#regras" class="nav-link"><span class="nav-num">11</span> Regras</a>
+      <a href="#chat" class="nav-link"><span class="nav-num">12</span> Chat</a>
+      <a href="#seguranca" class="nav-link"><span class="nav-num">13</span> Segurança</a>
+      <a href="#punicoes" class="nav-link"><span class="nav-num">14</span> Punições</a>
+      <a href="#bloqueios" class="nav-link"><span class="nav-num">15</span> Bloqueios</a>
+      <a href="#contato" class="nav-link"><span class="nav-num">16</span> Falar com a gente</a>
+    </div>
+    <div class="sidebar-footer">🤫 não compartilha esse link</div>
   </aside>
 
   <!-- 01 PERFIL ATIVO -->
