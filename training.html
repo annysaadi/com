@@ -47,7 +47,6 @@
       --radius: 12px;
       --shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
       --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.1);
-      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       --danger: var(--red-500);
     }
 
@@ -56,7 +55,7 @@
     }
 
     body {
-      background: var(--bg);
+      background: var(--cream);
       color: var(--ink);
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       font-weight: 400;
@@ -593,7 +592,7 @@
 
     /* SECTIONS */
     .section {
-      padding: 56px 32px;
+      padding: 72px 32px;
       border-bottom: 1px solid var(--line);
       max-width: 680px;
       margin: 0 auto;
@@ -602,7 +601,7 @@
 
     .section.bg-white {
       background: var(--white);
-      padding: 56px 32px;
+      padding: 72px 32px;
     }
 
     .section.bg-white .inner {
@@ -613,7 +612,7 @@
     .section.bg-dark {
       background: #1a1a1a;
       max-width: 100%;
-      padding: 56px 32px;
+      padding: 72px 32px;
     }
 
     .section.bg-dark .inner {
@@ -621,41 +620,12 @@
       margin: 0 auto;
     }
 
-    .sec-num {
-      font-size: 48px;
-      font-weight: 900;
-      line-height: 1;
-      background: linear-gradient(180deg,
-          var(--line) 0%,
-          transparent 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      opacity: 0.5;
-      display: block;
-      margin-bottom: -8px;
-    }
-
-    .sec-tag {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      color: var(--g);
-      display: inline-block;
-      margin-bottom: 10px;
-    }
-
-    .sec-tag-dark {
-      color: rgba(255, 255, 255, 0.5);
-    }
-
     .sec-title {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(24px, 5vw, 32px);
+      font-size: clamp(28px, 6vw, 38px);
       font-weight: 600;
       line-height: 1.2;
-      letter-spacing: -0.5px;
+      letter-spacing: -1px;
       margin-bottom: 16px;
       color: var(--ink);
     }
@@ -664,10 +634,6 @@
       font-style: italic;
       color: var(--g);
       font-weight: 500;
-    }
-
-    .sec-title-light {
-      color: #ffffff;
     }
 
     .sec-body {
@@ -819,6 +785,7 @@
       border: 1px solid var(--line);
       border-radius: 14px;
       background: var(--white);
+      box-shadow: var(--shadow-sm);
     }
 
     .card-dark {
@@ -882,6 +849,7 @@
       border: 1px solid var(--line);
       border-radius: 14px;
       background: var(--white);
+      box-shadow: var(--shadow-sm);
     }
 
     .call-name {
@@ -991,6 +959,7 @@
       border-radius: 14px;
       background: var(--white);
       border: 1px solid var(--line);
+      box-shadow: var(--shadow-sm);
     }
 
     .punish-num {
@@ -1031,6 +1000,7 @@
       border-left: 3px solid var(--g);
       border-radius: 12px;
       background: var(--white);
+      box-shadow: var(--shadow-sm);
     }
 
     .info-box-dark {
@@ -1127,6 +1097,7 @@
       border: 1px solid var(--line);
       border-radius: 14px;
       background: var(--white);
+      box-shadow: var(--shadow-sm);
     }
 
     .func-icon {
@@ -1248,31 +1219,6 @@
       background: var(--g-d);
       transform: scale(1.03);
       box-shadow: 0 8px 24px rgba(107, 124, 78, 0.3);
-    }
-
-    footer {
-      background: var(--dark);
-      padding: 28px 32px;
-      text-align: center;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
-    }
-
-    footer p {
-      font-size: 11px;
-      color: rgba(255, 255, 255, 0.4);
-      letter-spacing: 0.5px;
-      line-height: 1.8;
-    }
-
-    .footer-brand {
-      font-weight: 600;
-      color: rgba(255, 255, 255, 0.55);
-      margin-bottom: 4px;
-    }
-
-    .footer-sep {
-      margin: 0 8px;
-      opacity: 0.3;
     }
 
     .fade-up {
@@ -2034,10 +1980,6 @@
         font-size: 26px;
       }
 
-      footer {
-        padding: 16px 16px;
-      }
-
       .chat-box {
         width: calc(100vw - 32px);
         right: 16px;
@@ -2287,7 +2229,7 @@
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
     }
     /* FONT OVERRIDE — kit.css consistency */
-    .step-n, .card-val, .call-name, .punish-num, .punish-pct, .wa-btn, .chat-input, .chat-send, footer p {
+    .step-n, .card-val, .call-name, .punish-num, .punish-pct, .wa-btn, .chat-input, .chat-send {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     }
     .sec-title, .hero-title, .final-title {
@@ -2401,8 +2343,7 @@
   <!-- 01 PERFIL ATIVO -->
   <div id="perfil">
     <div class="section fade-up">
-      <span class="sec-num">01</span>
-      <span class="sec-tag">primeiro passo</span>
+      <div class="zn-section-head"><span class="zn-section-num">01</span><span class="zn-section-tag">primeiro passo</span></div>
       <h2 class="sec-title">Meu perfil<br /><em>tá ativo?</em></h2>
       <p class="sec-body">
         Abre o app e olha se aparece <strong>Status da Deusa</strong> ou
@@ -2498,8 +2439,7 @@
   <div id="kyc">
     <div class="section bg-white fade-up">
       <div class="inner">
-        <span class="sec-num">02</span>
-        <span class="sec-tag">envio de documento</span>
+        <div class="zn-section-head"><span class="zn-section-num">02</span><span class="zn-section-tag">envio de documento</span></div>
         <h2 class="sec-title">
           Você vai precisar<br /><em>mandar seu documento.</em>
         </h2>
@@ -2564,8 +2504,7 @@
   <!-- 03 PIX -->
   <div id="pix">
     <div class="section fade-up">
-      <span class="sec-num">03</span>
-      <span class="sec-tag">pra receber seu dinheiro</span>
+      <div class="zn-section-head"><span class="zn-section-num">03</span><span class="zn-section-tag">pra receber seu dinheiro</span></div>
       <h2 class="sec-title">Coloca seu Pix<br /><em>certinho.</em></h2>
       <p class="sec-body">
         Se o Pix tiver errado, você <strong>não vai receber</strong>. Então
@@ -2646,9 +2585,8 @@
   <div id="chamadas">
     <div class="section bg-dark fade-up">
       <div class="inner">
-        <span class="sec-num" style="color: rgba(255, 255, 255, 0.4)">04</span>
-        <span class="sec-tag sec-tag-dark">entenda as chamadas</span>
-        <h2 class="sec-title sec-title-light">
+        <div class="zn-section-head"><span class="zn-section-num" style="color: #a3b18a;">04</span><span class="zn-section-tag" style="color: rgba(255,255,255,0.45); border-left-color: rgba(255,255,255,0.15);">entenda as chamadas</span></div>
+        <h2 class="sec-title" style="color: #fff;">
           Tem três tipos de<br /><em>chamada no app.</em>
         </h2>
         <div class="call-cards stagger fade-up">
@@ -2809,8 +2747,7 @@
   <div id="valores">
     <div class="section bg-white fade-up">
       <div class="inner">
-        <span class="sec-num">05</span>
-        <span class="sec-tag">quanto vale em dinheiro</span>
+        <div class="zn-section-head"><span class="zn-section-num">05</span><span class="zn-section-tag">quanto vale em dinheiro</span></div>
         <h2 class="sec-title">Suas moedas<br /><em>viram reais.</em></h2>
         <p class="sec-body">
           Aqui embaixo você vê quanto dá em reais dependendo de quantas moedas
@@ -2989,8 +2926,7 @@
   <div id="pagamento">
     <div class="section bg-white fade-up">
       <div class="inner">
-        <span class="sec-num">06</span>
-        <span class="sec-tag">seu dinheiro</span>
+        <div class="zn-section-head"><span class="zn-section-num">06</span><span class="zn-section-tag">seu dinheiro</span></div>
         <h2 class="sec-title">
           Você recebe toda sexta.<br /><em>Quanto mais você se dedicar, mais ganha.</em>
         </h2>
@@ -3269,8 +3205,7 @@
   <!-- 07 NÍVEIS -->
   <div id="niveis">
     <div class="section fade-up">
-      <span class="sec-num">07</span>
-      <span class="sec-tag">quanto mais tempo, mais você ganha</span>
+      <div class="zn-section-head"><span class="zn-section-num">07</span><span class="zn-section-tag">quanto mais tempo, mais você ganha</span></div>
       <h2 class="sec-title">Entenda os<br /><em>níveis do app.</em></h2>
       <p class="sec-body">
         Você começa no <strong>Nível Nova</strong>. Conforme for atendendo
@@ -3319,8 +3254,7 @@
   <!-- 08 GANHOS -->
   <div id="ganhos">
     <div class="section fade-up">
-      <span class="sec-num">08</span>
-      <span class="sec-tag">fique de olho</span>
+      <div class="zn-section-head"><span class="zn-section-num">08</span><span class="zn-section-tag">fique de olho</span></div>
       <h2 class="sec-title">
         Como ver quanto<br /><em>você já ganhou na semana.</em>
       </h2>
@@ -3374,8 +3308,7 @@
   <div id="funcionalidades">
     <div class="section bg-white fade-up">
       <div class="inner">
-        <span class="sec-num">09</span>
-        <span class="sec-tag">dentro da chamada</span>
+        <div class="zn-section-head"><span class="zn-section-num">09</span><span class="zn-section-tag">dentro da chamada</span></div>
         <h2 class="sec-title">
           Botões que você<br /><em>precisa conhecer.</em>
         </h2>
@@ -3480,8 +3413,7 @@
   <!-- 10 STORIES -->
   <div id="stories">
     <div class="section fade-up">
-      <span class="sec-num">10</span>
-      <span class="sec-tag">pra ganhar mais</span>
+      <div class="zn-section-head"><span class="zn-section-num">10</span><span class="zn-section-tag">pra ganhar mais</span></div>
       <h2 class="sec-title">
         Posta vídeos<br /><em>pra receber mais chamadas.</em>
       </h2>
@@ -3570,8 +3502,7 @@
   <div id="regras">
     <div class="section bg-white fade-up">
       <div class="inner">
-        <span class="sec-num">11</span>
-        <span class="sec-tag">presta atenção aqui</span>
+        <div class="zn-section-head"><span class="zn-section-num">11</span><span class="zn-section-tag">presta atenção aqui</span></div>
         <h2 class="sec-title">
           Segue as regras<br /><em>pra não ter problema.</em>
         </h2>
@@ -3617,8 +3548,7 @@
   <!-- 12 CHAT -->
   <div id="chat">
     <div class="section fade-up">
-      <span class="sec-num">12</span>
-      <span class="sec-tag">cuidado com o que escreve</span>
+      <div class="zn-section-head"><span class="zn-section-num">12</span><span class="zn-section-tag">cuidado com o que escreve</span></div>
       <h2 class="sec-title">O chat é vigiado<br /><em>o tempo todo.</em></h2>
       <p class="sec-body">
         Tudo que você escreve fica salvo. Se receber um aviso, não é punição
@@ -3665,8 +3595,7 @@
   <div id="seguranca">
     <div class="section bg-white fade-up">
       <div class="inner">
-        <span class="sec-num">13</span>
-        <span class="sec-tag">se cuida</span>
+        <div class="zn-section-head"><span class="zn-section-num">13</span><span class="zn-section-tag">se cuida</span></div>
         <h2 class="sec-title">
           Como se proteger<br /><em>nas chamadas.</em>
         </h2>
@@ -3709,8 +3638,7 @@
   <!-- 14 PUNIÇÕES -->
   <div id="punicoes">
     <div class="section fade-up">
-      <span class="sec-num">14</span>
-      <span class="sec-tag">fica esperta</span>
+      <div class="zn-section-head"><span class="zn-section-num">14</span><span class="zn-section-tag">fica esperta</span></div>
       <h2 class="sec-title">
         Cada punição<br /><em>tira dinheiro do seu Pix.</em>
       </h2>
@@ -3743,8 +3671,7 @@
   <div id="bloqueios">
     <div class="section bg-white fade-up">
       <div class="inner">
-        <span class="sec-num">15</span>
-        <span class="sec-tag">bloqueio por chamada encerrada</span>
+        <div class="zn-section-head"><span class="zn-section-num">15</span><span class="zn-section-tag">bloqueio por chamada encerrada</span></div>
         <h2 class="sec-title">
           Se o app encerrar sua chamada,<br /><em>você fica bloqueada.</em>
         </h2>
