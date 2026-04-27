@@ -42,8 +42,6 @@
     :root {
       --red-500: #ef4444;
       --red-50: #fef2f2;
-      --amber-500: #f59e0b;
-      --amber-50: #fffbeb;
       --radius: 12px;
       --shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
       --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.1);
@@ -57,7 +55,7 @@
     body {
       background: var(--cream);
       color: var(--ink);
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: var(--font-sans);
       font-weight: 400;
       line-height: 1.6;
       overflow-x: hidden;
@@ -66,7 +64,7 @@
     }
 
     .serif {
-      font-family: 'Playfair Display', Georgia, serif;
+      font-family: var(--serif);
     }
 
     /* TICKER */
@@ -95,7 +93,7 @@
     }
 
     .ticker-item span {
-      color: #a3b18a;
+      color: var(--g);
       opacity: 0.35;
       margin: 0 10px;
     }
@@ -112,7 +110,7 @@
 
     /* HERO */
     .hero {
-      background: #1a1a1a;
+      background: var(--ink);
       position: relative;
       overflow: hidden;
       min-height: 52vh;
@@ -172,7 +170,7 @@
       font-weight: 500;
       letter-spacing: 2.5px;
       text-transform: uppercase;
-      color: #a3b18a;
+      color: var(--g);
     }
 
     .hero-badge {
@@ -193,7 +191,7 @@
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      background: #a3b18a;
+      background: var(--g);
       animation: heroPulse 2s ease-in-out infinite;
     }
 
@@ -218,10 +216,10 @@
     }
 
     .hero-title {
-      font-family: 'Playfair Display', Georgia, serif;
+      font-family: var(--serif);
       font-size: clamp(38px, 10vw, 56px);
       font-weight: 600;
-      color: #ffffff;
+      color: var(--white);
       line-height: 1.08;
       letter-spacing: -1.5px;
       margin-bottom: 20px;
@@ -233,13 +231,13 @@
     .hero-title em {
       font-style: italic;
       font-weight: 400;
-      color: #a3b18a;
+      color: var(--g);
     }
 
     .hero-divider {
       width: 32px;
       height: 2px;
-      background: linear-gradient(90deg, #a3b18a, transparent);
+      background: linear-gradient(90deg, var(--g), transparent);
       margin-bottom: 20px;
       border-radius: 2px;
       opacity: 0;
@@ -303,7 +301,7 @@
     .hero-stat-val {
       font-size: 20px;
       font-weight: 700;
-      color: #a3b18a;
+      color: var(--g);
       display: block;
       line-height: 1;
       margin-bottom: 4px;
@@ -342,10 +340,10 @@
       margin: 0 auto;
       position: relative;
       z-index: 2;
-      background: rgba(255, 251, 235, 0.97);
+      background: var(--gold-l);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(245, 158, 11, 0.2);
+      border: 1px solid rgba(184, 160, 106, 0.24);
       border-radius: 16px;
       padding: 22px 24px;
       display: flex;
@@ -360,7 +358,7 @@
       width: 36px;
       height: 36px;
       border-radius: 10px;
-      background: linear-gradient(135deg, #fef3c7, #fde68a);
+      background: var(--gold-l);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -371,7 +369,7 @@
     .warn-title {
       font-size: 12px;
       font-weight: 700;
-      color: #b45309;
+      color: var(--g-dd);
       letter-spacing: 0.8px;
       text-transform: uppercase;
       margin-bottom: 6px;
@@ -380,7 +378,7 @@
     .warn-text {
       font-size: 13px;
       font-weight: 400;
-      color: #92400e;
+      color: var(--ink-2);
       line-height: 1.65;
     }
 
@@ -398,8 +396,8 @@
       background: rgba(255, 255, 255, 0.97);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.07);
-      box-shadow: 0 1px 12px rgba(0, 0, 0, 0.04);
+      border-bottom: 1px solid var(--line);
+      box-shadow: var(--shadow-sm);
       transition: all 0.3s ease;
     }
 
@@ -446,7 +444,7 @@
       width: 40px;
       height: 40px;
       border-radius: 10px;
-      border: 1px solid rgba(0, 0, 0, 0.08);
+      border: 1px solid var(--line-2);
       background: var(--bg);
       cursor: pointer;
       transition: var(--transition);
@@ -458,7 +456,7 @@
     }
 
     .top-nav.scrolled .mobile-nav-toggle {
-      border-color: rgba(0, 0, 0, 0.08);
+      border-color: var(--line-2);
       background: var(--bg);
       color: var(--g-d);
     }
@@ -476,7 +474,7 @@
       z-index: 150;
       background: var(--white);
       box-shadow: var(--shadow-lg);
-      border-left: 1px solid rgba(0, 0, 0, 0.07);
+      border-left: 1px solid var(--line);
       overflow-y: auto;
       transform: translateX(100%);
       transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
@@ -488,7 +486,7 @@
 
     .sidebar-head {
       padding: 20px 20px 16px;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      border-bottom: 1px solid var(--line);
     }
 
     .sidebar-brand {
@@ -521,7 +519,7 @@
 
     .sidebar-footer {
       padding: 16px 20px;
-      border-top: 1px solid rgba(0, 0, 0, 0.06);
+      border-top: 1px solid var(--line);
       font-size: 10px;
       color: var(--ink-3);
       line-height: 1.5;
@@ -563,10 +561,10 @@
     }
 
     .nav-num {
-      font-family: 'Playfair Display', Georgia, serif;
+      font-family: var(--serif);
       font-style: italic;
       font-size: 13px;
-      color: #a3b18a;
+      color: var(--g);
       min-width: 20px;
       line-height: 1;
       font-weight: 400;
@@ -592,7 +590,7 @@
 
     /* SECTIONS */
     .section {
-      padding: 72px 32px;
+      padding: 64px 32px;
       max-width: 680px;
       margin: 0 auto;
       scroll-margin-top: 64px;
@@ -600,7 +598,7 @@
 
     .section.bg-white {
       background: var(--white);
-      padding: 72px 32px;
+      padding: 64px 32px;
     }
 
     .section.bg-white .inner {
@@ -609,9 +607,9 @@
     }
 
     .section.bg-dark {
-      background: #1a1a1a;
+      background: var(--ink);
       max-width: 100%;
-      padding: 72px 32px;
+      padding: 64px 32px;
     }
 
     .section.bg-dark .inner {
@@ -620,7 +618,7 @@
     }
 
     .sec-title {
-      font-family: 'Playfair Display', Georgia, serif;
+      font-family: var(--serif);
       font-size: 52px;
       font-weight: 600;
       line-height: 1.05;
@@ -768,7 +766,7 @@
     }
 
     .dark-list.no-list li::before {
-      color: #e74c3c;
+      color: var(--danger);
     }
 
     /* CARDS */
@@ -782,7 +780,7 @@
     .card {
       padding: 20px;
       border: 1px solid var(--line);
-      border-radius: 14px;
+      border-radius: var(--radius-lg);
       background: var(--white);
       box-shadow: var(--shadow-sm);
     }
@@ -808,10 +806,7 @@
 
     .card-val {
       font-family:
-        "Poppins",
-        -apple-system,
-        BlinkMacSystemFont,
-        sans-serif;
+        var(--font-sans);
       font-size: 26px;
       font-weight: 700;
       color: var(--ink);
@@ -820,7 +815,7 @@
     }
 
     .card-val-dark {
-      color: #ffffff;
+      color: var(--white);
     }
 
     .card-sub {
@@ -845,18 +840,15 @@
 
     .call-card {
       padding: 20px 22px;
-      border: none;
-      border-radius: 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
       background: var(--white);
       box-shadow: var(--shadow-sm);
     }
 
     .call-name {
       font-family:
-        "Poppins",
-        -apple-system,
-        BlinkMacSystemFont,
-        sans-serif;
+        var(--font-sans);
       font-size: 20px;
       font-weight: 600;
       color: var(--ink);
@@ -864,7 +856,7 @@
     }
 
     .call-name-dark {
-      color: #ffffff;
+      color: var(--white);
     }
 
     .badge {
@@ -955,18 +947,15 @@
       align-items: center;
       gap: 12px;
       padding: 14px 16px;
-      border-radius: 14px;
+      border-radius: var(--radius-lg);
       background: var(--white);
-      border: none;
+      border: 1px solid var(--line);
       box-shadow: var(--shadow-sm);
     }
 
     .punish-num {
       font-family:
-        "Poppins",
-        -apple-system,
-        BlinkMacSystemFont,
-        sans-serif;
+        var(--font-sans);
       font-size: 13px;
       font-weight: 600;
       color: var(--ink-3);
@@ -976,10 +965,7 @@
 
     .punish-pct {
       font-family:
-        "Poppins",
-        -apple-system,
-        BlinkMacSystemFont,
-        sans-serif;
+        var(--font-sans);
       font-size: 22px;
       font-weight: 700;
       color: var(--danger);
@@ -996,8 +982,9 @@
     .info-box {
       margin-top: 16px;
       padding: 16px 20px;
-      border-radius: 12px;
+      border-radius: var(--radius-lg);
       background: var(--white);
+      border: 1px solid var(--line);
       box-shadow: var(--shadow-sm);
     }
 
@@ -1030,15 +1017,15 @@
     .alert-box {
       margin-top: 16px;
       padding: 16px 20px;
-      border-radius: 14px;
+      border-radius: var(--radius-lg);
       display: flex;
       align-items: flex-start;
       gap: 12px;
     }
 
     .alert-box.alert-warn {
-      background: var(--amber-50);
-      border: 1px solid rgba(245, 158, 11, 0.3);
+      background: var(--gold-l);
+      border: 1px solid rgba(184, 160, 106, 0.28);
     }
 
     .alert-box.alert-danger {
@@ -1047,7 +1034,7 @@
     }
 
     .alert-box.alert-tip {
-      background: var(--bg);
+      background: var(--g-l);
       border: 1px solid var(--line);
     }
 
@@ -1064,15 +1051,15 @@
     }
 
     .alert-box.alert-warn p {
-      color: #92400e;
+      color: var(--g-dd);
     }
 
     .alert-box.alert-danger p {
-      color: #8b2a22;
+      color: var(--danger);
     }
 
     .alert-box.alert-tip p {
-      color: #1e5c30;
+      color: var(--g-dd);
     }
 
     .alert-box strong {
@@ -1092,8 +1079,8 @@
       align-items: flex-start;
       gap: 14px;
       padding: 16px 18px;
-      border: none;
-      border-radius: 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
       background: var(--white);
       box-shadow: var(--shadow-sm);
     }
@@ -1157,7 +1144,7 @@
 
     /* FINAL */
     .final {
-      background: #1a1a1a;
+      background: var(--ink);
       padding: 64px 32px 56px;
       text-align: center;
     }
@@ -1170,7 +1157,7 @@
     .final-title {
       font-size: 32px;
       font-weight: 800;
-      color: #ffffff;
+      color: var(--white);
       line-height: 1.2;
       letter-spacing: -0.5px;
       margin-bottom: 16px;
@@ -1178,7 +1165,7 @@
 
     .final-title em {
       font-style: normal;
-      color: #a3b18a;
+      color: var(--g);
     }
 
     .final-sub {
@@ -1197,12 +1184,9 @@
       align-items: center;
       gap: 12px;
       background: var(--g);
-      color: #fff;
+      color: var(--white);
       font-family:
-        "Poppins",
-        -apple-system,
-        BlinkMacSystemFont,
-        sans-serif;
+        var(--font-sans);
       font-size: 13px;
       font-weight: 500;
       padding: 16px 32px;
@@ -1338,14 +1322,14 @@
 
     .call-mockup-lupa .call-mockup-avatar {
       background: #2ec4b6;
-      color: white;
+      color: var(--white);
       font-size: 20px;
       font-weight: 600;
     }
 
     .call-mockup-amigo .call-mockup-avatar {
       background: #2ec4b6;
-      color: white;
+      color: var(--white);
       font-size: 20px;
       font-weight: 600;
     }
@@ -1358,7 +1342,7 @@
     .call-mockup-name {
       font-size: 13px;
       font-weight: 600;
-      color: white;
+      color: var(--white);
       margin-bottom: 2px;
     }
 
@@ -1377,11 +1361,11 @@
     .call-mockup-earn {
       font-size: 13px;
       font-weight: 700;
-      color: white;
+      color: var(--white);
     }
 
     .call-mockup-earn span {
-      color: #f59e0b;
+      color: var(--gold);
     }
 
     .call-mockup-type {
@@ -1402,7 +1386,7 @@
     .call-mockup-header {
       font-size: 12px;
       font-weight: 700;
-      color: white;
+      color: var(--white);
       margin-bottom: 16px;
       letter-spacing: 0.3px;
       display: flex;
@@ -1482,16 +1466,13 @@
       right: 0;
       background: none;
       border: none;
-      color: #fff;
+      color: var(--white);
       font-size: 13px;
       font-weight: 400;
       letter-spacing: 1px;
       cursor: pointer;
       font-family:
-        "Poppins",
-        -apple-system,
-        BlinkMacSystemFont,
-        sans-serif;
+        var(--font-sans);
       opacity: 0.7;
     }
 
@@ -1514,10 +1495,7 @@
       border: none;
       padding: 0;
       font-family:
-        "Poppins",
-        -apple-system,
-        BlinkMacSystemFont,
-        sans-serif;
+        var(--font-sans);
       text-decoration: underline;
       text-decoration-color: var(--line);
       text-underline-offset: 3px;
@@ -1545,10 +1523,10 @@
       height: 60px;
       border-radius: 50%;
       background: var(--g);
-      color: white;
+      color: var(--white);
       border: none;
       cursor: pointer;
-      box-shadow: 0 4px 24px rgba(22, 163, 74, 0.4);
+      box-shadow: 0 4px 24px rgba(107, 124, 78, 0.3);
       z-index: 300;
       font-size: 26px;
       display: flex;
@@ -1568,7 +1546,7 @@
       right: 24px;
       width: 360px;
       max-height: 520px;
-      background: #fafafa;
+      background: var(--bg);
       border-radius: 24px;
       box-shadow: 0 12px 48px rgba(0, 0, 0, 0.18);
       z-index: 300;
@@ -1583,7 +1561,7 @@
 
     .chat-header {
       background: var(--g);
-      color: white;
+      color: var(--white);
       padding: 18px 20px;
       font-size: 16px;
       font-weight: 700;
@@ -1596,7 +1574,7 @@
     .chat-header button {
       background: rgba(255, 255, 255, 0.2);
       border: none;
-      color: white;
+      color: var(--white);
       font-size: 18px;
       cursor: pointer;
       width: 32px;
@@ -1614,7 +1592,7 @@
       flex-direction: column;
       gap: 12px;
       max-height: 200px;
-      background: #fafafa;
+      background: var(--bg);
       -webkit-overflow-scrolling: touch;
       position: relative;
     }
@@ -1624,7 +1602,7 @@
     }
 
     .chat-messages::-webkit-scrollbar-thumb {
-      background: #d1d5db;
+      background: var(--cream-2);
       border-radius: 4px;
     }
 
@@ -1637,7 +1615,7 @@
     }
 
     .chat-msg.bot {
-      background: white;
+      background: var(--white);
       color: var(--ink);
       align-self: flex-start;
       border-radius: 18px 18px 18px 4px;
@@ -1646,7 +1624,7 @@
 
     .chat-msg.user {
       background: var(--g);
-      color: white;
+      color: var(--white);
       align-self: flex-end;
       border-radius: 18px 18px 4px 18px;
       font-weight: 500;
@@ -1684,13 +1662,13 @@
       font-weight: 600;
       cursor: pointer;
       transition: all 0.2s;
-      font-family: 'Inter', sans-serif;
+      font-family: var(--font-sans);
       white-space: nowrap;
     }
 
     .chat-opt:hover {
       background: var(--g);
-      color: white;
+      color: var(--white);
     }
 
     .chat-scroll-hint {
@@ -1756,22 +1734,22 @@
 
     .week-day-dot--moedas {
       background: var(--g-l);
-      border: 2px solid #a3b18a;
+      border: 2px solid var(--g);
     }
 
     .week-day-dot--planilha {
-      background: #fef3c7;
-      border: 2px solid var(--amber-500);
+      background: var(--gold-l);
+      border: 2px solid var(--gold);
     }
 
     .week-day-dot--pix {
-      background: #dbeafe;
-      border: 2px solid #3b82f6;
+      background: var(--g-l);
+      border: 2px solid var(--g);
     }
 
     .week-day-dot--off {
-      background: #f3f4f6;
-      border: 2px solid #e5e7eb;
+      background: var(--bg);
+      border: 2px solid var(--line-2);
     }
 
     .week-day-label {
@@ -1879,7 +1857,7 @@
       height: 44px;
       border-radius: 50%;
       background: var(--white);
-      border: 1px solid #e5e7eb;
+      border: 1px solid var(--line);
       box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
       color: var(--ink-2);
       cursor: pointer;
@@ -1910,13 +1888,13 @@
       left: 0;
       right: 0;
       height: 3px;
-      background: #f3f4f6;
+      background: var(--bg);
     }
 
     .progress-bar {
       height: 100%;
       width: 0%;
-      background: linear-gradient(90deg, #a3b18a, var(--g));
+      background: linear-gradient(90deg, var(--g), var(--g-d));
       transition: width 0.15s linear;
     }
 
@@ -2010,7 +1988,7 @@
     .app-popup {
       background: var(--white);
       border-radius: 16px;
-      border: 1px solid #e5e7eb;
+      border: 1px solid var(--line);
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
       padding: 28px 24px;
       text-align: center;
@@ -2038,7 +2016,7 @@
     .app-popup-text {
       font-size: 13px;
       font-weight: 400;
-      color: #4b5563;
+      color: var(--ink-2);
       line-height: 1.65;
       margin-bottom: 16px;
     }
@@ -2051,7 +2029,7 @@
     .app-popup-btn {
       display: inline-block;
       background: #7c5cfc;
-      color: #fff;
+      color: var(--white);
       font-size: 14px;
       font-weight: 600;
       padding: 12px 48px;
@@ -2064,7 +2042,7 @@
     .inline-app-btn {
       display: inline-block;
       background: #7c5cfc;
-      color: #fff;
+      color: var(--white);
       font-size: 11px;
       font-weight: 600;
       padding: 3px 12px;
@@ -2101,7 +2079,7 @@
     .app-status-name {
       font-size: 14px;
       font-weight: 500;
-      color: #fff;
+      color: var(--white);
       display: block;
       line-height: 1.3;
     }
@@ -2165,7 +2143,7 @@
       font-weight: 500;
       letter-spacing: 1px;
       text-transform: uppercase;
-      color: #d1d5db;
+      color: var(--cream-2);
       display: block;
       margin-bottom: 6px;
       text-align: center;
@@ -2184,7 +2162,7 @@
 
     .app-btn-sim--purple {
       background: #6c5ce7;
-      color: #fff;
+      color: var(--white);
     }
 
     .app-btn-sim--gray {
@@ -2221,7 +2199,7 @@
       width: 18px;
       height: 18px;
       border-radius: 50%;
-      background: #fff;
+      background: var(--white);
       position: absolute;
       top: 2px;
       left: 2px;
@@ -2229,10 +2207,10 @@
     }
     /* FONT OVERRIDE — kit.css consistency */
     .step-n, .card-val, .call-name, .punish-num, .punish-pct, .wa-btn, .chat-input, .chat-send {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: var(--font-sans);
     }
     .sec-title, .hero-title, .final-title {
-      font-family: 'Playfair Display', Georgia, serif;
+      font-family: var(--serif);
     }
 
     .hero-pill-item {
@@ -2256,7 +2234,7 @@
       width: 5px;
       height: 5px;
       border-radius: 50%;
-      background: #a3b18a;
+      background: var(--g);
       flex-shrink: 0;
     }
 
@@ -2278,18 +2256,20 @@
       min-height: 44px;
       padding: 12px 20px;
       border-radius: 999px;
-      background: #a3b18a;
-      color: #151a12;
-      font-size: 13px;
-      font-weight: 700;
+      background: rgba(255, 255, 255, 0.06);
+      color: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      font-size: 12px;
+      font-weight: 600;
       text-decoration: none;
-      box-shadow: 0 12px 28px rgba(163, 177, 138, 0.22);
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
       transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
     }
 
     .hero-cta:hover {
-      background: #b6c59b;
-      box-shadow: 0 16px 34px rgba(163, 177, 138, 0.28);
+      background: rgba(107, 124, 78, 0.22);
+      box-shadow: var(--shadow-sm);
       transform: translateY(-1px);
     }
 
@@ -2310,12 +2290,11 @@
     .attention-card {
       max-width: 680px;
       margin: 0 auto;
-      padding: 20px 22px;
-      border-radius: 16px;
-      background: #fff;
-      border: 1px solid rgba(245, 158, 11, 0.42);
-      border-left: 4px solid rgba(239, 68, 68, 0.72);
-      box-shadow: 0 14px 34px rgba(63, 45, 24, 0.08);
+      padding: 18px 22px;
+      border-radius: var(--radius-lg);
+      background: var(--gold-l);
+      border: 1px solid rgba(184, 160, 106, 0.28);
+      box-shadow: var(--shadow-sm);
     }
 
     .attention-card p {
@@ -2325,7 +2304,7 @@
     }
 
     .attention-card strong {
-      color: #9f2d20;
+      color: var(--g-dd);
       font-weight: 700;
     }
 
@@ -2333,8 +2312,8 @@
       display: flex;
       align-items: center;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 16px;
+      gap: 12px;
+      margin-bottom: 14px;
     }
 
     .zn-section-head::before {
@@ -2344,12 +2323,23 @@
       min-height: 26px;
       padding: 5px 10px;
       border-radius: 999px;
-      background: rgba(163, 177, 138, 0.14);
-      border: 1px solid rgba(163, 177, 138, 0.28);
+      background: var(--g-l);
+      border: 1px solid rgba(107, 124, 78, 0.18);
       color: var(--g-d);
       font-size: 10px;
       font-weight: 700;
       letter-spacing: 1px;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .zn-section-tag {
+      border-left: 1px solid var(--line);
+      color: var(--ink-3);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2.2px;
+      padding-left: 12px;
       text-transform: uppercase;
     }
 
@@ -2368,22 +2358,6 @@
     #seguranca .zn-section-head::before { content: "passo 13 de 16"; }
     #punicoes .zn-section-head::before { content: "passo 14 de 16"; }
     #bloqueios .zn-section-head::before { content: "passo 15 de 16"; }
-    #contato .sec-tag::before {
-      content: "passo 16 de 16";
-      display: inline-flex;
-      align-items: center;
-      min-height: 26px;
-      padding: 5px 10px;
-      margin-right: 8px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      color: rgba(255, 255, 255, 0.72);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
 
     #chamadas .zn-section-head::before {
       background: rgba(255, 255, 255, 0.06);
@@ -2391,36 +2365,41 @@
       color: rgba(255, 255, 255, 0.72);
     }
 
+    #chamadas .zn-section-tag {
+      border-left-color: rgba(255, 255, 255, 0.12);
+      color: rgba(255, 255, 255, 0.42);
+    }
+
     #pagamento .section,
     #regras .section,
     #bloqueios .section {
-      border-top: 1px solid rgba(245, 158, 11, 0.18);
-      border-bottom: 1px solid rgba(245, 158, 11, 0.16);
+      border-top: 1px solid rgba(184, 160, 106, 0.2);
+      border-bottom: 1px solid rgba(184, 160, 106, 0.16);
       background:
-        linear-gradient(180deg, rgba(255, 251, 235, 0.9), rgba(255, 255, 255, 0.98));
+        linear-gradient(180deg, rgba(245, 240, 226, 0.72), var(--white));
     }
 
     #punicoes .section {
-      border-top: 1px solid rgba(239, 68, 68, 0.16);
-      border-bottom: 1px solid rgba(239, 68, 68, 0.14);
+      border-top: 1px solid rgba(184, 160, 106, 0.2);
+      border-bottom: 1px solid rgba(184, 160, 106, 0.16);
       background:
-        linear-gradient(180deg, rgba(254, 242, 242, 0.78), rgba(250, 247, 240, 0.96));
+        linear-gradient(180deg, rgba(245, 240, 226, 0.72), var(--cream));
     }
 
     #pagamento .card {
-      border-color: rgba(163, 177, 138, 0.28);
+      border-color: rgba(107, 124, 78, 0.24);
       box-shadow: 0 12px 28px rgba(72, 93, 50, 0.09);
     }
 
     #pagamento .card-dark {
-      background: linear-gradient(135deg, var(--g-dd), #344229) !important;
-      border-color: rgba(163, 177, 138, 0.32) !important;
+      background: linear-gradient(135deg, var(--g-dd), var(--g-d)) !important;
+      border-color: rgba(107, 124, 78, 0.32) !important;
     }
 
     #valores .call-card,
     #ganhos .info-box,
     #niveis .info-box {
-      border: 1px solid rgba(163, 177, 138, 0.22);
+      border: 1px solid rgba(107, 124, 78, 0.18);
       box-shadow: 0 10px 24px rgba(72, 93, 50, 0.07);
     }
 
@@ -2447,13 +2426,31 @@
 
     #punicoes .punish-item:last-child,
     #bloqueios .punish-item {
-      background: #fffafa;
+      background: var(--white);
       border-color: rgba(239, 68, 68, 0.24);
     }
 
     #bloqueios .app-popup {
       border-color: rgba(239, 68, 68, 0.18);
       box-shadow: 0 14px 34px rgba(127, 29, 29, 0.1);
+    }
+
+    #contato .sec-tag::before {
+      content: "passo 16 de 16";
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      padding: 5px 10px;
+      margin-right: 8px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      vertical-align: middle;
     }
 
     .sec-title {
@@ -2509,9 +2506,15 @@
         margin-bottom: 12px;
       }
 
-      .zn-section-head::before,
+      .zn-section-head::before {
+        font-size: 9px;
+        min-height: 24px;
+        padding: 4px 9px;
+      }
+
       #contato .sec-tag::before {
         font-size: 9px;
+        margin-right: 8px;
         min-height: 24px;
         padding: 4px 9px;
       }
@@ -2538,14 +2541,14 @@
     </div>
     <div class="hero-content">
       <div class="hero-eyebrow">
-        <span style="width:20px;height:1px;background:#a3b18a;opacity:0.6;display:inline-block;"></span>
+        <span style="width:20px;height:1px;background:var(--g);opacity:0.6;display:inline-block;"></span>
         <span class="hero-agency" style="margin-left:10px;">leitura obrigatória</span>
       </div>
-      <h1 class="hero-title">Comece do jeito certo.<br /><em>Evite perder dinheiro.</em></h1>
+      <h1 class="hero-title">Comece do jeito certo.<br /><em>Leia antes de começar.</em></h1>
       <div class="hero-divider"></div>
       <p class="hero-sub">Esse guia explica como o app funciona, como você recebe, as regras e tudo que você precisa saber antes de começar.</p>
       <div class="hero-actions">
-        <a class="hero-cta" href="#perfil">Começar agora</a>
+        <a class="hero-cta" href="#perfil">Ir para o guia</a>
       </div>
       <div class="hero-pills">
         <span class="hero-pill-item hero-pill-dark"><span class="hero-pill-dot"></span>Pagamentos semanais</span>
@@ -2554,10 +2557,10 @@
       <div style="height:1px;background:rgba(255,255,255,0.07);margin:20px 0;"></div>
       <div style="display:flex;gap:14px 20px;flex-wrap:wrap;">
         <div style="display:flex;align-items:center;gap:7px;font-size:11px;color:rgba(255,255,255,0.35);">
-          <span style="width:4px;height:4px;border-radius:50%;background:#a3b18a;flex-shrink:0;"></span>16 tópicos
+          <span style="width:4px;height:4px;border-radius:50%;background:var(--g);flex-shrink:0;"></span>16 passos
         </div>
         <div style="display:flex;align-items:center;gap:7px;font-size:11px;color:rgba(255,255,255,0.35);max-width:320px;">
-          <span style="width:4px;height:4px;border-radius:50%;background:#a3b18a;flex-shrink:0;"></span>Se você pular isso, vai errar no app.
+          <span style="width:4px;height:4px;border-radius:50%;background:var(--g);flex-shrink:0;"></span>Se você pular isso, vai errar no app.
         </div>
       </div>
     </div>
@@ -2663,7 +2666,7 @@
               <span class="glass-card-sub" style="color: var(--ink-3)">Offline</span>
             </div>
             <div class="app-toggle" style="background: rgba(0, 0, 0, 0.1)">
-              <div class="app-toggle-knob" style="background: #fff"></div>
+              <div class="app-toggle-knob" style="background: var(--white)"></div>
             </div>
           </div>
         </div>
@@ -2692,7 +2695,7 @@
               <span class="glass-card-sub" style="color: var(--ink-3)">Offline</span>
             </div>
             <div class="app-toggle" style="background: rgba(0, 0, 0, 0.1)">
-              <div class="app-toggle-knob" style="background: #fff"></div>
+              <div class="app-toggle-knob" style="background: var(--white)"></div>
             </div>
           </div>
         </div>
@@ -2765,7 +2768,7 @@
                   font-size: 15px;
                   font-weight: 500;
                   color: var(--ink-2);
-                  border: 1px solid #e5e7eb;
+                  border: 1px solid var(--line);
                   border-radius: 100px;
                 ">Ignorar</span>
           </div>
@@ -2801,7 +2804,7 @@
               <img src="centro-lives.jpeg" alt="Botão Centro de Lives no app" style="
                     max-width: 140px;
                     border-radius: 10px;
-                    border: 1px solid #e5e7eb;
+                    border: 1px solid var(--line);
                     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
                   " />
             </div>
@@ -2869,7 +2872,7 @@
     <div class="section bg-dark fade-up">
       <div class="inner">
         <div class="zn-section-head"><span class="zn-section-tag" style="color: rgba(255,255,255,0.45); border-left-color: rgba(255,255,255,0.15);">entenda as chamadas</span></div>
-        <h2 class="sec-title" style="color: #fff;">
+        <h2 class="sec-title" style="color: var(--white);">
           Tem três tipos de<br /><em>chamada no app.</em>
         </h2>
         <div class="call-cards stagger fade-up">
@@ -2973,7 +2976,7 @@
               </div>
               <div class="call-mockup-avatar" style="
                     background: #a855f7;
-                    color: white;
+      color: var(--white);
                     font-size: 20px;
                     font-weight: 600;
                   ">
@@ -3014,7 +3017,7 @@
             </div>
           </div>
         </div>
-        <div class="info-box info-box-dark" style="margin-top: 20px; border-left-color: #a3b18a">
+        <div class="info-box info-box-dark" style="margin-top: 20px; border-left-color: var(--g)">
           <p>
             ⚠️ Você
             <strong>só ganha moedas quando a outra pessoa liga pra você</strong>. Se você ligar pra alguém, não ganha
@@ -3238,7 +3241,7 @@
                 padding: 16px;
                 background: var(--bg);
                 border-radius: 12px;
-                border: 1px solid #f3f4f6;
+                border: 1px solid var(--line);
                 margin-top: 16px;
               ">
             <p style="
@@ -3305,7 +3308,7 @@
               padding: 16px;
               background: var(--bg);
               border-radius: 12px;
-              border: 1px solid #f3f4f6;
+              border: 1px solid var(--line);
               margin-top: 10px;
             ">
           <p style="
@@ -3313,7 +3316,7 @@
                 font-weight: 600;
                 letter-spacing: 1px;
                 text-transform: uppercase;
-                color: #3b82f6;
+                color: var(--g-d);
                 margin: 0 0 8px;
               ">
             Semana 2 → você recebe
@@ -3365,7 +3368,7 @@
               padding: 12px 16px;
               background: var(--bg);
               border-radius: 10px;
-              border: 1px solid #f3f4f6;
+              border: 1px solid var(--line);
             ">
           <div style="
                 display: flex;
@@ -3379,7 +3382,7 @@
                   width: 8px;
                   height: 8px;
                   border-radius: 50%;
-                  background: #a3b18a;
+                  background: var(--g);
                   flex-shrink: 0;
                 "></span>
             Ganhando moedas
@@ -3396,7 +3399,7 @@
                   width: 8px;
                   height: 8px;
                   border-radius: 50%;
-                  background: var(--amber-500);
+                  background: var(--gold);
                   flex-shrink: 0;
                 "></span>
             Planilha com valores
@@ -3413,7 +3416,7 @@
                   width: 8px;
                   height: 8px;
                   border-radius: 50%;
-                  background: #3b82f6;
+                  background: var(--g);
                   flex-shrink: 0;
                 "></span>
             Pix cai na conta
@@ -3509,7 +3512,7 @@
           </div>
         </div>
         <div class="step-row">
-          <span class="step-n" style="color: #d1d5db">—</span>
+          <span class="step-n" style="color: var(--line-2)">—</span>
           <div>
             <span class="step-title">Nível do meio</span>
             <span class="step-desc">Entre 0% e 13% das chamadas passaram de 5 minutos. Dá pra
@@ -3517,7 +3520,7 @@
           </div>
         </div>
         <div class="step-row">
-          <span class="step-n" style="color: #d1d5db">●</span>
+          <span class="step-n" style="color: var(--line-2)">●</span>
           <div>
             <span class="step-title">Nível Nova (quando você começa)</span>
             <span class="step-desc">Todo mundo começa aqui. É só ir atendendo que você sobe.</span>
@@ -3551,7 +3554,7 @@
               <img src="centro-lives.jpeg" alt="Botão Centro de Lives no app" style="
                     max-width: 140px;
                     border-radius: 10px;
-                    border: 1px solid #e5e7eb;
+                    border: 1px solid var(--line);
                     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
                   " />
             </div>
@@ -3640,7 +3643,7 @@
                     justify-content: center;
                     box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
                   ">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--white)">
                   <path
                     d="M20 7h-1.5A3.5 3.5 0 0 0 12 4.5 3.5 3.5 0 0 0 5.5 7H4a2 2 0 0 0-2 2v1a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V9a2 2 0 0 0-2-2zM12 7a1.5 1.5 0 0 1-1.5-1.5A1.5 1.5 0 0 1 12 4a1.5 1.5 0 0 1 1.5 1.5A1.5 1.5 0 0 1 12 7zm-9 5v7a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7H3z" />
                 </svg>
@@ -3717,8 +3720,8 @@
                   gap: 14px;
                   margin-top: 10px;
                   padding: 10px 16px 10px 10px;
-                  background: #fff;
-                  border: 1px solid #e5e7eb;
+                  background: var(--white);
+                  border: 1px solid var(--line);
                   border-radius: 14px;
                   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
                   max-width: 260px;
@@ -3727,7 +3730,7 @@
                     width: 42px;
                     height: 42px;
                     border-radius: 10px;
-                    background: #f3f4f6;
+                    background: var(--bg);
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -4047,7 +4050,7 @@
                 d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
             </svg>
             <span
-              style="font-family: 'Inter', sans-serif; font-size: 9px; font-weight: 500; color: #444; letter-spacing: 0.2px;">ADM
+              style="font-family: var(--font-sans); font-size: 9px; font-weight: 500; color: var(--ink-2); letter-spacing: 0.2px;">ADM
               Vanessa</span>
           </div>
         </div>
@@ -4064,7 +4067,7 @@
             Dicas de quem já bate a meta toda semana.
           </p>
           <span style="
-            font-family: 'Inter', sans-serif;
+            font-family: var(--font-sans);
             font-size: 13px;
             font-weight: 600;
             color: var(--g);
@@ -4207,7 +4210,7 @@
         botMsg.className = "chat-msg bot";
         if (chatData[i].a === "__CTA__") {
           botMsg.innerHTML =
-            'Claro! 🚀 Fala com a gente no WhatsApp:<br><br><a href="https://wa.me/5521972804151" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:#25d366;color:white;padding:10px 20px;border-radius:50px;text-decoration:none;font-weight:700;font-size:13px;">Chamar no WhatsApp →</a>';
+            'Claro! 🚀 Fala com a gente no WhatsApp:<br><br><a href="https://wa.me/5521972804151" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:#25d366;color:var(--white);padding:10px 20px;border-radius:50px;text-decoration:none;font-weight:700;font-size:13px;">Chamar no WhatsApp →</a>';
         } else {
           botMsg.textContent = chatData[i].a;
         }
