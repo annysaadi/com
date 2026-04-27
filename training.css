@@ -2636,21 +2636,21 @@
       color: rgba(255, 255, 255, 0.45);
     }
 
-    #perfil .guide-head::before { content: "passo 1 de 16"; }
-    #kyc .guide-head::before { content: "passo 2 de 16"; }
-    #pix .guide-head::before { content: "passo 3 de 16"; }
-    #chamadas .guide-head::before { content: "passo 4 de 16"; }
-    #valores .guide-head::before { content: "passo 5 de 16"; }
-    #pagamento .guide-head::before { content: "passo 6 de 16"; }
-    #niveis .guide-head::before { content: "passo 7 de 16"; }
-    #ganhos .guide-head::before { content: "passo 8 de 16"; }
-    #funcionalidades .guide-head::before { content: "passo 9 de 16"; }
-    #stories .guide-head::before { content: "passo 10 de 16"; }
-    #regras .guide-head::before { content: "passo 11 de 16"; }
-    #chat .guide-head::before { content: "passo 12 de 16"; }
-    #seguranca .guide-head::before { content: "passo 13 de 16"; }
-    #punicoes .guide-head::before { content: "passo 14 de 16"; }
-    #bloqueios .guide-head::before { content: "passo 15 de 16"; }
+    #perfil .guide-head::before { content: "passo 1 de 15"; }
+    #kyc .guide-head::before { content: "passo 2 de 15"; }
+    #pix .guide-head::before { content: "passo 3 de 15"; }
+    #chamadas .guide-head::before { content: "passo 4 de 15"; }
+    #valores .guide-head::before { content: "passo 5 de 15"; }
+    #pagamento .guide-head::before { content: "passo 6 de 15"; }
+    #niveis .guide-head::before { content: "passo 7 de 15"; }
+    #ganhos .guide-head::before { content: "passo 8 de 15"; }
+    #funcionalidades .guide-head::before { content: "passo 9 de 15"; }
+    #stories .guide-head::before { content: "passo 10 de 15"; }
+    #regras .guide-head::before { content: "passo 11 de 15"; }
+    #chat .guide-head::before { content: "passo 12 de 15"; }
+    #seguranca .guide-head::before { content: "passo 13 de 15"; }
+    #punicoes .guide-head::before { content: "passo 14 de 15"; }
+    #bloqueios .guide-head::before { content: "passo 15 de 15"; }
 
     #chamadas .guide-head::before {
       background: rgba(255, 255, 255, 0.06);
@@ -2729,7 +2729,7 @@
     }
 
     #contato .sec-tag::before {
-      content: "passo 16 de 16";
+      content: "suporte";
       display: inline-flex;
       align-items: center;
       min-height: 26px;
