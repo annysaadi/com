@@ -136,9 +136,11 @@
     .hero-content {
       position: relative;
       z-index: 1;
-      padding: 80px 32px 48px;
+      padding: 96px 32px 64px;
       max-width: 600px;
-    }
+      margin: 0 auto;
+  width: 100%;
+}
 
     .hero-eyebrow {
       display: flex;
@@ -248,7 +250,7 @@
       left: 32px;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       opacity: 0;
       animation: heroFadeUp 0.6s ease forwards 1.2s;
     }
@@ -645,12 +647,13 @@
     }
 
     .sec-body {
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 400;
-      color: var(--ink-2);
-      line-height: 1.75;
+      color: var(--ink);
+      line-height: 1.65;
       margin-bottom: 20px;
-    }
+      max-width: 640px;
+}
 
     .sec-body-dark {
       color: rgba(255, 255, 255, 0.5);
@@ -745,7 +748,7 @@
       color: var(--ink-2);
       display: flex;
       align-items: flex-start;
-      gap: 10px;
+      gap: 12px;
       line-height: 1.6;
     }
 
@@ -784,7 +787,7 @@
     .cards-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 10px;
+      gap: 12px;
       margin-top: 20px;
     }
 
@@ -1132,7 +1135,7 @@
       border-radius: 12px;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
     }
 
     .sub-from {
@@ -1913,7 +1916,7 @@
       font-size: 13px;
       color: var(--ink-2);
       line-height: 1.6;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
 
     .dicas-card-link {
@@ -1988,8 +1991,10 @@
       }
 
       .hero-content {
-        padding: 24px 36px 36px !important;
-      }
+        padding: 32px 24px 40px !important;
+        margin: 0 auto;
+  width: 100%;
+}
 
       .hero-title {
         font-size: 32px;
@@ -2008,15 +2013,15 @@
       }
 
       .section {
-        padding: 40px 36px;
+        padding: 64px 24px;
       }
 
       .section.bg-white {
-        padding: 40px 36px;
+        padding: 64px 24px;
       }
 
       .section.bg-dark {
-        padding: 40px 36px;
+        padding: 64px 24px;
       }
 
       .sec-title {
@@ -2034,7 +2039,7 @@
       }
 
       .final {
-        padding: 48px 36px 40px;
+        padding: 64px 24px 48px;
       }
 
       .final-title {
@@ -2139,7 +2144,7 @@
     .app-status-cards {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 12px;
       margin: 20px 0;
       max-width: 300px;
     }
@@ -2300,7 +2305,7 @@
     .hero-pill-item {
       display: inline-flex;
       align-items: center;
-      gap: 7px;
+      gap: 8px;
       padding: 7px 14px;
       border-radius: 999px;
       font-size: 12px;
@@ -2326,8 +2331,8 @@
       display: flex;
       align-items: center;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 22px;
+      gap: 12px;
+      margin-top: 24px;
       opacity: 0;
       transform: translateY(12px);
       animation: heroFadeUp 0.6s ease forwards 0.68s;
@@ -2383,14 +2388,14 @@
 
     .hero-meta {
       display: flex;
-      gap: 14px 20px;
+      gap: 16px 24px;
       flex-wrap: wrap;
     }
 
     .hero-meta-item {
       display: flex;
       align-items: center;
-      gap: 7px;
+      gap: 8px;
       font-size: 11px;
       color: rgba(255, 255, 255, 0.35);
     }
@@ -2585,7 +2590,7 @@
       align-items: center;
       flex-wrap: wrap;
       gap: 12px;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
 
     .guide-head::before {
@@ -2742,23 +2747,25 @@
     }
 
     .sec-title {
-      margin-bottom: 18px;
+      margin-bottom: 24px;
     }
 
     .sec-body + .cards-grid,
     .sec-body + .steps,
     .sec-body + .call-cards,
     .sec-body + .func-grid {
-      margin-top: 22px;
+      margin-top: 24px;
     }
 
     @media (max-width: 900px) {
       .hero-content {
         padding-bottom: 30px !important;
-      }
+        margin: 0 auto;
+  width: 100%;
+}
 
       .hero-actions {
-        margin-top: 18px;
+        margin-top: 24px;
       }
 
       .hero-cta {
@@ -2766,11 +2773,11 @@
       }
 
       .hero-pills {
-        gap: 7px;
+        gap: 8px;
       }
 
       .attention-wrap {
-        padding: 18px 24px 0;
+        padding: 24px 24px 0;
       }
 
       .attention-card {
@@ -2785,8 +2792,8 @@
       .section,
       .section.bg-white,
       .section.bg-dark {
-        padding-top: 34px;
-        padding-bottom: 34px;
+        padding-top: 48px;
+        padding-bottom: 48px;
       }
 
       .guide-head {
