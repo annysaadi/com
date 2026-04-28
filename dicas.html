@@ -86,6 +86,15 @@
       --shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
       --shadow-lg: 0 16px 44px rgba(0, 0, 0, 0.12);
       --transition: 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+      --space-2xs: 6px;
+      --space-xs: 10px;
+      --space-sm: 14px;
+      --space-md: 20px;
+      --space-lg: 28px;
+      --space-xl: 40px;
+      --space-2xl: 64px;
+      --section-y: clamp(48px, 7vw, 76px);
+      --page-x: clamp(20px, 5vw, 32px);
       /* aliases */
       --cream-d: var(--cream-2);
       --dark: var(--green-deep);
@@ -161,7 +170,7 @@
       background: linear-gradient(160deg, #151a12 0%, var(--g-dd) 50%, #24271d 100%);
       position: relative;
       overflow: hidden;
-      min-height: 100vh;
+      min-height: 92svh;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
@@ -290,7 +299,7 @@
     .hero-content {
       position: relative;
       z-index: 1;
-      padding: 120px 28px 48px;
+      padding: clamp(104px, 14svh, 132px) var(--page-x) var(--space-xl);
       max-width: 680px;
     }
 
@@ -298,7 +307,7 @@
       display: flex;
       align-items: center;
       gap: 14px;
-      margin-bottom: 28px;
+      margin-bottom: var(--space-lg);
       opacity: 0;
       transform: translateY(12px);
       animation: heroFadeUp 0.6s ease forwards 0.1s;
@@ -366,7 +375,7 @@
       color: rgba(255, 255, 255, 0.85);
       line-height: 1.08;
       letter-spacing: -1.5px;
-      margin-bottom: 20px;
+      margin-bottom: var(--space-md);
       opacity: 0;
       transform: translateY(16px);
       animation: heroFadeUp 0.7s ease forwards 0.25s;
@@ -388,7 +397,7 @@
       width: 48px;
       height: 2px;
       background: linear-gradient(90deg, var(--green-accent), transparent);
-      margin-bottom: 24px;
+      margin-bottom: var(--space-lg);
       border-radius: 2px;
       opacity: 0;
       animation: heroFadeUp 0.5s ease forwards 0.45s;
@@ -400,7 +409,7 @@
       color: rgba(255, 255, 255, 0.7);
       line-height: 1.75;
       max-width: 420px;
-      margin-bottom: 28px;
+      margin-bottom: var(--space-lg);
       opacity: 0;
       transform: translateY(12px);
       animation: heroFadeUp 0.6s ease forwards 0.55s;
@@ -667,9 +676,9 @@
 
     /* SECTIONS */
     .section {
-      padding: 56px 24px;
+      padding: var(--section-y) var(--page-x);
       border-bottom: 1px solid var(--border);
-      max-width: 680px;
+      max-width: 760px;
       margin: 0 auto;
       scroll-margin-top: 64px;
     }
@@ -677,22 +686,22 @@
     .section.bg-white {
       background: var(--white);
       max-width: 100%;
-      padding: 56px 24px;
+      padding: var(--section-y) var(--page-x);
     }
 
     .section.bg-white .inner {
-      max-width: 680px;
+      max-width: 760px;
       margin: 0 auto;
     }
 
     .section.bg-dark {
       background: var(--green-deep);
       max-width: 100%;
-      padding: 56px 24px;
+      padding: var(--section-y) var(--page-x);
     }
 
     .section.bg-dark .inner {
-      max-width: 680px;
+      max-width: 760px;
       margin: 0 auto;
     }
 
@@ -704,7 +713,7 @@
       line-height: 1;
       color: rgba(107, 124, 78, 0.28);
       display: block;
-      margin-bottom: -8px;
+      margin-bottom: -6px;
     }
 
     .sec-tag {
@@ -713,7 +722,7 @@
       letter-spacing: 0.3px;
       color: var(--green);
       display: inline-block;
-      margin-bottom: 10px;
+      margin-bottom: var(--space-xs);
     }
 
     .sec-tag-dark {
@@ -726,7 +735,7 @@
       font-weight: 600;
       line-height: 1.2;
       letter-spacing: -0.6px;
-      margin-bottom: 16px;
+      margin-bottom: var(--space-md);
       color: var(--coal);
     }
 
@@ -745,7 +754,7 @@
       font-weight: 400;
       color: var(--mid);
       line-height: 1.8;
-      margin-bottom: 16px;
+      margin-bottom: var(--space-md);
     }
 
     .sec-body-dark {
@@ -776,7 +785,7 @@
     /* LISTS */
     .check-list {
       list-style: none;
-      margin-top: 16px;
+      margin-top: var(--space-md);
       border-top: 1px solid var(--border);
     }
 
@@ -820,8 +829,8 @@
 
     /* INFO BOX */
     .info-box {
-      margin-top: 16px;
-      padding: 16px 20px;
+      margin-top: var(--space-md);
+      padding: var(--space-md);
       border: 1px solid rgba(107, 124, 78, 0.16);
       border-radius: 12px;
       background: var(--white);
@@ -845,8 +854,8 @@
     }
 
     .tip-box {
-      margin-top: 16px;
-      padding: 16px 20px;
+      margin-top: var(--space-md);
+      padding: var(--space-md);
       border: 1px solid rgba(107, 124, 78, 0.16);
       border-radius: 12px;
       background: var(--green-light);
@@ -864,21 +873,22 @@
     }
 
     /* TIP CARDS */
-    .tip-cards {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-top: 20px;
+    .tip-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+      gap: var(--space-sm);
+      margin-top: var(--space-lg);
     }
 
     .tip-card {
-      padding: 18px 20px;
+      padding: var(--space-md);
       border: 1px solid var(--border);
       border-radius: 12px;
       background: var(--white);
       display: flex;
       align-items: flex-start;
-      gap: 14px;
+      gap: var(--space-sm);
+      min-height: 100%;
       transition:
         transform 0.25s ease,
         box-shadow 0.25s ease;
@@ -896,6 +906,14 @@
 
     .tip-card-dark:hover {
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .tip-list .tip-card:nth-child(5n + 1):not(:only-child) {
+      grid-column: span 2;
+    }
+
+    .tip-list .tip-card:nth-child(5n + 1):not(:only-child) .tip-title {
+      font-size: 15px;
     }
 
     .tip-icon {
@@ -935,15 +953,16 @@
     .schedule {
       display: flex;
       flex-direction: column;
-      gap: 8px;
-      margin-top: 16px;
+      gap: var(--space-xs);
+      margin-top: var(--space-md);
     }
 
     .schedule-row {
-      display: flex;
+      display: grid;
+      grid-template-columns: minmax(86px, 0.6fr) auto minmax(0, 2fr);
       align-items: center;
-      gap: 14px;
-      padding: 12px 16px;
+      gap: var(--space-sm);
+      padding: 12px var(--space-md);
       border-radius: 12px;
       background: var(--white);
       border: 1px solid var(--border);
@@ -988,10 +1007,10 @@
 
     /* CONVO CARDS */
     .convo-cards {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 16px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+      gap: var(--space-xs);
+      margin-top: var(--space-md);
     }
 
     .convo-card {
@@ -1029,7 +1048,7 @@
       display: flex;
       flex-direction: column;
       gap: 0;
-      margin-top: 20px;
+      margin-top: var(--space-lg);
       border-top: 1px solid var(--border);
     }
 
@@ -1167,24 +1186,25 @@
 
     /* UTILITY */
     .mt-sm {
-      margin-top: 12px;
+      margin-top: var(--space-sm);
     }
 
     .mt-md {
-      margin-top: 16px;
+      margin-top: var(--space-md);
     }
 
     .mt-lg {
-      margin-top: 20px;
+      margin-top: var(--space-lg);
     }
 
     .mt-xl {
-      margin-top: 24px;
+      margin-top: var(--space-xl);
     }
 
     .sec-tag-inline {
-      margin-top: 20px;
+      margin-top: var(--space-lg);
       color: var(--coal);
+      display: block;
     }
 
     .sec-num-dark {
@@ -1478,15 +1498,15 @@
       }
 
       .section {
-        padding: 40px 20px;
+        padding: 44px 20px;
       }
 
       .section.bg-white {
-        padding: 40px 20px;
+        padding: 44px 20px;
       }
 
       .section.bg-dark {
-        padding: 40px 20px;
+        padding: 44px 20px;
       }
 
       .sec-title {
@@ -1531,6 +1551,21 @@
         width: 100%;
         justify-content: center;
         white-space: normal;
+      }
+
+      .tip-list,
+      .convo-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .tip-list .tip-card:nth-child(5n + 1):not(:only-child) {
+        grid-column: auto;
+      }
+
+      .schedule-row {
+        grid-template-columns: 1fr;
+        gap: 6px;
+        align-items: start;
       }
     }
   </style>
@@ -1650,7 +1685,7 @@
           quase sempre é o mesmo: não trata como trabalho de verdade. Quem
           ganha bem é quem tem foco, paciência e aparece todo dia.
         </p>
-        <div class="tip-cards">
+        <div class="tip-list">
           <div class="tip-card">
             <div class="tip-icon">🚫</div>
             <div>
@@ -1703,7 +1738,7 @@
             O usuário escolhe com os olhos. Antes de ligar, ele olha sua foto,
             vídeo e nome. Perfil bem feito = mais chamadas chegando sozinhas.
           </p>
-          <div class="tip-cards">
+          <div class="tip-list">
             <div class="tip-card tip-card-dark">
               <div class="tip-icon">💄</div>
               <div>
@@ -1946,7 +1981,7 @@
           <p class="sec-tag sec-tag-inline mt-lg">
             Quanto tempo em chamadas pra bater a meta?
           </p>
-          <div class="tip-cards" style="margin-top: 12px">
+          <div class="tip-list" style="margin-top: 12px">
             <div class="tip-card">
               <div class="tip-icon">⏱️</div>
               <div>
@@ -2006,7 +2041,7 @@
           possível. Mais tempo = mais moedas. Chamadas longas também melhoram
           seu nível no app.
         </p>
-        <div class="tip-cards">
+        <div class="tip-list">
           <div class="tip-card">
             <div class="tip-icon">😊</div>
             <div>
@@ -2126,7 +2161,7 @@
             Deixa ele curioso, segura ele na chamada sem forçar, e faz ele
             querer voltar. Tudo com jeitinho e leveza.
           </p>
-          <div class="tip-cards" style="margin-top: 20px">
+          <div class="tip-list" style="margin-top: 20px">
             <div class="tip-card tip-card-dark">
               <div class="tip-icon">🎭</div>
               <div>
@@ -2222,7 +2257,7 @@
             chamada normal (a da Deusa, que é quando um desconhecido te liga).
             Quanto mais amigos, mais chamadas chegam sem você fazer nada.
           </p>
-          <div class="tip-cards" style="margin-top: 20px">
+          <div class="tip-list" style="margin-top: 20px">
             <div class="tip-card tip-card-dark">
               <div class="tip-icon">➕</div>
               <div>
@@ -2274,7 +2309,7 @@
           Cada cara é diferente. Aprender a ler o perfil dele logo no começo
           te ajuda a agir certo e ganhar mais.
         </p>
-        <div class="tip-cards">
+        <div class="tip-list">
           <div class="tip-card">
             <div class="tip-icon">💸</div>
             <div>
@@ -2345,7 +2380,7 @@
             Nunca pede logo de cara. Espera o clima esquentar, cria uma
             conexão — aí parece natural e ele fica feliz em mandar.
           </p>
-          <div class="tip-cards">
+          <div class="tip-list">
             <div class="tip-card">
               <div class="tip-icon">🎯</div>
               <div>
