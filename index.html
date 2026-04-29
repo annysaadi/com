@@ -176,12 +176,24 @@
     #faq-toggle {
       min-height: 48px;
     }
-    .zn-read-note {
-      color: var(--ink-3);
-      font-size: 12px;
-      line-height: 1.5;
-      max-width: 54ch;
-      margin: -18px 0 28px;
+    .zn-faq-more-toggle {
+      width: 100%;
+      padding: 16px;
+      margin-top: 8px;
+      background: transparent;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      color: var(--ink-2);
+      cursor: pointer;
+      font: inherit;
+      font-size: 14px;
+      font-weight: 600;
+      transition: color .2s, border-color .2s, background .2s;
+    }
+    .zn-faq-more-toggle:hover {
+      background: var(--g-l);
+      border-color: rgba(107, 124, 78, 0.18);
+      color: var(--g-dd);
     }
     .zn-proof-head {
       flex-wrap: wrap;
@@ -240,16 +252,6 @@
       max-width: 58ch;
       margin: -18px 0 36px;
     }
-    .zn-section-cta {
-      display: grid;
-      justify-items: center;
-      gap: 10px;
-      margin-top: clamp(28px, 5vw, 56px);
-    }
-    .zn-section-cta .zn-btn-primary {
-      min-width: min(100%, 250px);
-    }
-
     /* Step cards zig-zag */
     .zn-steps-cards {
       gap: clamp(18px, 3vw, 34px);
@@ -305,10 +307,6 @@
       margin-top: 18px;
       box-shadow: var(--shadow-sm);
     }
-    .zn-earn-inner > .zn-section-cta {
-      grid-column: 1 / -1;
-    }
-
     /* About section breathes like a decision checkpoint */
     .zn-about-inner {
       display: grid;
@@ -330,9 +328,6 @@
       top: 92px;
     }
 
-    .zn-final-bg {
-      display: none;
-    }
     .zn-final-feet {
       opacity: 0.82;
     }
@@ -347,7 +342,6 @@
         padding: 44px 36px 48px;
       }
       .zn-hero--compact .zn-hero-title { font-size: clamp(2.75rem, 14vw, 4.25rem); }
-      .zn-what-grid { grid-template-columns: 1fr; gap: 20px; }
       .zn-phone-compact .zn-phone-mock { width: 160px; }
       .zn-phone-compact .zn-phone-content { min-height: 240px; height: 260px; }
       .zn-step-card:nth-child(odd),
@@ -396,13 +390,11 @@
       .zn-hero--compact {
         padding-inline: 24px;
       }
-      .zn-hero-cta-row,
-      .zn-section-cta {
-        justify-items: stretch;
+      .zn-hero-cta-row {
+        align-items: stretch;
       }
       .zn-hero-cta-row .zn-btn-primary,
       .zn-hero-cta-row .zn-btn-secondary,
-      .zn-section-cta .zn-btn-primary,
       .zn-final-btn {
         width: 100%;
       }
@@ -771,7 +763,7 @@
         <div class="zn-faq-item is-open"><button class="zn-faq-q" type="button" aria-expanded="true" aria-controls="faq-a-1"><span class="zn-faq-num">01</span><span class="zn-faq-txt">Tem que pagar alguma coisa?</span><span class="zn-faq-plus">−</span></button><div class="zn-faq-a" id="faq-a-1">Não. O cadastro é gratuito e a equipe não cobra dinheiro para você trabalhar. Se alguém pedir pagamento, não siga.</div></div>
         <div class="zn-faq-item"><button class="zn-faq-q" type="button" aria-expanded="false" aria-controls="faq-a-2"><span class="zn-faq-num">02</span><span class="zn-faq-txt">Preciso fazer algo que eu não queira?</span><span class="zn-faq-plus">+</span></button><div class="zn-faq-a" id="faq-a-2" hidden>Não. O trabalho envolve conteúdo adulto, mas você precisa respeitar seus limites e seguir as regras do app. Se tiver dúvida, fale com a equipe antes de atender.</div></div>
         <div class="zn-faq-item"><button class="zn-faq-q" type="button" aria-expanded="false" aria-controls="faq-a-3"><span class="zn-faq-num">03</span><span class="zn-faq-txt">Alguém pode me reconhecer?</span><span class="zn-faq-plus">+</span></button><div class="zn-faq-a" id="faq-a-3" hidden>Existe essa possibilidade, por isso você usa apelido e deve seguir orientações de segurança. A equipe também explica como proteger seu perfil.</div></div>
-        <button id="faq-toggle" type="button" aria-expanded="false" aria-controls="faq-more" style="width:100%;padding:16px;margin-top:8px;background:none;border:1px solid var(--line);border-radius:var(--radius);font-size:14px;font-weight:600;color:var(--ink-2);cursor:pointer;font-family:inherit;transition:color .2s, border-color .2s, background .2s;">Ver mais perguntas +</button>
+        <button class="zn-faq-more-toggle" id="faq-toggle" type="button" aria-expanded="false" aria-controls="faq-more">Ver mais perguntas +</button>
         <div id="faq-more" style="display:none" hidden aria-hidden="true">
         <div class="zn-faq-item"><button class="zn-faq-q" type="button" aria-expanded="false" aria-controls="faq-a-4"><span class="zn-faq-num">04</span><span class="zn-faq-txt">Quando e como eu recebo?</span><span class="zn-faq-plus">+</span></button><div class="zn-faq-a" id="faq-a-4" hidden>O pagamento é semanal por Pix, quando você atinge o valor mínimo e segue as regras do app. A equipe explica tudo antes de você começar.</div></div>
         <div class="zn-faq-item"><button class="zn-faq-q" type="button" aria-expanded="false" aria-controls="faq-a-5"><span class="zn-faq-num">05</span><span class="zn-faq-txt">Preciso falar inglês?</span><span class="zn-faq-plus">+</span></button><div class="zn-faq-a" id="faq-a-5" hidden>Não precisa. O app tem chat com tradutor: você digita em português e ele traduz na hora.</div></div>
@@ -784,7 +776,6 @@
 
 <!-- ═══ CTA FINAL ═══ -->
 <section class="zn-final">
-  <div class="zn-final-bg"><span>sexta</span><span>sexta</span><span>sexta</span><span>sexta</span></div>
   <div class="zn-final-inner">
     <div class="zn-final-tag"><span class="zn-final-tag-dot"></span>terminou de ler?</div>
     <h2 class="zn-final-h">Leu com calma?<br><span class="zn-final-hi">Agora me chama.</span></h2>
@@ -1085,7 +1076,7 @@ document.querySelectorAll('#faq-list .zn-faq-item').forEach(function(item){
 });
 
 // === FADE-IN ON SCROLL ===
-var fadeEls = document.querySelectorAll('.zn-step-card, .zn-what, .zn-sim, .zn-faq, .zn-final');
+var fadeEls = document.querySelectorAll('.zn-step-card, .zn-faq, .zn-final');
 fadeEls.forEach(function(el){ el.classList.add('zn-fade'); });
 var fadeObs = new IntersectionObserver(function(entries){
   entries.forEach(function(e){
