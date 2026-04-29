@@ -44,8 +44,9 @@
       padding-bottom: clamp(12px, 4vw, 40px);
     }
     .zn-hero--compact .zn-hero-title {
-      font-size: clamp(3.5rem, 8vw, 6.6rem);
-      max-width: 9ch;
+      font-size: clamp(4rem, 9vw, 7.35rem);
+      max-width: 8.7ch;
+      line-height: 0.92;
     }
     .zn-hero--compact .zn-hero-lead {
       max-width: 56ch;
@@ -62,6 +63,20 @@
     }
     .zn-hero-cta-row {
       margin-top: 4px;
+    }
+    .zn-hero--compact .zn-section-head {
+      margin-bottom: 36px;
+    }
+    .zn-hero--compact .zn-section-num {
+      color: var(--gold);
+      font-size: 28px;
+    }
+    .zn-hero--compact .zn-section-tag {
+      color: var(--g-d);
+      letter-spacing: 3px;
+    }
+    .zn-hero--compact .zn-hi em {
+      color: var(--g-d);
     }
     .zn-hero-pills {
       max-width: 620px;
@@ -160,15 +175,15 @@
     }
     .zn-btn-primary,
     .zn-nav-cta {
-      box-shadow: var(--shadow-sm);
+      box-shadow: 0 16px 34px rgba(58, 69, 40, 0.18);
     }
     .zn-btn-primary::before {
-      display: none;
+      display: block;
     }
     .zn-btn-primary:hover,
     .zn-nav-cta:hover {
-      transform: translateY(-1px);
-      box-shadow: var(--shadow-sm);
+      transform: translateY(-2px);
+      box-shadow: 0 18px 40px rgba(58, 69, 40, 0.2);
     }
     .zn-btn-primary:hover .zn-btn-arrow,
     .zn-nav-cta:hover span {
@@ -226,6 +241,11 @@
       box-shadow: none;
       opacity: 0.86;
     }
+    .zn-h2 {
+      font-size: clamp(3.6rem, 6.8vw, 5.75rem);
+      line-height: 0.98;
+      max-width: 720px;
+    }
     .zn-proof + .zn-how {
       padding-top: var(--idx-section-y);
     }
@@ -274,6 +294,7 @@
       padding: clamp(30px, 4.5vw, 48px);
       grid-template-columns: minmax(150px, 190px) minmax(0, 1fr);
       gap: clamp(24px, 4vw, 52px);
+      transition: border-color .28s cubic-bezier(.22,1,.36,1), box-shadow .28s cubic-bezier(.22,1,.36,1), opacity .28s cubic-bezier(.22,1,.36,1), transform .28s cubic-bezier(.22,1,.36,1);
     }
     .zn-step-card:nth-child(odd) {
       margin-right: clamp(0px, 7vw, 76px);
@@ -298,6 +319,40 @@
     .zn-step-highlight span {
       display: none;
     }
+    .zn-step-card-num {
+      display: inline-grid;
+      place-items: center;
+      min-width: 30px;
+      min-height: 30px;
+      border-radius: 999px;
+      transition: color .25s cubic-bezier(.22,1,.36,1), background .25s cubic-bezier(.22,1,.36,1), transform .25s cubic-bezier(.22,1,.36,1);
+    }
+    .zn-step-card.is-active {
+      border-color: rgba(107, 124, 78, 0.22);
+      box-shadow: 0 18px 48px rgba(58, 69, 40, 0.11);
+    }
+    .zn-step-card.is-active .zn-step-card-num {
+      background: var(--g-l);
+      color: var(--g-dd);
+      transform: scale(1.04);
+    }
+    .zn-step-card.is-past {
+      opacity: 0.72;
+    }
+    .zn-step-card.is-past .zn-step-card-num {
+      background: var(--g);
+      color: var(--white);
+      font-family: var(--font-sans);
+      font-size: 0;
+      font-style: normal;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+    .zn-step-card.is-past .zn-step-card-num::after {
+      content: "✓";
+      font-size: 14px;
+      line-height: 1;
+    }
 
     /* Earnings as a stronger decision block */
     .zn-earn-inner {
@@ -319,7 +374,23 @@
       position: sticky;
       top: 92px;
       margin-top: 18px;
-      box-shadow: var(--shadow-sm);
+      border-color: rgba(107, 124, 78, 0.18);
+      box-shadow: 0 22px 58px rgba(58, 69, 40, 0.14);
+    }
+    .zn-earn-result-amount {
+      font-size: clamp(2.75rem, 4.8vw, 4.2rem);
+      line-height: 0.98;
+    }
+    .zn-earn-hour--active {
+      background: var(--g);
+      color: var(--white);
+      box-shadow: 0 16px 34px rgba(58, 69, 40, 0.16);
+    }
+    .zn-earn-hour--active .zn-earn-hour-icon,
+    .zn-earn-hour--active .zn-earn-hour-time,
+    .zn-earn-hour--active .zn-earn-hour-value,
+    .zn-earn-hour--active .zn-earn-hour-tag {
+      color: var(--white);
     }
     /* About section breathes like a decision checkpoint */
     .zn-about-inner {
@@ -345,6 +416,18 @@
     .zn-final-feet {
       opacity: 0.82;
     }
+    .zn-final {
+      padding-block: clamp(86px, 12vw, 150px);
+    }
+    .zn-final-h {
+      font-size: clamp(3.1rem, 6.8vw, 5.2rem);
+      line-height: 0.96;
+      margin-bottom: 44px;
+    }
+    .zn-final-btn {
+      min-width: min(100%, 360px);
+      justify-content: center;
+    }
     .zn-final-tag-dot {
       animation: none;
       box-shadow: none;
@@ -358,6 +441,7 @@
       .zn-hero--compact .zn-hero-title {
         max-width: 10ch;
         font-size: clamp(2.65rem, 12vw, 4.05rem);
+        line-height: 0.96;
       }
       .zn-phone-compact .zn-phone-mock { width: 160px; }
       .zn-phone-compact .zn-phone-content { min-height: 240px; height: 260px; }
@@ -425,6 +509,10 @@
       .zn-h2 {
         font-size: clamp(2rem, 9vw, 2.65rem);
         letter-spacing: -0.04em;
+      }
+      .zn-final-h {
+        font-size: clamp(2.25rem, 9vw, 3.05rem);
+        line-height: 1;
       }
       .zn-section-lead,
       .zn-about-lead {
