@@ -1067,6 +1067,12 @@
       overflow-y: auto;
     }
 
+    .chat-opt-more {
+      background: var(--bg);
+      color: var(--mid);
+      border: 1px solid var(--line-2);
+    }
+
     .chat-opt {
       background: var(--green-light);
       border: none;
@@ -1686,10 +1692,8 @@
           </div>
         </div>
         <p class="final-text">
-          <span class="final-mark">✓</span> Responda o formulário
-          se você leu tudo e quer seguir com a inscrição.<br />
-          <span class="final-mark">→</span> Depois de aprovada,
-          você recebe o treinamento completo e o suporte da equipe.
+          Depois de aprovada, você recebe o treinamento completo e o suporte da
+          equipe.
         </p>
         <a href="https://forms.gle/Bs3mg8Jtg3cVQCFs5" target="_blank" rel="noopener noreferrer" class="final-btn">
           Ir para o formulário &nbsp;&nbsp;→
@@ -1773,6 +1777,8 @@
       },
       { q: "Li tudo e quero ir pro formulário", a: "__CTA__" },
     ];
+    const initialChatOptions = 4;
+    let showAllChatOptions = false;
 
     function toggleChat() {
       document.getElementById("chatBox").classList.toggle("open");
@@ -1781,13 +1787,27 @@
     function renderOptions() {
       const opts = document.getElementById("chatOptions");
       opts.innerHTML = "";
-      chatData.forEach((item, i) => {
+      const visibleItems = showAllChatOptions
+        ? chatData
+        : chatData.slice(0, initialChatOptions);
+      visibleItems.forEach((item, i) => {
         const btn = document.createElement("button");
         btn.className = "chat-opt";
         btn.textContent = item.q;
         btn.onclick = () => sendQuestion(i);
         opts.appendChild(btn);
       });
+      if (!showAllChatOptions && chatData.length > initialChatOptions) {
+        const moreBtn = document.createElement("button");
+        moreBtn.className = "chat-opt chat-opt-more";
+        moreBtn.type = "button";
+        moreBtn.textContent = "Ver mais dúvidas";
+        moreBtn.onclick = () => {
+          showAllChatOptions = true;
+          renderOptions();
+        };
+        opts.appendChild(moreBtn);
+      }
     }
 
     function sendQuestion(i) {
