@@ -1445,7 +1445,7 @@
           <div class="alert-box-tag">Aviso importante</div>
           <p class="alert-box-text">
             Nesse app, os usuários aparecem sem roupa, fazem pedidos
-            íntimos e falar sobre sexo durante as chamadas.
+            íntimos e falam sobre sexo durante as chamadas.
             <strong>Se você não se sente confortável com esse tipo de situação,
               tudo bem parar por aqui.</strong>
           </p>
@@ -1738,7 +1738,7 @@
   <!-- /main -->
 
   <!-- BACK TO TOP -->
-  <button class="back-to-top" id="backToTop" type="button" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+  <button class="back-to-top" id="backToTop" type="button"
     aria-label="Voltar ao topo">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
       stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -1747,15 +1747,16 @@
   </button>
 
   <!-- CHATBOT -->
-  <button class="chat-toggle" type="button" onclick="toggleChat()" aria-label="Abrir chat">
+  <button class="chat-toggle" id="chatToggle" type="button" aria-label="Abrir chat" aria-expanded="false"
+    aria-controls="chatBox">
     💬
   </button>
-  <div class="chat-box" id="chatBox">
+  <div class="chat-box" id="chatBox" role="dialog" aria-label="Tire suas dúvidas" aria-hidden="true">
     <div class="chat-header">
       <span>Tire suas dúvidas 💌</span>
-      <button type="button" onclick="toggleChat()" aria-label="Fechar chat">✕</button>
+      <button type="button" id="chatClose" aria-label="Fechar chat">✕</button>
     </div>
-    <div class="chat-messages" id="chatMessages">
+    <div class="chat-messages" id="chatMessages" aria-live="polite">
       <div class="chat-msg bot">
         Oi! 🤍 Ficou alguma dúvida antes de continuar? Escolhe uma pergunta
         abaixo.
@@ -1806,9 +1807,25 @@
     ];
     const initialChatOptions = 4;
     let showAllChatOptions = false;
+    const chatToggle = document.getElementById("chatToggle");
+    const chatBox = document.getElementById("chatBox");
+    const chatClose = document.getElementById("chatClose");
+
+    function setChatState(isOpen) {
+      chatBox.classList.toggle("open", isOpen);
+      chatBox.setAttribute("aria-hidden", String(!isOpen));
+      chatToggle.setAttribute("aria-expanded", String(isOpen));
+      chatToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Fechar chat" : "Abrir chat",
+      );
+      if (isOpen) {
+        requestAnimationFrame(() => chatClose.focus({ preventScroll: true }));
+      }
+    }
 
     function toggleChat() {
-      document.getElementById("chatBox").classList.toggle("open");
+      setChatState(!chatBox.classList.contains("open"));
     }
 
     function renderOptions() {
@@ -1859,6 +1876,11 @@
     }
 
     renderOptions();
+    chatToggle.addEventListener("click", toggleChat);
+    chatClose.addEventListener("click", () => {
+      setChatState(false);
+      chatToggle.focus({ preventScroll: true });
+    });
   </script>
 
   <script>
@@ -1880,6 +1902,9 @@
 
     // Progress bar + back to top
     const backToTop = document.getElementById("backToTop");
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
     window.addEventListener("scroll", () => {
       const h = document.documentElement.scrollHeight - window.innerHeight;
       const pct = h > 0 ? (window.scrollY / h) * 100 : 0;
@@ -1939,7 +1964,10 @@
     });
 
     document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") setMenuState(false);
+      if (event.key === "Escape") {
+        setMenuState(false);
+        setChatState(false);
+      }
     });
   </script>
 
