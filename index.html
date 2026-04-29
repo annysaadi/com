@@ -50,6 +50,7 @@
     .zn-hero--compact .zn-hero-lead {
       max-width: 56ch;
       font-size: clamp(1rem, 1.5vw, 1.125rem);
+      line-height: 1.75;
     }
     .zn-hero--compact .zn-hero-bg-word {
       top: auto;
@@ -246,11 +247,24 @@
       max-width: 620px;
     }
     .zn-section-lead {
-      font-size: 15px;
+      font-size: 1rem;
       color: var(--ink-2);
-      line-height: 1.7;
+      line-height: 1.75;
       max-width: 58ch;
       margin: -18px 0 36px;
+    }
+    .zn-step-card-body li,
+    .zn-faq-a,
+    .zn-about-card p {
+      font-size: 0.9375rem;
+      line-height: 1.62;
+    }
+    .zn-step-card-body h3 {
+      text-wrap: balance;
+    }
+    .zn-earn-result-note,
+    .zn-proof-note {
+      line-height: 1.55;
     }
     /* Step cards zig-zag */
     .zn-steps-cards {
@@ -341,7 +355,10 @@
         min-height: auto;
         padding: 44px 36px 48px;
       }
-      .zn-hero--compact .zn-hero-title { font-size: clamp(2.75rem, 14vw, 4.25rem); }
+      .zn-hero--compact .zn-hero-title {
+        max-width: 10ch;
+        font-size: clamp(2.65rem, 12vw, 4.05rem);
+      }
       .zn-phone-compact .zn-phone-mock { width: 160px; }
       .zn-phone-compact .zn-phone-content { min-height: 240px; height: 260px; }
       .zn-step-card:nth-child(odd),
@@ -352,12 +369,13 @@
       .zn-step-card {
         grid-template-columns: 1fr;
         gap: 22px;
-        padding: 42px 22px 26px;
+        padding: 36px 22px 26px;
         align-items: start;
       }
       .zn-step-card .zn-step-phone,
       .zn-step-card:nth-child(even) .zn-step-phone {
         order: 2;
+        justify-self: center;
       }
       .zn-step-card .zn-step-card-body,
       .zn-step-card:nth-child(even) .zn-step-card-body {
@@ -366,6 +384,11 @@
       .zn-step-card-body h3 {
         max-width: 18ch;
         margin-bottom: 12px;
+      }
+      .zn-h2,
+      .zn-about-title,
+      .zn-faq-side h2 {
+        line-height: 1.12;
       }
       .zn-step-highlight {
         width: 100%;
@@ -390,27 +413,99 @@
       .zn-hero--compact {
         padding-inline: 24px;
       }
+      .zn-hero--compact .zn-hero-lead {
+        font-size: 1rem;
+        max-width: 100%;
+      }
+      .zn-h2 {
+        font-size: clamp(2rem, 9vw, 2.65rem);
+        letter-spacing: -0.04em;
+      }
+      .zn-section-lead,
+      .zn-about-lead {
+        font-size: 1rem;
+      }
       .zn-hero-cta-row {
+        flex-direction: column;
         align-items: stretch;
+        gap: 14px;
       }
       .zn-hero-cta-row .zn-btn-primary,
-      .zn-hero-cta-row .zn-btn-secondary,
       .zn-final-btn {
         width: 100%;
       }
       .zn-hero-cta-row .zn-btn-secondary {
-        justify-self: center;
+        align-self: center;
         width: auto;
+        min-height: 44px;
       }
       .zn-hero-trust {
         width: 100%;
       }
+      .zn-proof-marquee {
+        mask-image: linear-gradient(90deg, transparent 0, rgb(0 0 0) 24px, rgb(0 0 0) calc(100% - 24px), transparent 100%);
+      }
+      .zn-proof-track {
+        gap: 8px;
+        padding-inline: 8px;
+      }
       .zn-proof-note {
-        padding-inline: 36px;
+        padding-inline: 24px;
         margin-top: -6px;
+      }
+      .zn-step-card {
+        padding: 32px 20px 24px;
+      }
+      .zn-step-card-body h3 {
+        max-width: none;
       }
       .zn-earn-hours {
         grid-template-columns: 1fr;
+      }
+      .zn-about-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .zn-signup {
+        width: calc(100vw - 32px);
+        max-height: calc(100svh - 32px);
+        overflow: auto;
+        padding: 42px 22px 26px;
+      }
+      .zn-video-popup-container {
+        width: calc(100vw - 24px);
+        max-height: calc(100svh - 24px);
+      }
+      .zn-video-popup-footer {
+        padding: 18px 18px 20px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .zn-nav-inner {
+        gap: 10px;
+        padding-inline: 18px;
+      }
+      .zn-logo {
+        font-size: 14px;
+      }
+      .zn-nav-cta {
+        min-height: 44px;
+        padding: 9px 12px;
+        font-size: 12px;
+      }
+      .zn-hero--compact {
+        padding-inline: 20px;
+      }
+      .zn-hero--compact .zn-hero-title {
+        font-size: clamp(2.4rem, 11vw, 3rem);
+      }
+    }
+
+    @media (orientation: landscape) and (max-height: 520px) {
+      .zn-hero--compact {
+        min-height: auto;
+        padding-block: 32px;
       }
     }
 
@@ -501,7 +596,7 @@
   <div class="zn-hero-copy">
     <div class="zn-eyebrow"><span class="zn-eye-line"></span>para mulheres · 18+</div>
     <h1 class="zn-hero-title">Leia com calma<br>antes de <span class="zn-hi"><em>decidir.</em></span></h1>
-    <p class="zn-hero-lead">Aqui eu te explico o trabalho pelo celular do jeito mais simples: como são as chamadas, como os ganhos entram, quais são as regras e o que você precisa saber antes de me chamar no WhatsApp.</p>
+    <p class="zn-hero-lead">Aqui eu te explico o trabalho pelo celular do jeito mais simples: como são as chamadas, como os ganhos entram, quais são as regras e o que você precisa saber antes de se inscrever.</p>
     <div class="zn-hero-cta-row">
       <button class="zn-btn-primary zn-btn-xl" type="button" data-scroll-target="#como-funciona">Começar por aqui<span class="zn-btn-arrow">↓</span></button>
       <button class="zn-btn-secondary zn-video-trigger" type="button" data-video-trigger>Ver vídeo de apoio</button>
@@ -550,7 +645,7 @@
   <div class="zn-how-inner">
     <div class="zn-section-head"><span class="zn-section-num">I</span><span class="zn-section-tag">como funciona</span></div>
     <h2 class="zn-h2">Passo a passo <em>bem simples.</em></h2>
-    <p class="zn-section-lead">Veja o caminho completo antes de chamar no WhatsApp.</p>
+    <p class="zn-section-lead">Veja o caminho completo antes de começar.</p>
     <div class="zn-steps-cards">
 
       <!-- PASSO 01 -->
