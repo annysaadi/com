@@ -81,16 +81,25 @@ window.addEventListener("scroll", () => {
 });
 
     // Mobile menu toggle
+    function setMenuState(isOpen) {
+      sidebar.classList.toggle("open", isOpen);
+      overlay.classList.toggle("open", isOpen);
+      overlay.setAttribute("aria-hidden", String(!isOpen));
+      menuBtn.setAttribute("aria-expanded", String(isOpen));
+      menuBtn.setAttribute("aria-label", isOpen ? "Fechar menu" : "Abrir menu");
+      if (isOpen) {
+        requestAnimationFrame(() => sidebar.focus({ preventScroll: true }));
+      }
+    }
+
     function toggleMenu() {
-      sidebar.classList.toggle("open");
-      overlay.classList.toggle("open");
+      setMenuState(!sidebar.classList.contains("open"));
     }
     menuBtn.addEventListener("click", toggleMenu);
-    overlay.addEventListener("click", toggleMenu);
+    overlay.addEventListener("click", () => setMenuState(false));
     navLinks.forEach((link) => {
       link.addEventListener("click", () => {
-        sidebar.classList.remove("open");
-        overlay.classList.remove("open");
+        setMenuState(false);
       });
     });
 

@@ -40,7 +40,14 @@ const chatData= [
     ];
 
     function toggleChat() {
-      document.getElementById("chatBox").classList.toggle("open");
+      const chatBox = document.getElementById("chatBox");
+      const chatToggle = document.getElementById("chatToggle");
+      const isOpen = chatBox.classList.toggle("open");
+      chatBox.setAttribute("aria-hidden", String(!isOpen));
+      if (chatToggle) {
+        chatToggle.setAttribute("aria-expanded", String(isOpen));
+        chatToggle.setAttribute("aria-label", isOpen ? "Fechar chat" : "Abrir chat");
+      }
     }
 
     function renderOptions() {
@@ -49,6 +56,7 @@ const chatData= [
       chatData.forEach((item, i) => {
         const btn = document.createElement("button");
         btn.className = "chat-opt";
+        btn.type = "button";
         btn.textContent = item.q;
         btn.onclick = () => sendQuestion(i);
         opts.appendChild(btn);

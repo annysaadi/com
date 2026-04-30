@@ -1648,6 +1648,59 @@
         right: 12px;
       }
     }
+
+    /* CTA consistency pass: same primary button language as the rest of the site. */
+    .hero-cta,
+    .wa-btn,
+    .chat-cta {
+      min-height: 48px;
+      border-radius: var(--radius) !important;
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      text-decoration: none;
+      transition:
+        background-color 0.28s ease,
+        border-color 0.28s ease,
+        box-shadow 0.28s ease,
+        color 0.28s ease,
+        transform 0.28s ease;
+    }
+
+    .hero-cta,
+    .wa-btn,
+    .chat-cta {
+      background: var(--green);
+      color: var(--white);
+      border: 1px solid transparent;
+      box-shadow: 0 16px 34px rgba(58, 69, 40, 0.18);
+    }
+
+    .hero-cta:hover,
+    .wa-btn:hover,
+    .chat-cta:hover {
+      background: var(--green-dark);
+      color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: 0 18px 40px rgba(58, 69, 40, 0.2);
+    }
+
+    .hero-cta:active,
+    .wa-btn:active,
+    .chat-cta:active {
+      transform: translateY(0) scale(0.98);
+    }
+
+    .hero-cta svg,
+    .wa-btn svg {
+      transition: transform 0.28s ease;
+    }
+
+    .hero-cta:hover svg,
+    .wa-btn:hover svg {
+      transform: translateX(2px);
+    }
   </style>
 </head>
 
